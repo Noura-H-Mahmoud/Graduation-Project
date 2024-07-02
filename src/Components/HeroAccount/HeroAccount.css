@@ -71,11 +71,10 @@ opacity: 75%;
     }
 }
 @media (max-width:768px) {
-
     .MS-heroAccountImg button{
-        bottom: 80px;
-        left: 50%;
-        transform: translateX(-50%);
+        top:26px;
+        right: 26px;
+        height: max-content;
         width: max-content;
     }
     }
