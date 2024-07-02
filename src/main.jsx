@@ -157,7 +157,7 @@ const State = () => {
                 </Link>
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
-                <Link className='AM_Link' to="/hotelflow/favorites">
+                <Link className='AM_Link'>
                 <img src={favourite} alt="" />Favourites</Link>
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
@@ -189,7 +189,7 @@ const State = () => {
                     } />
                     <Route path="flightflow" element={<FlightFlow />}>
                         <Route index element={
-                            <FlightsSearch
+                            <FlightListing
                                 navButtons={navButtons(true, false)}
                                 navButtonsForMobile={navButtonsForMobile}
                             />
@@ -214,14 +214,22 @@ const State = () => {
                         } />
                     </Route>
                     <Route path="hotelflow" element={<HotelFlow />}>
-                        <Route index element={<HotelSearch />} />
+                        <Route index element={<HotelSearch 
+                        navButtons={navButtons(true, false)}
+                        navButtonsForMobile={navButtonsForMobile}
+                        />
+                        }   />
                         <Route path="listing" element={<HotelListing />} />
                         <Route path="detail" element={<HotelDetail />} />
                         <Route path="booking" element={<HotelBooking />} />
                         <Route path="favorites" element={<Favorites />} />
                     </Route>
                     <Route path="myaccount" element={<AccountFlow />}>
-                        <Route index element={<MyAccount />} />
+                        <Route index element={<MyAccount
+                         navButtons={navButtons(true, false)}
+                         navButtonsForMobile={navButtonsForMobile}
+                         />
+                         } />
                     </Route>
                     <Route path="auth" element={<Authenticate />}>
                         <Route index element={<SignUp />} />
