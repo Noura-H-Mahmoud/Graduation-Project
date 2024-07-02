@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css';
 
+
 export default function Hero({ title, para }) {
   return (
     <section className='NM_Hero'>
@@ -12,6 +13,7 @@ export default function Hero({ title, para }) {
         <p className='NM_cssanimation NM_sequence NM_leBlurInBottom'>
           {para}
           </p>
+
     </section>
   );
 }

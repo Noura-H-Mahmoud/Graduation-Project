@@ -1,11 +1,19 @@
 import React from 'react'
-import Nav from '../../../Components/Nav/Nav'
+import FlightSearchBook from '../../../Components/FlightSearchBook/FlightSearchBook'
+import FlightSearshMap from '../../../Components/FlightSearchMap/FlightSearshMap'
+
+
+
+
 
 export default function FlightsSearch() {
   return (
-    <div>
-      <Nav/>
-    </div>
+  <>
+<FlightSearshMap/>
+ <FlightSearchBook/>
+
+</>
+
   )
 }
 
