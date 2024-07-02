@@ -77,15 +77,15 @@ export default function Places() {
     ]
     return (
         <>
-            <section className='MS-placesSection container'>
-                <div className="MS-flex container">
+            <section className='MS-placesSection'>
+                <div className="MS-flex">
                     <div>
                         <h3 className="MS-Head3">Plan your perfect trip</h3>
                         <p className="MS-pargraph">Search Flights & Places Hire to our most popular destinations</p>
                     </div>
                     <button className="MS-BtnseePlaces">See more places</button>
                 </div>
-                <div className="MS-placesCards">
+                <div className="MS-placesCards" data-aos="fade-right">
                     {PlacesData.map((cardPlace, id) => (
                         <CardPlaces key={id} image={cardPlace.image} title={cardPlace.title} description={cardPlace.description} className={cardPlace.className}/>
                     )

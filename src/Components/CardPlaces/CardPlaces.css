@@ -4,9 +4,10 @@
     padding: 16px;
     display: flex;
     align-items: center;
-    width: 350.33px;
+    width: 389.33px;
     color: var(--main-text-color);
     border-radius: var(--second-border-radius);
+    margin: 0 auto;
 }
 .MS-CardPlace img{
     width: 90px;
@@ -22,4 +23,9 @@
 font-size: var(  --xxsmall-font-size);
 font-weight: var(  --second-font-weight);
 line-height: var(  --xxsmall-line-hieght);
+}
+@media (max-width:576px) {
+    .MS-CardPlace{
+        width: 100%;
+    }
 }
