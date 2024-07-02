@@ -228,7 +228,11 @@ const State = () => {
                         />} />
                     </Route>
                     <Route path="myaccount" element={<AccountFlow />}>
-                        <Route index element={<MyAccount />} />
+                        <Route index element={<MyAccount
+                         navButtons={navButtons(true, false)}
+                         navButtonsForMobile={navButtonsForMobile}
+                         />
+                         } />
                     </Route>
                     <Route path="auth" element={<Authenticate />}>
                         <Route index element={<SignUp />} />

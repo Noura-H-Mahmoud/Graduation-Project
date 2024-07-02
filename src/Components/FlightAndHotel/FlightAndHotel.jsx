@@ -11,6 +11,7 @@ export default function FlightAndHotel() {
       heading: "Flights",
       text: "Search Flights & Places Hire to our most popular destinations",
       btn: "Show Flights",
+      route:"/flightflow/listing"
     },
     {
       id: 2,
@@ -18,13 +19,14 @@ export default function FlightAndHotel() {
       heading: "Hotels",
       text: "Search Flights & Places Hire to our most popular destinations",
       btn: "Show Hotels",
+      route:"/hotelflow/listing"
     },
   ]
   return (
     <>
-      <section className="MS-FlightAndHotel container">
+      <section className="MS-FlightAndHotel">
         {FlightAndHotelData.map((cardFlight, id) => (
-          <FlightAndHotelCard key={id} img={cardFlight.img} heading={cardFlight.heading} text={cardFlight.text} btn={cardFlight.btn} />
+          <FlightAndHotelCard key={id} img={cardFlight.img} heading={cardFlight.heading} text={cardFlight.text} btn={cardFlight.btn} route={cardFlight.route} animation={id % 2 === 0 ? 'fade-right' : 'fade-left'} />
         )
         )}
       </section>
