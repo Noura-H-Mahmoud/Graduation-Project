@@ -157,7 +157,7 @@ const State = () => {
                 </Link>
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
-                <Link className='AM_Link' to="/hotelflow/favorites">
+                <Link className='AM_Link'>
                 <img src={favourite} alt="" />Favourites</Link>
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
@@ -189,7 +189,7 @@ const State = () => {
                     } />
                     <Route path="flightflow" element={<FlightFlow />}>
                         <Route index element={
-                            <FlightsSearch
+                            <FlightListing
                                 navButtons={navButtons(true, false)}
                                 navButtonsForMobile={navButtonsForMobile}
                             />
