@@ -32,7 +32,7 @@ const CardFlightDetailFinal = () => {
         imgPart4 : [img10 , img11 , img12]
     }
     useEffect (() => {
-        Aos.init({duration : 1500})
+        Aos.init({duration : 2000})
     }, [])
     return (
     <section className='Aya_Flight_Details_Final'>

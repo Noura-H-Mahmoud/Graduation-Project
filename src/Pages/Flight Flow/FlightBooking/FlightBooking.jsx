@@ -1,6 +1,5 @@
 import CardFlightDetailFinal from "../../../Components/CardFlightDetailFinal/CardFlightDetailFinal";
 import Path from "../../../Components/Path/Path";
-import Nav from "../../../Components/Nav/Nav";
 import './FlightBooking.css'
 import Footer from "../../../Components/Footer/Footer";
 import FlightCard from "../../../Components/FlightCard/FlightCard";
@@ -8,10 +7,11 @@ import FlightAccordion from "../../../Components/FlightAccordion/FlightAccordion
 import FlightForm from "../../../Components/FlightForm/FlightForm";
 import imgFlightCard from './../../../assets/images/Booking detail.png'
 import Newsletter from "../../../Components/Newsletter/Newsletter";
-export default function FlightBooking() {
+import Navigation from "../../../Components/Nav/Nav";
+export default function FlightBooking(navButtons ,navButtonsForMobile ) {
   return (
     <section className="FlightBooking">
-    <Nav/>
+    <Navigation navButtons={navButtons} navButtonsForMobile={navButtonsForMobile}/>
     <Path country={'Turkey'} city={'Istanbul'} hotel_name={'CVK Park Bosphorus Hotel Istanbul'} />
     <div className='FlightBookingRow'>
       <div className="FlightContainer" >

@@ -8,7 +8,7 @@ import email from './../../assets/images/email.png'
 import { useEffect } from "react";
 const FlightForm = () => {
     useEffect (() => {
-        Aos.init({duration : 1500})
+        Aos.init({duration : 2000})
     }, [])
     const data = {
         Login_Or_Signup : "Login or Sign up to book" ,

@@ -5,13 +5,13 @@ import imgHotelCard from './../../../assets/images/Booking detail (2).png'
 import './HotelBooking.css'
 import FlightForm from "../../../Components/FlightForm/FlightForm";
 import CardHotelDetailFinal from "../../../Components/CardHotelDetailFinal/CardHotelDetailFinal";
-import Nav from "../../../Components/Nav/Nav";
 import Newsletter from "../../../Components/Newsletter/Newsletter";
 import Footer from "../../../Components/Footer/Footer";
-export default function HotelBooking() {
+import Navigation from "../../../Components/Nav/Nav";
+export default function HotelBooking(navButtons ,navButtonsForMobile ) {
   return (
     <section className="FlightBooking">
-      <Nav/>
+      <Navigation navButtons={navButtons} navButtonsForMobile={navButtonsForMobile}/>
       <Path country={'Turkey'} city={'Istanbul'} hotel_name={'CVK Park Bosphorus Hotel Istanbul'}/>
       <div className='FlightBookingRow'>
       <div className="FlightContainer" >

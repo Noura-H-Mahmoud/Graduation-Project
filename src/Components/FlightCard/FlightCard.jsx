@@ -16,7 +16,7 @@ const data = {
 }
 const FlightCard = ({page , imgFlightCard ,title , subtitle ,button ,price_Base_Fare , price_Discount ,price_taxes ,price_Service_Fee,price_total}) => {
     useEffect (() => {
-        Aos.init({duration : 1500})
+        Aos.init({duration : 2000})
     }, [])
     return (
     <section className='Aya-Flight_Card' data-aos='fade-left'>

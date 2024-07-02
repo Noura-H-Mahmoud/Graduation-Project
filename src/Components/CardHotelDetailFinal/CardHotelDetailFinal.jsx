@@ -22,7 +22,7 @@ const CardHotelDetailFinal = () => {
         imgPart3 : [img1 , img2 , img3 ]
     }
     useEffect (() => {
-        Aos.init({duration : 1500})
+        Aos.init({duration : 2000})
     }, [])
     return (
         <section className='Aya_Hotel_Details_Final' data-aos='fade-right'>

@@ -9,7 +9,7 @@ const FlightAccordion = ({Header_Title , Header_Body , Header_Title2 ,Header_Bod
         setActive(panelId)
     }
     useEffect (() => {
-        Aos.init({duration : 1500})
+        Aos.init({duration : 2000})
     }, [])
     return (
     <section className="Aya-Accordion" data-aos='fade-right'>
