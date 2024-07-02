@@ -170,8 +170,11 @@
     }
 }
 @media (min-width : 1130px) and (max-width : 1179px)  {
-    .Aya-Flight_Card .flightCards ,.Aya-Flight_Card .hoteltCards{
+    .Aya-Flight_Card .flightCards{
         width: 21.325rem;
+    }
+    .Aya-Flight_Card .hoteltCards {
+        width: 22rem;
     }
     .Aya-Flight_Card .Line1 , .Aya-Flight_Card .Line2 {
         width: 19.124rem;
@@ -187,16 +190,23 @@
     .Aya-Flight_Card .flightCards ,.Aya-Flight_Card .hoteltCards {
         width: 19.325rem;
     }
+    .Aya-Flight_Card .hoteltCards {
+        height: 540px;
+    }
     .Aya-Flight_Card .Line1 , .Aya-Flight_Card .Line2 {
         width: 17.124rem;
     }
     .Aya-Flight_Card .part1 .subtitle {
-        width: 148px;
-        font-size: 18px;
+        width: 128px;
+        font-size: 16px;
     }
     .Aya-Flight_Card .part1-content {
         padding: 0 10px 10px;
         width: 150px;
+    }
+    .Aya-Flight_Card .part1 .hotelTitle {
+        width: 8rem;
+        height: 40px;
     }
 }
 @media (min-width : 993px) and (max-width : 1099px)  {
@@ -264,6 +274,9 @@
     }
     .Aya-Flight_Card .part1 .subtitle {
         font-size: 18px;
+    }
+    .Aya-Flight_Card .part1 .hotelTitle , .Aya-Flight_Card .part1 .subtitle {
+        width: 11.5rem;
     }
 } 
 @media(min-width : 320px) and (max-width : 399px) {

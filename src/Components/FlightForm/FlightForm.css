@@ -110,7 +110,7 @@
     align-items: center;
     margin-bottom: 16px;
 }
-.Aya-Flight-Form .Form-Part3 .facebook , .Aya-Flight-Form .Form-Part3 .google , .Aya-Flight-Form .Form-Part3 .apple {
+.Aya-Flight-Form .Form-Part3 .img1 , .Aya-Flight-Form .Form-Part3 .img2 , .Aya-Flight-Form .Form-Part3 .img3 {
     width: 236.67px;
     height: 56px;
     padding: 16px 24px 16px 24px;
@@ -118,7 +118,7 @@
     border: 1px solid #FF8500 ; 
     background-color: #FFFFFF;
 }
-.Aya-Flight-Form .Form-Part3 .facebook img, .Aya-Flight-Form .Form-Part3 .google img , .Aya-Flight-Form .Form-Part3 .apple img {
+.Aya-Flight-Form .Form-Part3 .img1 img, .Aya-Flight-Form .Form-Part3 .img2 img , .Aya-Flight-Form .Form-Part3 .img3 img {
     width: 1.5rem;
     height: 1.5rem;
 }
@@ -269,7 +269,7 @@
     .Aya-Flight-Form .Form-Part1 .Text {
         height: 65px;
     }
-    .Aya-Flight-Form .Form-Part3 .facebook, .Aya-Flight-Form .Form-Part3 .google, .Aya-Flight-Form .Form-Part3 .apple {
+    .Aya-Flight-Form .Form-Part3 .img1 , .Aya-Flight-Form .Form-Part3 .img2 , .Aya-Flight-Form .Form-Part3 .img3 {
         width: 60px;
         padding: 15px 10px 16px 10px;
     }
