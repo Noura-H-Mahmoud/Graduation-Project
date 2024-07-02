@@ -12,12 +12,12 @@ export default function FlightListing({ navButtons, navButtonsForMobile }) {
         <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} />
         <FormWithOutTab />
       </header>
-      <main>
+      {/* <main>
         <FilterFlight />
       </main>
       <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }
