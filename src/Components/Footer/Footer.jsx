@@ -20,6 +20,7 @@ export default function Footer() {
                             <img src={facebook} alt="facebook" />
 
                         </a>
+                        {/* <span>Facebook</span> */}
                     </div>
                     <div className='NM_Twitter'>
                         <a href="#" target="_blank" rel="noopener noreferrer">
@@ -27,6 +28,7 @@ export default function Footer() {
                             <img src={twitter} alt="twitter" />
 
                         </a>
+                        {/* <span>Twitter</span> */}
                     </div>
                     <div className='NM_Youtube'>
                         <a href="#" target="_blank" rel="noopener noreferrer">
@@ -34,6 +36,7 @@ export default function Footer() {
                             <img src={youtube} alt="youtube" />
 
                         </a>
+                        {/* <span>Youtube</span> */}
                     </div>
                     <div className='NM_Instagram'>
                         <a href="#" target="_blank" rel="noopener noreferrer">
@@ -43,6 +46,7 @@ export default function Footer() {
                             <img src={instagram} alt="instagram" />
 
                         </a>
+                        {/* <span>Instagram</span> */}
                     </div>
                 </div>
             </div>
