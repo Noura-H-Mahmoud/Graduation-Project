@@ -54,7 +54,7 @@ export default function TabsAccount() {
                 >
                     <Tab eventKey="Account" title={<spsn className="MS-span MS-border2">Account</spsn>} className="Ms-tabhome">
                         <h6 className='MS-HeaderAccount'>Account</h6>
-                        <div className='MS-infoAcount'>
+                        <div className='MS-infoAcount' data-aos="zoom-in">
                             
                                 {dataAccount.map((accountCard) => (
                                     <>

@@ -34,14 +34,14 @@ export default function Reviewes() {
   return (
     <>
       <section className="MS-ReviewesSection">
-        <div className="MS-flex container">
+        <div className="MS-flex MS-container">
           <div>
             <h3 className="MS-Head3">Reviews</h3>
-            <p className="MS-pargraphreview">What people says about Golobe facilities</p>
+            <p className="MS-pargraphReview">What people says about Golobe facilities</p>
           </div>
           <button>See All</button>
         </div>
-        <div className="MS-reviewCards">
+        <div className="MS-reviewCards" data-aos="fade-up">
           {ReviewesCardData.map((cardReview, id) => (
             <ReviewCard key={id} titlecard={cardReview.titlecard} textreview={cardReview.textreview} head6={cardReview.head6} pargreview={cardReview.pargreview} imgReview={cardReview.imgReview} />
           )

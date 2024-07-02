@@ -1,7 +1,9 @@
 .MS-ReviewesSection {
-    width: 100%;
     overflow-x: hidden;
     padding-bottom: 241px;
+}
+.MS-container{
+    margin: 0 104px;
 }
 .MS-pargraphReview{
     font-weight:var(  --main-font-weight);
@@ -29,7 +31,16 @@
     }
       .MS-reviewCards{
         justify-content: center;
-        flex-wrap: wrap;
-        margin: 0 !important;
+        align-items: center;
+        flex-direction: column;
+        margin: 0!important;
+    }
+    .MS-container,.MS-ReviewesSection{
+        margin: 0 30px;
+    }
+}
+@media (max-width:576px) {
+    .MS-pargraphReview{
+        text-align: center;
     }
 }

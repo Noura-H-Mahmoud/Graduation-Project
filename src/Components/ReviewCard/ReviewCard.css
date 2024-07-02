@@ -56,11 +56,11 @@
     padding-top: 40px;
 }
 @media (max-width:576px) {
-    .MS-ReviewCard::after{
+.MS-ReviewCard::after{
         display: none;
     }
     .MS-ReviewCard{
-        width: 90%;
+        width: 100%;
     }
     .MS-imgReview{
         width: 100%;

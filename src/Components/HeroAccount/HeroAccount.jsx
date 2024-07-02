@@ -9,9 +9,9 @@ export default function HeroAccount() {
     <>
     <section className='MS-heroAccount'>
         <div className='MS-heroAccountImg'>
-            <button><img src={upload} alt="upload" />Upload new cover</button>
+            <button  data-aos="fade-down-right"><img src={upload} alt="upload" />Upload new cover</button>
         </div>
-        <div className='MS-profile'>
+        <div className='MS-profile' data-aos="flip-left">
             <img src={client} alt="client" className='MS-client'/>
             <div className='MS-icon'><img src={pen} alt="pen" /></div>
     </div>
