@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './FlightSearchBook.css'
-import { Col, Row } from 'react-bootstrap'
+import {  Row } from 'react-bootstrap'
+import'aos/dist/aos.css'
+import Aos from 'aos'
 
 export default function FlightSearchBook () {
 const data =[
@@ -40,10 +42,12 @@ const data2=[ {img:"./src/assets/images/Travel-3.png",
    {img:"./src/assets/images/Travel-2.png",  
        class:" img  img4"},  
   ]
+  useEffect(()=>{Aos.init();},[])
   return (
     <>
- <section className='OS_Travel_Section'>
-    <div className='OS_oone_Title'>
+ <section className='OS_Travel_Section' data-aos="fade-up" data-aos-easing="linear"
+     data-aos-duration="1500">
+    <div className='OS_oone_Title' >
             <div className='OS_Title_Book'>
             <h3>Fall into travel</h3>
             <p>Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.</p>
@@ -52,24 +56,31 @@ const data2=[ {img:"./src/assets/images/Travel-3.png",
            <button>See All</button>
            </div>
         </div>
- <Row className='OS_Travel_R'> {data.map((item)=>{ 
+ <Row className='OS_Travel_R' data-aos="fade-up" data-aos-easing="linear"
+     data-aos-duration="1500"> {data.map((item)=>{ 
                 return<>
-             <div className={item.class} >
+             <div className={item.class} data-aos="flip-left" data-aos-easing="linear"
+     data-aos-duration="3000">
          <div className='OS_Travel_T'>
+            <div className='OS-TR'>
+                <h6 className='OS-Tr-h'>{item.title}</h6>
+            </div>
+            <div className='OS_visibility'>
             <div className='OS_Travel_Title'>
-                <h6>{item.title}</h6>
-                <p>{item.paragraf}</p>
-            </div>
-            <div><p className='OS_Sale'>{item.sale}</p></div> 
-            </div>
-            <div className='OS-btn-Book'><button>Book Flight</button></div>
+            <p className='OS-Tr-p'>{item.paragraf}</p>
+            <p className='OS_Sale'>{item.sale}</p>
+            </div> 
+              <div className='OS-btn-Book'><button>Book Flight</button></div>
              </div>
+             </div>
+         </div>
  </>
 })}
          </Row>
    </section>
 <section className=''>
-   <div className='OS_one_Title MS-padding'>
+   <div className='OS_one_Title MS-padding' data-aos="fade-up" data-aos-easing="linear"
+     data-aos-duration="1500">
             <div className='OS_Title_Book'>
             <h3>Fall into travel</h3>
             <p>Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your  destination.</p>
@@ -78,7 +89,8 @@ const data2=[ {img:"./src/assets/images/Travel-3.png",
            <button>See All</button>
            </div>
      </div>
-<div className='OS-BackPacking'>
+<div className='OS-BackPacking'data-aos="fade-up" data-aos-easing="linear"
+     data-aos-duration="1500">
   
  <div className='OS-one-Backing'>
         <div className='OS-Back_Par'> 
@@ -94,11 +106,13 @@ const data2=[ {img:"./src/assets/images/Travel-3.png",
  <div className='OS-two-Backing'>
  <div className='OS_img_Travel'>{data3.map((item)=>{
         return<>
-    <img className={item.class} src={item.img} alt="travel" />
+    <img className={item.class} src={item.img} alt="travel" data-aos="flip-left" data-aos-easing="linear"
+     data-aos-duration="3000"/>
  </>})}</div>
  <div className='OS_img_Travel'>{data2.map((item)=>{
         return<>
-    <img className={item.class} src={item.img} alt="travel" />
+    <img className={item.class} src={item.img} alt="travel" data-aos="flip-left" data-aos-easing="linear"
+     data-aos-duration="3000" />
  </>})}</div>
     </div>
         

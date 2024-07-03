@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './HotelListingThree.css'
 import OSLine from './../../assets/images/line.svg'
-
+import'aos/dist/aos.css'
+import Aos from 'aos'
 export default function HotelListingThree  ()  {
     const OSArrayRoom=[
         {
@@ -42,9 +43,9 @@ export default function HotelListingThree  ()  {
           
         } 
         ]
-        
+        useEffect(()=>{Aos.init();},[])
   return (
-    <section className='OS-Section-three'>
+    <section className='OS-Section-three'data-aos="fade-up"data-aos-easing="linear"data-aos-duration="3000">
       <div className='OS-Line_Img'><img className='line' src={OSLine} alt="Line" />
       </div>
       <div>
