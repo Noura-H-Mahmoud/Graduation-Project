@@ -1,7 +1,7 @@
 import { useState} from 'react';
 import "./ShowFlight.css"
 import * as React from 'react';
-import { Select, MenuItem, InputLabel, FormControl, Popover,OutlinedInput } from '@mui/material';
+import { Select, MenuItem, InputLabel, FormControl, Popover,OutlinedInput, Dialog, DialogActions, DialogContent, DialogTitle, Button, Box } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import Tab from 'react-bootstrap/Tab';
@@ -17,6 +17,9 @@ import building from"./../../assets/images/building.svg"
 import user from"./../../assets/images/User.svg"
 import { styled } from '@mui/system';
 import { Link } from 'react-router-dom';
+import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import dayjs from 'dayjs';
 export default function ShowFlight() {
   const [value, setValue] = useState('Lahore - Karachi');
 
@@ -54,6 +57,17 @@ export default function ShowFlight() {
   const handleClassChange = (event) => {
     setClassType(event.target.value);
     setAnchorEl(null);
+  };
+  const [open, setOpen] = useState(false);
+  const [startDate, setStartDate] = useState(dayjs('2022-11-07'));
+  const [endDate, setEndDate] = useState(dayjs('2022-11-13'));
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleCloseDate = () => {
+    setOpen(false);
   };
   return (
     <>
@@ -101,13 +115,48 @@ export default function ShowFlight() {
         <MenuItem value="Multi-City">Multi-City</MenuItem>
       </CustomSelect>
     </FormControl>
-              <TextField
+              {/* <TextField
                 label="Depart- Return"
                 id="outlined-size-small"
                 defaultValue="07 Nov 22 - 13 Nov 22"
                 size="large"
                 className="MS-field"
-              />
+              /> */}
+               <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <TextField
+        label="Depart - Return"
+        value={`${startDate.format('DD MMM YY')} - ${endDate.format('DD MMM YY')}`}
+        size="large"
+        onClick={handleClickOpen}
+        readOnly
+        variant="outlined"
+      />
+
+      <Dialog open={open} onClose={handleCloseDate }>
+        <DialogTitle>Choose Dates</DialogTitle>
+        <DialogContent>
+          <Box display="flex" flexDirection="column" gap={2}>
+            <DatePicker
+              label="Start Date"
+              value={startDate}
+              onChange={(newValue) => setStartDate(newValue)}
+              renderInput={(params) => <TextField {...params} />}
+            />
+            <DatePicker
+              label="End Date"
+              value={endDate}
+              onChange={(newValue) => setEndDate(newValue)}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDate} color="primary">
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </LocalizationProvider>
           <TextField
         label="Passenger - Class"
         id="outlined-size-small"
