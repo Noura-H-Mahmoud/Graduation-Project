@@ -4,6 +4,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import change from "./../../assets/images/change.svg"
 import plus from "./../../assets/images/plus.svg"
+import TicketsFlights from '../../Components/TicketsFlights/TicketsFlights'
 
 export default function TabsAccount() {
     const dataAccount = [
@@ -73,8 +74,8 @@ export default function TabsAccount() {
                                 )}
                             </div>
                     </Tab>
-                    <Tab eventKey="History" title={<spsn className="MS-span MS-border2">History</spsn>}>
-
+                    <Tab eventKey="History" title={<spsn className="MS-span MS-border2">History</spsn>}>                
+                        <TicketsFlights/>
                     </Tab>
                     <Tab eventKey="Payment methods" title={<spsn className="MS-span">Payment methods</spsn>}>
                     </Tab>
