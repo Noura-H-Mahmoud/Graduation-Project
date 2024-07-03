@@ -159,11 +159,11 @@
     
     .OS-Btn-Book {
         width: 9.375rem;
-        height: 3rem;
         background-color: var(--main-bgcolor);
     }
     
-    .OS-Btn-Book:hover {
+    .OS-Btn-Book:hover,
+    .OS-link-Book:hover {
         background-color: transparent;
         transition: all 1s;
     }

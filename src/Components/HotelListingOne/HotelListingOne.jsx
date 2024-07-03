@@ -4,6 +4,8 @@ import OsLocation from './../../assets/images/Location.png'
 import OsHotelListing1 from './../../assets/images/Hotel-listing-1.svg'
 import'aos/dist/aos.css'
 import Aos from 'aos'
+import{Link} from 'react-router-dom'
+
 export default function HotelListingOne () {
    const OSdata2=[
         {
@@ -85,7 +87,7 @@ const OSImgHotel2=[
             {OSbutton.map((item)=>{
         return <button className={item.class}><img src={item.content} alt="" /></button>
       })}
-      <button className='OS-Btn-Book OS-btn-icon'>Book now</button>
+    <Link className='OS-link-Book' to='/hotelflow/booking'><button className='OS-Btn-Book OS-btn-icon'>Book now</button></Link>
             </div>
          </div>
         </div>
