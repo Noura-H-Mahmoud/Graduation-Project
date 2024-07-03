@@ -46,6 +46,12 @@
     height: 41px;
 }
 
+.OS-Div-review:hover {
+    background-color: transparent;
+    border: 1px solid var(--main-bgcolor);
+    transition: all 1s;
+}
+
 .OS-Par-review {
     font-size: var( --xsmall-font-size);
     font-weight: var(--fourth-font-weight);
@@ -77,6 +83,11 @@
     height: 145px;
     padding-left: 1rem;
     margin-left: 1rem;
+}
+
+.OS-Two-review :hover {
+    background-color: var(--main-bgcolor);
+    transition: all 1s;
 }
 
 .OS-Twoo-review img {

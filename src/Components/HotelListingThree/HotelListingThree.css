@@ -60,6 +60,12 @@
         border: none;
     }
     
+    .OS-Btn-Room:hover {
+        background-color: transparent;
+        border: 1px solid var(--main-bgcolor);
+        transition: all 1s;
+    }
+    
     .line1 {
         padding-top: 4rem;
     }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -9,10 +9,12 @@ import './TicketsFlights.css'
 import OSChevronDown from '../../assets/images/chevron_down.svg'
 import TapFlights from '../TapFlights/TapFlights';
 import TapState from '../TapState/TapState';
+import'aos/dist/aos.css'
+import Aos from 'aos'
 
 function CustomTabPanel(props) {
     const { children, value, index, ...other } = props;
-  
+   
     return (
       <div
         role="tabpanel"
@@ -44,10 +46,10 @@ export default  function TicketsFlights  ()  {
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
-   
+    useEffect(()=>{Aos.init();},[])
  return (
    
-    <section className='con Tab-section'>
+    <section className='OS-con Tab-section' data-aos="fade-up"data-aos-easing="linear"data-aos-duration="3000">
     <div className='OS-Title-Flight'>
         <h1  className='OS-T-Flight' >Tickets/Bookings</h1>
         <div className='OS-Titlee-Flight'>

@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './TapState.css'
+import'aos/dist/aos.css'
+import Aos from 'aos'
 export default  function TapState  ()  {
     const OSArrowFlight=[{
         img:'./src/assets/images/cvk.png',
@@ -53,11 +55,12 @@ export default  function TapState  ()  {
         btnContent2:'./src/assets/images/chevron_forward.svg'
     },
 ]
-  return (
+useEffect(()=>{Aos.init();},[])
+return (
     <>
          <div className='OS-big-Style'>
            {OSArrowFlight.map((item)=>{
-             return<div className='OS-Fl-Style'>
+             return<div className='OS-Fl-Style'data-aos="fade-up-right"data-aos-easing="linear"data-aos-duration="3000">
                 <div className=' OS-Emirates-line'> <img src={item.img} alt="Emirates-line" /></div>
                 <div className=' OS-Text-Style'>
                     <div className='OS-Text'>

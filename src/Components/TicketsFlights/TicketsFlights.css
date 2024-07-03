@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: end;
+    flex-wrap: wrap;
 }
 
 .OS-Titlee-Flight {
@@ -37,7 +38,7 @@
     border-radius: 12px;
 }
 
-.con {
+.OS-con {
     padding: 104px;
 }
 
@@ -57,8 +58,8 @@
 
 .css-1aquho2-MuiTabs-indicator {
     background-color: var(--main-bgcolor)!important;
-    width: 583px!important;
-    margin-left: 30px!important;
+    width: 45%!important;
+    margin-left: 10px!important;
 }
 
 .Tab {
@@ -74,4 +75,25 @@
 
 .OS-FlightIcon {
     transform: rotate(90deg);
+}
+
+@media screen and (max-width:872px) {
+    .OS-con {
+        padding: 64px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .OS-con {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width:390px) {
+    .OS-con {
+        padding: 10px;
+    }
+    .OS-T-Flight {
+        font-size: var(--second-medium-font-size);
+    }
 }

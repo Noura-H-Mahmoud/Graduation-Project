@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './HotelListingOne.css'
-import OsLocation from './../../assets/images/Location.svg'
+import OsLocation from './../../assets/images/Location.png'
 import OsHotelListing1 from './../../assets/images/Hotel-listing-1.svg'
+import'aos/dist/aos.css'
+import Aos from 'aos'
 export default function HotelListingOne () {
    const OSdata2=[
         {
@@ -25,11 +27,11 @@ export default function HotelListingOne () {
     const OSbutton=[
     {
         content:'../src/assets/images/heart.svg',
-        class:'OS-btn-icon'
+        class:'OS-btn-icon OS-Btn-Heart'
     },
     {
         content:'../src/assets/images/Share.svg',
-        class:'OS-btn-icon'
+        class:'OS-btn-icon OS-Btn-Share'
     },
    ]
    const OSImgHotel1=[
@@ -42,12 +44,12 @@ const OSImgHotel2=[
       class:'OS-Room-Img'},
     { img:'../src/assets/images/Room-4.png',
       class:'OS-Room-Img OS-room-img'}
-  ]
- 
+  ];  
+  useEffect(()=>{Aos.init();},[])
 
-  return (
+ return (
     <>
-    <section className='OS-Listing_section'>
+    <section className='OS-Listing_section'data-aos="fade-up"data-aos-easing="linear"data-aos-duration="3000">
         <div className='OS-Listing-one OS-Listing-onne'>
         {OSdata2.map((item)=>{
         return<div className='OS-Listing-one'> 
@@ -69,7 +71,7 @@ const OSImgHotel2=[
             <p className='Os-Size-ppp'>5 Star Hotel</p>
             </div>
             <div className='OS-Listing-one'>
-                <img className='OS-Location-img' src={OsLocation} alt="" />
+                <img className='OS-Location-img' src={OsLocation} alt="location" />
                 <p className='Os-Size-p OS-Size-Co'>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</p>
             </div>
             <div className='OS-Listing-Two OS-Listing-size '>
