@@ -436,10 +436,42 @@
 /* ------------------------------------------------Whitebg nav------------------------------------------------ */
 /* ------------------------------------------------Whitebg nav------------------------------------------------ */
 
-/* Responsive */
-/* Responsive */
-@media screen and (min-width: 993px) {
+@media screen and (min-width:2200px){
+    .NM_NavBar{
+        width: 100vw;
+        background: rgba(0, 0, 0, 0.8);
+        top: 0;
+        right: 0;
+    }
+}
+@media screen and (min-width: 992px) {
     .NM_ToggleButton {
         display: none;
+    }
+}
+
+@media screen and (max-width:992px) {
+    
+    .NM_Start,
+    .NM_Buttons, .AM_Start, .AM_Buttons {
+        display: none;
+    }
+    .AM_Toggle {
+        display: block !important;
+    }
+    .AM_Logo {
+        margin-left: -70px !important;
+        margin-top: 18px;
+    }
+    .NM_Logo {
+        height: 27px;
+        width: 105px;
+        left: 24px;
+        transform: translateX(0%);
+    }
+
+    .NM_NavBar {
+        width: calc(100% - 14px);
+        left: var(--small-padding);
     }
 }
