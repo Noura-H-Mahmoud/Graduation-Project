@@ -1,6 +1,6 @@
 .NM_btn.Review {
     width: 152px;
-    height: 48px;
+    /* height: 48px; */
     font-size: var(--xxsmall-font-size);
     font-weight: var(--third-font-weight);
 }
@@ -47,7 +47,6 @@
 }
 
 .NM_Col2 {
-    height: 49px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,14 +62,13 @@
 }
 
 .NM_NameValuation {
-    height: 17px;
     display: flex;
     gap: 8px;
+    margin-bottom: 8px;
 }
 
 .NM_Person {
     width: 45px;
-    height: 45px;
 }
 
 .NM_Valuation,
@@ -119,7 +117,6 @@
 @media screen and (max-width:466px) {
     .NM_Person {
         width: 25px;
-        height: 25px;
     }
 
     .NM_ItemReview {
@@ -137,5 +134,9 @@
 
     .NM_Name {
         padding-bottom: 12px;
+    }
+
+    .NM_btn.Review {
+        margin-bottom: 30px;
     }
 }

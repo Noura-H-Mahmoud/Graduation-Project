@@ -9,10 +9,19 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Checkbox from '@mui/material/Checkbox';
 import { FormControlLabel, FormGroup } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import CryptoJS from 'crypto-js';
 
 export default function SignUpForm({ facebook, google, apple }) {
   const [showPassword, setShowPassword] = useState(false);
+  // for SignUp in local storage
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -22,6 +31,35 @@ export default function SignUpForm({ facebook, google, apple }) {
     event.preventDefault();
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
+    const user = {
+      firstName,
+      lastName,
+      email,
+      phone,
+      password: CryptoJS.SHA256(password).toString(),
+    };
+
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    users.push(user);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    // Generate token
+    const token = CryptoJS.SHA256(email + Date.now().toString()).toString();
+    localStorage.setItem('authToken', token);
+    console.log('Account created successfully');
+
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setPhone('');
+    setPassword('');
+    setConfirmPassword('');
+    navigate('/', { state: { token } });
+  }
+  
   const theme = createTheme({
     components: {
       MuiTextField: {
@@ -49,25 +87,33 @@ export default function SignUpForm({ facebook, google, apple }) {
       <div className='NM_SignUpF'>
         <h2>Sign up</h2>
         <p className='NM_ParaLog'>
-        Let’s get you all set up so you can access your personal account.
+          Let’s get you all set up so you can access your personal account.
         </p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='NM_FormLogin'>
             <div className='NM_Line'>
               <Box sx={{ width: '100%', height: '56px' }}>
                 <TextField
                   id="outlined-required"
                   label="First Name"
-                  defaultValue="john.doe@gmail.com"
+                  // defaultValue="john.doe@gmail.com"
                   fullWidth
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                  type='name'
                 />
               </Box>
               <Box sx={{ width: '100%', height: '56px' }}>
                 <TextField
                   id="outlined-required"
                   label="Last Name"
-                  defaultValue="john.doe@gmail.com"
+                  // defaultValue="john.doe@gmail.com"
                   fullWidth
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                  type='name'
                 />
               </Box>
             </div>
@@ -76,16 +122,24 @@ export default function SignUpForm({ facebook, google, apple }) {
                 <TextField
                   id="outlined-required"
                   label="Email"
-                  defaultValue="john.doe@gmail.com"
+                  // defaultValue="john.doe@gmail.com"
                   fullWidth
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  type='email'
                 />
               </Box>
               <Box sx={{ width: '100%', height: '56px' }}>
                 <TextField
                   id="outlined-required"
                   label="Phone Number"
-                  defaultValue="john.doe@gmail.com"
+                  // defaultValue="john.doe@gmail.com"
                   fullWidth
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                  type='number'
                 />
               </Box>
             </div>
@@ -94,8 +148,11 @@ export default function SignUpForm({ facebook, google, apple }) {
                 id="outlined-required"
                 type={showPassword ? 'text' : 'password'}
                 label="Password"
-                defaultValue="64bgffhdhfhhfdfdf"
+                // defaultValue="64bgffhdhfhhfdfdf"
                 fullWidth
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -117,8 +174,11 @@ export default function SignUpForm({ facebook, google, apple }) {
                 id="outlined-required"
                 type={showPassword ? 'text' : 'password'}
                 label="Confirm Password"
-                defaultValue="64bgffhdhfhhfdfdf"
+                // defaultValue="64bgffhdhfhhfdfdf"
                 fullWidth
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -149,7 +209,7 @@ export default function SignUpForm({ facebook, google, apple }) {
                 </>
               }
               sx={{
-                margin: 0, 
+                margin: 0,
               }}
             />
           </FormGroup>
@@ -157,9 +217,9 @@ export default function SignUpForm({ facebook, google, apple }) {
         </form>
         <div className='NM_LoginLink'>
           <p>
-          Already have an account?
-          <Link to={"/auth/login"} rel="noopener noreferrer"> Login
-          </Link>
+            Already have an account?
+            <Link to={"/auth/login"} rel="noopener noreferrer"> Login
+            </Link>
           </p>
         </div>
         <div className="NM_Row">
@@ -174,14 +234,14 @@ export default function SignUpForm({ facebook, google, apple }) {
             </a>
           </div>
           <div className="NM_Google">
-              <a href="https://www.google.com/" target="_blank">
-                <img src={google} alt="google" />
-              </a>
+            <a href="https://www.google.com/" target="_blank">
+              <img src={google} alt="google" />
+            </a>
           </div>
           <div className="NM_Apple">
-              <a href="https://appleid.apple.com/account" target="_blank">
-                <img src={apple} alt="apple" />
-              </a>
+            <a href="https://appleid.apple.com/account" target="_blank">
+              <img src={apple} alt="apple" />
+            </a>
           </div>
         </div>
       </div>
