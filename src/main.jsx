@@ -131,7 +131,7 @@ const State = () => {
                         <Navlinks
                             type="list"
                             className="AM_Link"
-                            linkTo="#"
+                            linkTo="/myaccount"
                             imgSrc={client}
                             imgAlt="John D."
                             linkText="John D."
@@ -158,7 +158,7 @@ const State = () => {
                 </Link>
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
-                <Link className='AM_Link'>
+                <Link className='AM_Link' to='/hotelflow/favorites'>
                     <img src={favourite} alt="" />Favourites</Link>
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
