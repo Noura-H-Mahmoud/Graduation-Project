@@ -19,22 +19,11 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-<<<<<<< HEAD
     "@mui/icons-material": "^5.15.20",
     "@mui/material": "^5.15.19",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "crypto-js": "^4.2.0",
-=======
-    "@mui/icons-material": "^5.15.21",
-    "@mui/lab": "^5.0.0-alpha.170",
-    "@mui/material": "^5.15.21",
-    "@mui/x-date-pickers": "^7.8.0",
-    "@mui/x-date-pickers-pro": "^7.8.0",
-    "aos": "^2.3.4",
-    "bootstrap": "^5.3.3",
-    "date-fns": "^3.6.0",
->>>>>>> c054b63f0fbf416f1c20874bfe3f863725ef32d6
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-datepicker": "^7.2.0",

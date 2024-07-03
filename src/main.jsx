@@ -189,7 +189,7 @@ const State = () => {
                     } />
                     <Route path="flightflow" element={<FlightFlow />}>
                         <Route index element={
-                            <FlightListing
+                            <FlightsSearch
                                 navButtons={navButtons(true, false)}
                                 navButtonsForMobile={navButtonsForMobile}
                             />
