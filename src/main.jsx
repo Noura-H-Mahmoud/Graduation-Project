@@ -47,6 +47,7 @@ const head2 = 'Helping Others';
 const State = () => {
     const [isLoginActive, setIsLoginActive] = useState(true);
     const [currentPage, setCurrentPage] = useState('landingpage');
+    const [listingPage, setListingPage] = useState('listingpage');
     const location = useLocation();
 
     useEffect(() => {
@@ -62,7 +63,7 @@ const State = () => {
     };
 
     const NM_Login2 = isLoginActive ? 'NM_Login' : 'NM_Signup';
-    const NM_Signup2 = isLoginActive ? 'NM_Signup' : 'NM_Login';
+    const NM_Signup2 = isLoginActive ? 'NM_Signup' : 'NM_LoginN';
     const NM_LinkLog = isLoginActive ? 'NM_LinkLogin' : 'NM_LinkSignup';
     const NM_LinkSign = isLoginActive ? 'NM_LinkSignup' : 'NM_LinkLogin';
 
@@ -158,13 +159,13 @@ const State = () => {
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
                 <Link className='AM_Link'>
-                <img src={favourite} alt="" />Favourites</Link>
+                    <img src={favourite} alt="" />Favourites</Link>
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
                 <Link className='AM_Link'>John D.</Link>
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : 'user-profile'}>
-            <img src={client} alt="" /></li>
+                <img src={client} alt="" /></li>
         </>
     );
 
@@ -179,7 +180,7 @@ const State = () => {
                 <Route path="/" element={<App />}>
                     <Route index element={
                         <LandingPage
-                            head2 ={head2}
+                            head2={head2}
                             className={className}
                             title={title}
                             para={para}
@@ -189,7 +190,7 @@ const State = () => {
                     } />
                     <Route path="flightflow" element={<FlightFlow />}>
                         <Route index element={
-                            <FlightListing
+                            <FlightsSearch
                                 navButtons={navButtons(true, false)}
                                 navButtonsForMobile={navButtonsForMobile}
                             />
@@ -214,12 +215,15 @@ const State = () => {
                         } />
                     </Route>
                     <Route path="hotelflow" element={<HotelFlow />}>
-                        <Route index element={<HotelSearch 
-                        navButtons={navButtons(true, false)}
-                        navButtonsForMobile={navButtonsForMobile}
+                        <Route index element={<HotelSearch
+                            navButtons={navButtons(true, false)}
+                            navButtonsForMobile={navButtonsForMobile}
                         />
-                        }   />
-                        <Route path="listing" element={<HotelListing />} />
+                        } />
+                        <Route path="listing" element={<HotelListing
+                            navButtons={navButtons(true, false)}
+                            navButtonsForMobile={navButtonsForMobile}
+                        />} />
                         <Route path="detail" element={<HotelDetail />} />
                         <Route path="booking" element={<HotelBooking />} />
                         <Route path="favorites" element={<Favorites
@@ -229,10 +233,10 @@ const State = () => {
                     </Route>
                     <Route path="myaccount" element={<AccountFlow />}>
                         <Route index element={<MyAccount
-                         navButtons={navButtons(true, false)}
-                         navButtonsForMobile={navButtonsForMobile}
-                         />
-                         } />
+                            navButtons={navButtons(true, false)}
+                            navButtonsForMobile={navButtonsForMobile}
+                        />
+                        } />
                     </Route>
                     <Route path="auth" element={<Authenticate />}>
                         <Route index element={<SignUp />} />

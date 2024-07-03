@@ -9,8 +9,9 @@ export default function Favorites({navButtons,navButtonsForMobile}) {
   return (
     <section className='MH-favorites'>
       <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} />
+      <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} />
       <Favoriteshead/>
-      <Favoritesmain/>
+      <Favoritesmain isListingPage={false}/>
       <Newsletter/>
       <Footer/>
     </section>

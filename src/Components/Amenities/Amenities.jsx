@@ -155,7 +155,7 @@ export default function Amenities() {
         <div className='NM_Amenities'>
             <div className="NM_Box">
                 <h2>Amenities</h2>
-                <div className='NM_Items'>
+                <div className='NM_Items' data-aos='fade-right'>
                     {
                         items.map(item => (
                             <div key={item.id} className="NM_Item">
@@ -166,12 +166,18 @@ export default function Amenities() {
                     }
                     <div className="NM_Item_EndText">
                         <a onClick={handleLinkClick} href="#">+24 more</a>
+                        <div id="animation">
+                            <div id="frame"></div>
+                            <div id="roll"></div>
+                        </div>
                     </div>
                 </div>
             </div>
             {showPopup && (
                 <div className="NM_Popup">
-                    <div className="NM_Popup_Content">
+                    <div className="NM_Popup_Content"
+                        data-aos='fade-up'
+                        data-aos-duration="700">
                         <span className="NM_Close" onClick={handleClosePopup}>&times;</span>
                         <h2>More Amenities</h2>
                         <div className="NM_More">
