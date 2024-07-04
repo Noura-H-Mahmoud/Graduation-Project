@@ -6,11 +6,12 @@ import EmiratesAirlinesPolicies from '../../../Components/EmiratesAirlinesPolici
 import FlightDeatailsGalary from '../../../Components/FlightDeatailsGalary/FlightDeatailsGalary';
 import Footer from '../../../Components/Footer/Footer'
 import CardEmirates from '../../../Components/CardEmirates/CardEmirates';
+import Navigation from '../../../Components/Nav/Nav';
 
-export default function FlightDetail() {
+export default function FlightDetail({navButtons, navButtonsForMobile, navList}) {
   return (
     <section className='RH_FlightDetail'>
-     
+      <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList} />
       <FlightDetailsHero />
       <FlightDeatailsGalary />
       <EmiratesAirlinesPolicies />

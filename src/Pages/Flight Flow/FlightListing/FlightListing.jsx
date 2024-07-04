@@ -5,19 +5,19 @@ import Footer from '../../../Components/Footer/Footer';
 import FilterFlight from '../../../Components/FilterFlight/FilterFLight';
 import './FlightListing.css';
 
-export default function FlightListing({ navButtons, navButtonsForMobile }) {
+export default function FlightListing({ navButtons, navButtonsForMobile,navList }) {
   return (
     <div className='AM_flightListing'>
       <header className='header'>
-        <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} />
+        <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList} />
         <FormWithOutTab />
       </header>
-      <main>
+      {/* <main>
         <FilterFlight />
       </main>
       <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }
