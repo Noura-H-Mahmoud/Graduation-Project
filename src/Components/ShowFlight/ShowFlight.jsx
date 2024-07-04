@@ -204,7 +204,7 @@ export default function ShowFlight() {
             </div>
             <div className="MS-right">
               <a><img src={plus} alt="plus" className="MS-plus" />Add Promo Code</a>
-              <Link to="/flightflow/listing"> <button className="MS-btnFlight"><img src={btn} alt="arrow" />Show Filghts</button> </Link>
+              <Link to="/Graduation-Project/flightflow/listing"> <button className="MS-btnFlight"><img src={btn} alt="arrow" />Show Filghts</button> </Link>
             </div>
           </Tab>
           <Tab eventKey="Stays" title={<spsn className="MS-span MS-Stays"><img src={car} alt="car" className="MS_icon" />Stays</spsn>}>
@@ -273,7 +273,7 @@ export default function ShowFlight() {
             </div>
             <div className="MS-right">
             <a><img src={plus} alt="plus" className="MS-plus" />Add Promo Code</a>
-            <Link to="/hotelflow/listing">
+            <Link to="/Graduation-Project/hotelflow/listing">
               <button className="MS-btnFlight"><img src={building} alt="arrow" />Show Places</button>
               </Link>
             </div>

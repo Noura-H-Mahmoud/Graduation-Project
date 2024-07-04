@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 export default function FlightBooking3() {
     const linkto = [
-        <Link className='MH-addbtn ' to={"/flightflow/booking1"}>Add Card</Link>
+        <Link className='MH-addbtn ' to={"/Graduation-Project/flightflow/booking1"}>Add Card</Link>
     ]
     return (
         <section className="MH-FlightBooking">
