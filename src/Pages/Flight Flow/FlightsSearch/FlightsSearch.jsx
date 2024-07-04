@@ -1,8 +1,9 @@
 import React from 'react'
+import Navigation from '../../../Components/Nav/Nav'
 
-export default function FlightsSearch() {
+export default function FlightsSearch(navButtons, navButtonsForMobile) {
   return (
-    <div>FlightsSearch</div>
+    <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} />
   )
 }
 
