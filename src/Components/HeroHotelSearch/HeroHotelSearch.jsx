@@ -7,7 +7,7 @@ export default function HeroHotelSearch() {
     const className="MS_HeroSearch"
   return (
     <>
-       <Hero title={title} para={para} className={className} />
+       <Hero title={title} para={para} className={className} disableAnimation={true}/>
     </>
   )
 }

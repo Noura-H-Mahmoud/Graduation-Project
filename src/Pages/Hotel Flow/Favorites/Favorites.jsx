@@ -10,7 +10,7 @@ export default function Favorites() {
     <section className='MH-favorites'>
       <Navigation/>
       <Favoriteshead/>
-      <Favoritesmain/>
+      <Favoritesmain isListingPage={false}/>
       <Newsletter/>
       <Footer/>
     </section>

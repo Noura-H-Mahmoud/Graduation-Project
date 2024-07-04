@@ -115,13 +115,6 @@ export default function ShowFlight() {
         <MenuItem value="Multi-City">Multi-City</MenuItem>
       </CustomSelect>
     </FormControl>
-              {/* <TextField
-                label="Depart- Return"
-                id="outlined-size-small"
-                defaultValue="07 Nov 22 - 13 Nov 22"
-                size="large"
-                className="MS-field"
-              /> */}
                <LocalizationProvider dateAdapter={AdapterDayjs}>
       <TextField
         label="Depart - Return"

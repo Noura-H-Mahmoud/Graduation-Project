@@ -3,7 +3,9 @@ import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-// import HotelSearch from './Pages/Hotel Flow/HotelSearch/HotelSearch';
+import './App.css'
+
+
 
 function App() {
   useEffect(() => {
@@ -15,7 +17,6 @@ function App() {
   return (
     <>
     <Outlet />
-    {/* <HotelSearch />  */}
     </>
   )
 }
