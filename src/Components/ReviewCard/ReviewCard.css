@@ -4,7 +4,6 @@
     position: relative;
     background-color:var(--second-text-color);
     width: 425px;
-    height: 586px;
     border-radius: 20px;
 }
 .MS-ReviewCard::after{
@@ -20,6 +19,8 @@
 }
 .MS-ReviewCard h3{
     line-height: var( --xxmedium-line-hieght);
+    font-size: var(  --second-medium-font-size);
+    font-weight: var(  --fourth-font-weight);
 }
 .MS-ReviewCard .MS-pargraph{
     font-size: var(  --xxsmall-font-size);
@@ -46,9 +47,25 @@
 }
 .MS-textright{
     text-align: right;
+}
+.MS-head6{
     font-size: var(  --xxsmall-font-size);
     font-weight: var(  --fourth-font-weight);
 }
 .MS-imgReview{
     padding-top: 40px;
+}
+@media (max-width:576px) {
+.MS-ReviewCard::after{
+        display: none;
+    }
+    .MS-ReviewCard{
+        width: 100%;
+    }
+    .MS-imgReview{
+        width: 100%;
+    }
+    .MS-ReviewCard .MS-pargraph{
+        text-align:left;
+    }
 }

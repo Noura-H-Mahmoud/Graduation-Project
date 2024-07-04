@@ -10,10 +10,13 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Link ,useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-export default function VerifyCodeForm({Back}) {
+export default function VerifyCodeForm({ Back }) {
   const [showPassword, setShowPassword] = useState(false);
+  const [code, setCode] = useState('');
+  const [error, setError] = useState('');
+  const [resendMessage, setResendMessage] = useState('');
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -44,32 +47,48 @@ export default function VerifyCodeForm({Back}) {
       }
     },
   });
+
   const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate('/auth/new_password');
+
+    const storedCode = localStorage.getItem('verificationCode');
+
+    if (code === storedCode) {
+      navigate('/auth/new_password');
+    } else {
+      setError('The code is incorrect.');
+    }
+  };
+
+  const handleResend = () => {
+    const newCode = Math.floor(100000 + Math.random() * 900000).toString();
+    localStorage.setItem('verificationCode', newCode);
+    setResendMessage('A new verification code has been sent to your local storage.');
   };
 
   return (
     <ThemeProvider theme={theme}>
       <div className='NM_SignUpF'>
-         <Link className="NM_Back" to={"/auth/login"} rel="noopener noreferrer">
-         <img src={Back} alt="<" />
-         <p>Back to login</p>
-       </Link>
+        <Link className="NM_Back" to={"/auth/login"} rel="noopener noreferrer">
+          <img src={Back} alt="<" />
+          <p>Back to login</p>
+        </Link>
         <h2>Verify code</h2>
         <p className='NM_ParaLog'>
-        An authentication code has been sent to your email.
+          An authentication code has been sent to your email.
         </p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='NM_FormLogin'>
             <Box sx={{ width: '100%', height: '56px' }}>
               <TextField
                 id="outlined-required"
                 type={showPassword ? 'text' : 'password'}
                 label="Enter Code"
-                defaultValue="7789BM6X"
                 fullWidth
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -87,13 +106,15 @@ export default function VerifyCodeForm({Back}) {
               />
             </Box>
           </div>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
           <div className='NM_LoginLink ForCode'>
-          <p>
-          Didn’t receive a code?
-             <a href="#">Resend</a>
-          </p>
-        </div>
-          <input type="submit" value="Verify" className='NM_Submit ForCode'  onClick={handleSubmit}/>
+            <p>
+              Didn’t receive a code?
+              <a href="#" onClick={handleResend}>Resend</a>
+            </p>
+          </div>
+          {resendMessage && <p style={{ color: 'green' }}>{resendMessage}</p>}
+          <input type="submit" value="Verify" className='NM_Submit ForCode' />
         </form>
       </div>
     </ThemeProvider>

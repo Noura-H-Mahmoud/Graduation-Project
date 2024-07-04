@@ -1,0 +1,175 @@
+.NM_HotelListing {
+    margin-top: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 48px var(--main-padding) 120px var(--main-padding);
+}
+
+.MH-favorites-box.NM {
+    display: flex;
+    gap: 0px;
+    margin-bottom: 24px;
+    margin-right: 0px;
+    text-align: start;
+}
+
+.MH-favorites-box:last-child {
+    margin-bottom: 0;
+}
+
+.MH-favorites-main.NM {
+    padding: 0;
+}
+
+.NM_MainSection {
+    display: flex;
+    gap: 24px;
+}
+
+.NM_filter {
+    width: 27.84%;
+    /* 343  * 100 / 1232px */
+}
+
+.NM_Part2 {
+    width: 70.21%;
+    /* ( 840 + 24.5 + 0.5 ) *100 / 1232px */
+}
+
+.NM_Part2:last-child {
+    text-align: end;
+}
+
+.NM_Tabs {
+    padding-left: 24.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-left: 0.5px solid rgba(17, 34, 17, 0.25);
+}
+
+.MH-favorites-main .MH-favorites-box .MH-image.NM img {
+    width: 100%;
+    height: 100%;
+}
+
+.MH-favorites-main .MH-favorites-box .MH-image.NM {
+    width: 300px;
+    height: 298.5px;
+}
+
+.MH-favorites-main .MH-favorites-box .MH-favorites-info.NM {
+    width: 540px;
+    box-shadow: 0px 4px 16px 0px #1122110D;
+}
+
+.MH-favorites-main .MH-favorites-box .MH-favorites-info .MH-info1.NM {
+    width: 355px;
+    padding-right: 24px;
+}
+
+.MH-favorites-info .MH-box-button .MH-box-button2.NM {
+    width: 428px;
+}
+
+.NM_btnListing {
+    width: calc(100% - 24.5px);
+    height: 48px;
+    background-color: var(--main-text-color);
+    border: none;
+    border-radius: 4px;
+    color: var(--fourth-bgcolor);
+    font-family: var(--main-font);
+    margin-top: 32px;
+}
+
+.NM_LineInfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--main-font);
+    font-size: var(--xxsmall-font-size);
+    font-weight: var(--third-font-weight);
+    margin: 32px 0;
+}
+
+.NM_LineInfo p {
+    margin-bottom: 0;
+}
+
+.NM_ParaN {
+    font-weight: var(--main-font-weight);
+}
+
+.NM_ParaN b {
+    font-weight: var(--third-font-weight);
+}
+
+.NM_LineInfo span {
+    color: var(--main-bgcolor);
+}
+
+.NM_Tabs .nav-tabs {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    height: 80px;
+    padding: 17.5px 24px 0 24px;
+    margin-bottom: 0;
+    box-shadow: 0px 4px 16px 0px #1122110D;
+}
+
+.NM_Tabs .nav-link {
+    width: 232px;
+    height: 48px;
+    position: relative;
+    border: none;
+    color: var(--main-text-color);
+    text-align: start;
+    font-family: var(--main-font);
+    font-weight: var(--third-font-weight);
+    padding: 0;
+    margin: 0;
+    padding-bottom: 1.5rem;
+}
+
+.NM_tabs .nav-link.active::before {
+    content: "";
+    display: block;
+    width: 248px;
+    height: 4px;
+    background-color: var(--main-bgcolor);
+    position: absolute;
+    bottom: -17.5px;
+    left: 0;
+}
+
+.NM_tabs {
+    border-bottom: none;
+}
+#uncontrolled-tab-example-tab-hotel::after,
+#uncontrolled-tab-example-tab-motel::after,
+#uncontrolled-tab-example-tab-resort::after{
+    content: '257 places';
+    color: rgba(17, 34, 17, 0.4);
+    position: absolute;
+    top: 1.7rem;
+    left: 0;
+    font-weight: 400;
+    font-size: 14px;
+}
+#uncontrolled-tab-example-tab-motel::after{
+    content: '51 places';
+}
+#uncontrolled-tab-example-tab-resort::after{
+    content: '72 places';
+}
+#uncontrolled-tab-example-tab-hotel,
+#uncontrolled-tab-example-tab-motel
+{
+    border-radius: 0;
+    padding-right: 23.99px;
+    border-right: 1px solid #D7E2EE;
+    width: 255.99px !important;
+}

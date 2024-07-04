@@ -12,7 +12,6 @@
     right: var(--main-padding-home);
     transition: background 0.3s ease, width 0.3s ease;
     z-index: 100;
-    color: var(--second-text-color);
 }
 
 .NM_NavBar.scrolled {
@@ -35,16 +34,21 @@
 
 .NM_Start a {
     text-decoration: none;
-    color: inherit;
+    color: var(--second-text-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 4px;
+    transition: .1s all ease-in-out;
 }
 
 .NM_Start a img {
     width: 22.5px;
     height: 19.5px;
+}
+
+.NM_Start a:hover {
+    color: var(--main-bgcolor);
 }
 
 .NM_FindFlight {
@@ -84,6 +88,22 @@
     width: 104px;
     padding: 15.5px 24px;
     border-radius: 8px;
+    background-color: var(--second-text-color);
+}
+
+.NM_LoginN {
+    width: 73px;
+    padding: 15.5px 0 15.5px 0;
+    border-radius: 8px;
+    background-color: transparent;
+    text-align: end;
+}
+
+.NM_SignupNn {
+    width: 104px;
+    padding: 15.5px 24px;
+    border-radius: 8px;
+    background-color: var(--second-text-color);
 }
 
 .NM_LinkLogin,
@@ -192,6 +212,41 @@
     width: 100vw;
     height: 1px;
     background-color: #E1E1E1;
+}
+
+@media screen and (min-width:2200px) {
+    .NM_NavBar {
+        width: 100vw;
+        background: rgba(0, 0, 0, 0.8);
+        top: 0;
+        right: 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .NM_ToggleButton {
+        display: none;
+    }
+}
+
+@media screen and (max-width:992px) {
+
+    .NM_Start,
+    .NM_Buttons {
+        display: none;
+    }
+
+    .NM_Logo {
+        height: 27px;
+        width: 105px;
+        left: 24px;
+        transform: translateX(0%);
+    }
+
+    .NM_NavBar {
+        width: calc(100% - 14px);
+        left: var(--small-padding);
+    }
 }
 
 /* ------------------------------------------------Whitebg nav------------------------------------------------ */
@@ -334,6 +389,7 @@
     line-height: 17.07px;
     text-align: left;
 }
+
 .arrowDown {
     position: absolute;
     right: 9.5rem;
@@ -341,6 +397,7 @@
     width: 14px;
     height: 14px;
 }
+
 .AM_End.open {
     height: 100vh;
     display: flex;
@@ -356,28 +413,38 @@
     backdrop-filter: blur(10px);
     color: black !important;
 }
+
 .AM_End.open .NM_Link,
-.AM_End.open .AM_Link{
+.AM_End.open .AM_Link {
     text-decoration: none;
     color: var(--main-text-color);
     position: relative;
 }
+
 .AM_End.open .AM_Link {
     display: flex;
     flex-direction: row-reverse;
     width: 110%;
     justify-content: space-between;
 }
+
 .user-profile {
     padding-top: 173px;
 }
+
 /* ------------------------------------------------Whitebg nav------------------------------------------------ */
 /* ------------------------------------------------Whitebg nav------------------------------------------------ */
 /* ------------------------------------------------Whitebg nav------------------------------------------------ */
 
-/* Responsive */
-/* Responsive */
-@media screen and (min-width: 993px) {
+@media screen and (min-width:2200px){
+    .NM_NavBar{
+        width: 100vw;
+        background: rgba(0, 0, 0, 0.8);
+        top: 0;
+        right: 0;
+    }
+}
+@media screen and (min-width: 992px) {
     .NM_ToggleButton {
         display: none;
     }

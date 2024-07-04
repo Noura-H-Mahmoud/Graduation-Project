@@ -11,10 +11,16 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Checkbox from '@mui/material/Checkbox';
 import { FormControlLabel, FormGroup } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import CryptoJS from 'crypto-js';
+
 
 export default function LoginForm({ facebook, google, apple }) {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -24,6 +30,35 @@ export default function LoginForm({ facebook, google, apple }) {
     event.preventDefault();
   };
 
+  // for local storage
+  const handleSubmitLogin = (event) => {
+    event.preventDefault();
+  
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find(user => user.email === email);
+  
+    if (!user) {
+      setError('Email is not registered.');
+      return;
+    }
+  
+    const hashedPassword = CryptoJS.SHA256(password).toString();
+    
+    if (user.password !== hashedPassword) {
+      setError('Incorrect password.');
+      return;
+    }
+  
+    // Generate token
+    const token = CryptoJS.SHA256(email + Date.now().toString()).toString();
+    localStorage.setItem('authToken', token);
+    console.log('Login successful');
+  
+    setEmail('');
+    setPassword('');
+    setError('');
+    navigate('/', { state: { token } });
+  };
   const theme = createTheme({
     components: {
       MuiTextField: {
@@ -51,14 +86,18 @@ export default function LoginForm({ facebook, google, apple }) {
       <div className='NM_SignUpF'>
         <h2>Login</h2>
         <p className='NM_ParaLog'>Login to access your Golobe account</p>
-        <form>
+        <form onSubmit={handleSubmitLogin}>
           <div className='NM_FormLogin'>
             <Box sx={{ width: '100%', height: '56px' }}>
               <TextField
                 id="outlined-required"
                 label="Email"
-                defaultValue="john.doe@gmail.com"
+                // defaultValue="john.doe@gmail.com"
                 fullWidth
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                type='email'
               />
             </Box>
             <Box sx={{ width: '100%', height: '56px' }}>
@@ -66,8 +105,11 @@ export default function LoginForm({ facebook, google, apple }) {
                 id="outlined-required"
                 type={showPassword ? 'text' : 'password'}
                 label="Confirm Password"
-                defaultValue="64bgffhdhfhhfdfdf"
+                // defaultValue="64bgffhdhfhhfdfdf"
                 fullWidth
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -85,6 +127,7 @@ export default function LoginForm({ facebook, google, apple }) {
               />
             </Box>
           </div>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
           <div className='NM_AllCheckbox'>
             <FormGroup className='NM_Checkbox'>
               <FormControlLabel
@@ -122,13 +165,19 @@ export default function LoginForm({ facebook, google, apple }) {
         </div>
         <div className="NM_Account">
           <div className="NM_Facebook">
-            <img src={facebook} alt="face book" />
+            <a href="https://www.facebook.com/" target="_blank">
+              <img src={facebook} alt="face book" />
+            </a>
           </div>
           <div className="NM_Google">
-            <img src={google} alt="google" />
+            <a href="https://www.google.com/" target="_blank">
+              <img src={google} alt="google" />
+            </a>
           </div>
           <div className="NM_Apple">
-            <img src={apple} alt="apple" />
+            <a href="https://appleid.apple.com/account" target="_blank">
+              <img src={apple} alt="apple" />
+            </a>
           </div>
         </div>
       </div>

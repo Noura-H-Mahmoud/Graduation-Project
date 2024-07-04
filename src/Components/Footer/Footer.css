@@ -45,7 +45,6 @@
     display: flex;
     justify-content: space-between;
     gap: 24px;
-    /* flex-wrap: wrap; */
 }
 .NM_Right h6{
 font-size: var(--xsmall-font-size);
@@ -65,13 +64,17 @@ width: 100%;
 }
 .NM_Right a {
     text-decoration: none;
-    color: var(--main-text-color);   
+    color: var(--main-text-color);
+    transition: all .2s ease-in-out;   
 }
 .NM_Destinations, .NM_Activities, .NM_Blogs, .NM_About, .NM_Contact{
     display: flex;
     flex-direction: column;
     height: 140px; 
     width: 175.2px;
+}
+.NM_Right a:hover{
+    color: var(--second-text-color);
 }
 @media screen and (max-width:1352px){
     .NM_Right{
@@ -102,3 +105,4 @@ width: 100%;
         flex-wrap: wrap;
     }
 }
+

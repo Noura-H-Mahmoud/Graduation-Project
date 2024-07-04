@@ -4,9 +4,10 @@
     padding: 16px;
     display: flex;
     align-items: center;
-    width: 350.33px;
+    width: 389.33px;
     color: var(--main-text-color);
     border-radius: var(--second-border-radius);
+    margin: 0 auto;
 }
 .MS-CardPlace img{
     width: 90px;
@@ -15,9 +16,16 @@
 }
 .MS-CardPlace h5{
     opacity: 70%;
+    font-weight: var(  --third-font-weight);
+    font-family: var(--main-font);
 }
 .MS-cardContent p{
 font-size: var(  --xxsmall-font-size);
 font-weight: var(  --second-font-weight);
 line-height: var(  --xxsmall-line-hieght);
+}
+@media (max-width:576px) {
+    .MS-CardPlace{
+        width: 100%;
+    }
 }

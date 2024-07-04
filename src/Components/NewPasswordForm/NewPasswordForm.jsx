@@ -8,10 +8,14 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import CryptoJS from 'crypto-js';
 
 export default function NewPasswordForm() {
   const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -42,9 +46,26 @@ export default function NewPasswordForm() {
       }
     },
   });
+
   const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+
+    const email = localStorage.getItem('resetEmail');
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+  const hashedPassword = CryptoJS.SHA256(password).toString();
+    const updatedUsers = users.map(user => 
+      user.email === email ? { ...user, password:hashedPassword } : user
+    );
+
+    localStorage.setItem('users', JSON.stringify(updatedUsers));
     navigate('/');
   };
 
@@ -55,14 +76,15 @@ export default function NewPasswordForm() {
         <p className='NM_ParaLog ForForgetPassword'>
           Your previous password has been reseted. Please set a new password for your account.
         </p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='NM_FormLogin'>
             <Box sx={{ width: '100%', height: '56px' }}>
               <TextField
                 id="outlined-required"
                 type={showPassword ? 'text' : 'password'}
                 label="Create Password"
-                defaultValue="7789BM6X@@H&$K_"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 fullWidth
                 InputProps={{
                   endAdornment: (
@@ -85,7 +107,8 @@ export default function NewPasswordForm() {
                 id="outlined-required"
                 type={showPassword ? 'text' : 'password'}
                 label="Re-enter Password"
-                defaultValue="7789BM6X@@H&$K_"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 fullWidth
                 InputProps={{
                   endAdornment: (
@@ -104,7 +127,8 @@ export default function NewPasswordForm() {
               />
             </Box>
           </div>
-          <input type="submit" value="Set password" className='NM_Submit ForCode' onClick={handleSubmit} />
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          <input type="submit" value="Set password" className='NM_Submit ForCode' />
         </form>
       </div>
     </ThemeProvider>
