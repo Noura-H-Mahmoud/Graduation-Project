@@ -9,12 +9,9 @@ import blackBed from '../../assets/images/blackBed.svg';
 import blackPlane from '../../assets/images/blackPlane.svg';
 import blackLogo from '../../assets/images/blackLogo.svg';
 
-
-
-export default function Navigation({ buttons, navMobile, page , navList }) {
+export default function Navigation({ buttons, navMobile, page, navList }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showDiv, setShowDiv] = useState(false);
 
   const toggleNav = () => {
     setIsOpen(!isOpen);
@@ -37,10 +34,10 @@ export default function Navigation({ buttons, navMobile, page , navList }) {
   return (
     <nav className={`${isScrolled ? 'scrolled' : ''} ${page === "landingpage" ? "NM_NavBar" : "AM_Navbar"}`}>
       <div className={page === 'landingpage' ? 'NM_Start' : 'AM_Start'}>
-        <Link to="/flightflow" className={page === "landingpage" ? 'NM_FindFlight' : "AM_FindFlight"} rel="noopener noreferrer">
+        <Link to="/Graduation-Project/flightflow" className={page === "landingpage" ? 'NM_FindFlight' : "AM_FindFlight"} rel="noopener noreferrer">
           <img className={page === 'landingpage' ? '' : 'AM_Plane'} src={page === "landingpage" ? plane : blackPlane} alt="plane icon" /> Find Flight
         </Link>
-        <Link to="/hotelflow" className={page === 'landingpage' ? 'NM_FindStays' : 'AM_FindStays'} rel="noopener noreferrer">
+        <Link to="/Graduation-Project/hotelflow" className={page === 'landingpage' ? 'NM_FindStays' : 'AM_FindStays'} rel="noopener noreferrer">
           <img className='AM_Bed' src={page === "landingpage" ? bed : blackBed} alt="bed icon" /> Find Stays
         </Link>
       </div>
@@ -56,15 +53,15 @@ export default function Navigation({ buttons, navMobile, page , navList }) {
         </button>
         <ul className={`NM_End ${page === 'landingpage' ? '' : 'AM_End'} ${isOpen ? 'open' : ''}`}>
           <li>
-            <Link className='NM_Link' to="flightflow" rel="noopener noreferrer"> Find Flight</Link>
+            <Link className='NM_Link' to="/Graduation-Project/flightflow" rel="noopener noreferrer"> Find Flight</Link>
           </li>
           <li>
-            <Link className='NM_Link' to="hotelflow" rel="noopener noreferrer"> Find Stays</Link>
+            <Link className='NM_Link' to="/Graduation-Project/hotelflow" rel="noopener noreferrer"> Find Stays</Link>
           </li>
           {navMobile}
         </ul>
       </div>
-          {navList}
+      {navList}
     </nav>
   );
 }

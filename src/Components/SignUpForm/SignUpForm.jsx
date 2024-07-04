@@ -218,7 +218,7 @@ export default function SignUpForm({ facebook, google, apple }) {
         <div className='NM_LoginLink'>
           <p>
             Already have an account?
-            <Link to={"/auth/login"} rel="noopener noreferrer"> Login
+            <Link to={"/Graduation-Project/auth/login"} rel="noopener noreferrer"> Login
             </Link>
           </p>
         </div>

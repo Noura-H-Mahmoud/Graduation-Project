@@ -57,7 +57,7 @@ const State = () => {
     const location = useLocation();
 
     useEffect(() => {
-        if (location.pathname === '/') {
+        if (location.pathname === '/Graduation-Project/') {
             setCurrentPage('landingpage');
         } else {
             setCurrentPage('otherpage');
@@ -110,7 +110,7 @@ const State = () => {
                         <Navlinks
                             type="button"
                             className={NM_Login2}
-                            linkTo="/auth/login"
+                            linkTo="/Graduation-Project/auth/login"
                             linkText="Login"
                             onClick={toggleButtons}
                             classNameLink={NM_LinkLog}
@@ -118,7 +118,7 @@ const State = () => {
                         <Navlinks
                             type="button"
                             className={NM_Signup2}
-                            linkTo="/auth"
+                            linkTo="/Graduation-Project/auth"
                             linkText="Sign up"
                             onClick={toggleButtons}
                             classNameLink={NM_LinkSign}
@@ -130,7 +130,7 @@ const State = () => {
                         <Navlinks
                             type="list"
                             className="AM_Link"
-                            linkTo="/hotelflow/favorites"
+                            linkTo="/Graduation-Project/hotelflow/favorites"
                             imgSrc={favourite}
                             imgAlt="favourite"
                             linkText="Favourites"
@@ -160,15 +160,15 @@ const State = () => {
     const navButtonsForMobile = (
         <>
             <li className={currentPage === 'landingpage' ? "" : 'd-none'}>
-                <Link className='NM_Link' to="/auth/login" rel="noopener noreferrer"> Login
+                <Link className='NM_Link' to="/Graduation-Project/auth/login" rel="noopener noreferrer"> Login
                 </Link>
             </li>
             <li className={currentPage === 'landingpage' ? '' : 'd-none'}>
-                <Link className='NM_Link' to="/auth" rel="noopener noreferrer"> Sign Up
+                <Link className='NM_Link' to="/Graduation-Project/auth" rel="noopener noreferrer"> Sign Up
                 </Link>
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
-                <Link className='AM_Link' to='/hotelflow/favorites'>
+                <Link className='AM_Link' to='/Graduation-Project/hotelflow/favorites'>
                     <img src={favourite} alt="" />Favourites</Link>
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
@@ -190,7 +190,7 @@ const State = () => {
             </div>
           </div>
           <div className='AM_AccountLinks'>
-            <Link className='AM_Link1' to="/myaccount"><img src={profileBlack} alt=""/>My Account</Link>
+            <Link className='AM_Link1' to="/Graduation-Project/myaccount"><img src={profileBlack} alt=""/>My Account</Link>
             <Link className='AM_Link1'><img src={card} alt="" />Payments</Link>
             <Link className='AM_Link1'><img src={setting} alt="" />Setting</Link>
           </div>
@@ -210,7 +210,7 @@ const State = () => {
     return (
         <React.StrictMode>
             <Routes>
-                <Route path="/" element={<App />}>
+                <Route path="/Graduation-Project/" element={<App />}>
                     <Route index element={
                         <LandingPage
                             head2={head2}
@@ -221,7 +221,7 @@ const State = () => {
                             navButtonsForMobile={navButtonsForMobile}
                         />
                     } />
-                    <Route path="flightflow" element={<FlightFlow />}>
+                    <Route path="/Graduation-Project/flightflow" element={<FlightFlow />}>
                         <Route index element={
                             <FlightsSearch
                                 navButtons={navButtons(true, false)}
@@ -251,7 +251,7 @@ const State = () => {
                             />
                         } />
                     </Route>
-                    <Route path="hotelflow" element={<HotelFlow />}>
+                    <Route path="/Graduation-Project/hotelflow" element={<HotelFlow />}>
                         <Route index element={<HotelSearch
                             navButtons={navButtons(true, false)}
                             navButtonsForMobile={navButtonsForMobile}
@@ -271,7 +271,7 @@ const State = () => {
                          navList={navList}    
                          />} />
                     </Route>
-                    <Route path="myaccount" element={<AccountFlow />}>
+                    <Route path="/Graduation-Project/myaccount" element={<AccountFlow />}>
                         <Route index element={<MyAccount
                             navButtons={navButtons(true, false)}
                             navButtonsForMobile={navButtonsForMobile}
@@ -279,7 +279,7 @@ const State = () => {
                         />
                         } />
                     </Route>
-                    <Route path="auth" element={<Authenticate />}>
+                    <Route path="/Graduation-Project/auth" element={<Authenticate />}>
                         <Route index element={<SignUp />} />
                         <Route path="login" element={<Login />} />
                         <Route path="new_password" element={<NewPassword />} />
