@@ -5,13 +5,15 @@ import Favoriteshead from '../../../Components/Favorites-head/Favoriteshead'
 import Favoritesmain from '../../../Components/Favorites-main/Favoritesmain'
 import Footer from '../../../Components/Footer/Footer'
 import Newsletter from '../../../Components/Newsletter/Newsletter'
-export default function Favorites({navButtons,navButtonsForMobile,navList}) {
+export default function Favorites() {
   return (
     <section className='MH-favorites'>
       <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList} />
+      <div className="MH-favorites-content">
       <Favoriteshead/>
-      <Favoritesmain isListingPage={false}/>
-      <Newsletter/>
+      <Favoritesmain/>
+      </div>
+      {/* <Newsletter/> */}
       <Footer/>
     </section>
   )
