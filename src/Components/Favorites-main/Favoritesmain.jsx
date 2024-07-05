@@ -10,11 +10,23 @@ import whiteHeart from '../.././assets/images/NMwhiteheart.svg'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react'
 
 
 export default function Favoritesmain() {
+    useEffect(() => {
+        AOS.init({
+            duration: 2000,
+            once: true,
+        });
+        AOS.refresh();
+    }, []);
+
     const location = useLocation();
-    const isListingPage = location.pathname === '/hotelflow/listing';
+    const isListingPage = location.pathname === '/Graduation-Project/hotelflow/listing';
     let info = [
         {
             id: 1,
@@ -61,10 +73,13 @@ export default function Favoritesmain() {
         <section className={isListingPage ? 'MH-favorites-main NM' : 'MH-favorites-main'}>
             {info.map((item, index) => (
                 <div key={item.id} className={isListingPage ? 'MH-favorites-box NM' : 'MH-favorites-box'}>
-                    <div className={isListingPage ? 'MH-image NM' : 'MH-image'}>
+                    <div className={isListingPage ? 'MH-image NM' : 'MH-image'} data-aos='flip-right'>
+                        <div className={isListingPage ? 'MH-number-img NM' : 'MH-number-img'}>
+                            <p>9 images</p>
+                        </div>
                         <img src={item.image} alt="not-found" />
                     </div>
-                    <div className={isListingPage ? 'MH-favorites-info NM' : 'MH-favorites-info'}>
+                    <div className={isListingPage ? 'MH-favorites-info NM' : 'MH-favorites-info'} data-aos='fade-right'>
                         <div className={isListingPage ? 'MH-infos NM' : 'MH-infos'}>
                             <div className={isListingPage ? 'MH-info1 NM' : 'MH-info1'}>
                                 <h2>{item.title}</h2>
@@ -108,8 +123,14 @@ export default function Favoritesmain() {
                                 )}
                             </div>
 
-                            <div className={isListingPage ? 'MH-box-button2 NM' : 'MH-box-button2'}>
-                                <button>View Place</button>
+                            <div className={isListingPage ? 'MH-box-button2 NM' : 'MH-box-button2'} data-aos='flip-up'>
+                                {isListingPage ? (
+                                    <button>
+                                        <Link className='NM_ViewPlaceBtn' to="/Graduation-Project/hotelflow/detail" rel="noopener noreferrer">View Place </Link>
+                                    </button>
+                                ) : (
+                                    <button>View Place</button>
+                                )}
                             </div>
                         </div>
                     </div>

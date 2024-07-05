@@ -10,7 +10,7 @@ import Footer from '../../../Components/Footer/Footer'
 export default function HotelListing({ navButtons, navButtonsForMobile,navList }) {
   return (
     <>
-      <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList} />
+      <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList}/>
       {/* <HotelListingOne/>
  <HotelListingTow/>
  <HotelListingThree/> */}

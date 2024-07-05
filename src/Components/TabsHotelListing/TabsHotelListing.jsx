@@ -3,13 +3,20 @@ import Favoritesmain from '../Favorites-main/Favoritesmain'
 import './TabsHotelListing.css'
 import chevrondown from '../../assets/images/NMchevrondown.svg'
 import { Tab, Tabs } from 'react-bootstrap'
+import FormWithOutTab from '../FormWithOutTab/FormWithOutTab'
+import Accordion from '../Accordion/Accordion'
 
 export default function TabsHotelListing() {
     return (
         <section className='NM_HotelListing'>
-            <div>box</div>
+            <div><FormWithOutTab /></div>
             <div className='NM_MainSection'>
-                <div className='NM_filter'>filter</div>
+                <div className='NM_filter'>
+                <p className='MS-filter'>Filters</p>
+                    <div>
+                    <Accordion />
+                    </div>
+                </div>
                 <div className='NM_Part2'>
                     <div className='NM_Tabs'>
                         <div className='NM_Head'>
@@ -59,3 +66,4 @@ export default function TabsHotelListing() {
         </section>
     )
 }
+

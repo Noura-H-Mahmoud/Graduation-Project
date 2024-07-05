@@ -19,4 +19,3 @@ export default function Hero({ title, para, head2, className, disableAnimation =
     </section>
   );
 }
-
