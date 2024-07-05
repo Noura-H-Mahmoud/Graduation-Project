@@ -1,15 +1,12 @@
 .MS-placesSection{
     width: 100%;
-    padding: 80px 0;
+    padding: 80px 104px;
 }
 .MS-placesCards{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(350.33px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(389.33px,1fr));
     gap: 32px;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 .MS-pargraph{
     opacity: 75%;
@@ -28,11 +25,17 @@
     align-items: center;
     justify-content: space-between;
     padding-bottom: 20px;
+    
 }
 .MS-Head3{
 font-size: var(  --medium-font-size);
 font-weight: var(  --third-font-weight);
 font-family: var(--main-font);
+}
+@media (max-width:992px) {
+    .MS-placesSection{
+        padding: 80px 30px;
+    }
 }
 @media (max-width:576px) {
 .MS-flex{
@@ -44,5 +47,11 @@ font-family: var(--main-font);
 }
 .MS-pargraph{
     text-align: center;
+}
+.MS-placesCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 }

@@ -1,6 +1,6 @@
 .NM_btn.Review {
     width: 152px;
-    height: 48px;
+    /* height: 48px; */
     font-size: var(--xxsmall-font-size);
     font-weight: var(--third-font-weight);
 }
@@ -12,9 +12,11 @@
 .NM_Reviews p {
     margin-bottom: 0;
 }
-.NM_Reviews{
+
+.NM_Reviews {
     border-top: none;
 }
+
 .NM_Line2 {
     height: 63px;
     display: flex;
@@ -31,6 +33,7 @@
 .NM_Line2 h4 {
     font-size: 50px;
     font-weight: var(--fourth-font-weight);
+    transition: all .5s ease;
 }
 
 .NM_Line2 .NM_Para1 {
@@ -44,7 +47,6 @@
 }
 
 .NM_Col2 {
-    height: 49px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,17 +58,17 @@
     align-items: start;
     padding: 24px 0;
     border-bottom: .5px solid #11221140;
+    transition: all .1s ease;
 }
 
 .NM_NameValuation {
-    height: 17px;
     display: flex;
     gap: 8px;
+    margin-bottom: 8px;
 }
 
 .NM_Person {
     width: 45px;
-    height: 45px;
 }
 
 .NM_Valuation,
@@ -92,31 +94,49 @@
     height: 17.5px;
     top: 1.25px;
     left: 2.5px;
-
 }
 
 .NM_Box {
     width: 100%;
 }
-.NM_Close.Review{
+
+.NM_Close.Review {
     color: var(--main-bgcolor);
 }
-@media screen and (max-width:466px){
+
+.NM_Line2 h4:hover {
+    color: var(--main-bgcolor);
+}
+
+.NM_ItemReview:hover {
+    color: var(--second-text-color);
+    background-color: var(--main-bgcolor);
+    padding: 24px 13px;
+}
+
+@media screen and (max-width:466px) {
     .NM_Person {
         width: 25px;
-        height: 25px;
     }
+
     .NM_ItemReview {
         gap: 8px;
     }
-    .NM_NameValuation{
+
+    .NM_NameValuation {
         flex-direction: column;
         height: max-content;
     }
-    .NM_Valuation{
-        border-right:none ;
+
+    .NM_Valuation {
+        border-right: none;
     }
-    .NM_Name{
+
+    .NM_Name {
         padding-bottom: 12px;
+    }
+
+    .NM_btn.Review {
+        margin-bottom: 30px;
     }
 }

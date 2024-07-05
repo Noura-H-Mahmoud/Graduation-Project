@@ -8,6 +8,7 @@ import arrowdown from "./../../assets/images/Vector (7).svg"
 import date from"./../../assets/images/date.svg"
 import building from"./../../assets/images/building.svg"
 import user from"./../../assets/images/User.svg"
+import { Link } from 'react-router-dom';
 
 
 export default function ShowPlaces() {
@@ -98,7 +99,7 @@ export default function ShowPlaces() {
             </div>
             <div className="MS-right">
             <a><img src={plus} alt="plus" className="MS-plus" />Add Promo Code</a>
-              <button className="MS-btnFlight"><img src={building} alt="arrow" />Show Places</button>
+              <Link to="/Graduation-Project/hotelflow/listing"> <button className="MS-btnFlight"><img src={building} alt="arrow" />Show Places  </button></Link>
             </div>
       </div>
     </>

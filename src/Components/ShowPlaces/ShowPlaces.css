@@ -1,41 +1,20 @@
-    .MS-ShowPlaces p {
-        font-weight: 900;
-        font-weight: var( --third-font-weight);
-        font-size: var( --small-font-size);
-        margin: 0;
-    }
-    
-    .MS-field1 {
+.MS-ShowPlaces p {
+    font-weight: 900;
+    font-weight: var( --third-font-weight);
+    font-size: var( --small-font-size);
+    margin: 0;
+}
+
+.MS-field1 {
+    width: 240px;
+}
+
+.MS-firstfield {
+    width: 416px;
+}
+
+@media (max-width: 576px) {
+    .MS-firstfield {
         width: 240px;
     }
-    
-    .MS-firstfield {
-        width: 416px;
-    }
-    
-    .OS-firstfiled {
-        position: relative;
-    }
-    
-    .OS-DestinationDisplay {
-        display: none;
-    }
-    
-    .OS-Destination {
-        width: 400px;
-        height: 300px;
-        z-index: 1000;
-        position: absolute;
-        margin-top: 50px;
-    }
-    
-    .OS-DestinationFlex {
-        display: flex;
-        justify-content: space-around;
-    }
-    
-    @media (max-width: 576px) {
-        .MS-firstfield {
-            width: 240px;
-        }
-    }
+}

@@ -1,10 +1,10 @@
 import React from 'react'
 import './Footer.css'
-const logofooter='.././src/assets/images/logofooter.svg';
-const facebook ='.././src/assets/images/facebook.svg';
-const twitter ='.././src/assets/images/twitter.svg';
-const youtube ='.././src/assets/images/youtube.svg';
-const instagram ='.././src/assets/images/instagram.svg';
+import logofooter from '../../assets/images/logofooter.svg';
+import facebook from '../../assets/images/facebook.svg';
+import twitter from '../../assets/images/twitter.svg';
+import youtube from '../../assets/images/youtube.svg';
+import instagram from '../../assets/images/instagram.svg';
 
 export default function Footer() {
   return (

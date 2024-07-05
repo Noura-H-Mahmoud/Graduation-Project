@@ -7,10 +7,11 @@ import FlightCard from "../../../Components/FlightCard/FlightCard";
 import FlightAccordion from "../../../Components/FlightAccordion/FlightAccordion";
 import FlightForm from "../../../Components/FlightForm/FlightForm";
 import imgFlightCard from './../../../assets/images/Booking detail.png'
-export default function FlightBooking() {
+import Navigation from "../../../Components/Nav/Nav";
+export default function FlightBooking({navButtons, navButtonsForMobile,navList}) {
   return (
     <section className="FlightBooking">
-    {/* <Nav/> */}
+    <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList} />
     <Path country={'Turkey'} city={'Istanbul'} hotel_name={'CVK Park Bosphorus Hotel Istanbul'} />
     <div className='FlightBookingRow'>
       <div className="FlightContainer" >

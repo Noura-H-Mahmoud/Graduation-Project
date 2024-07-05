@@ -5,10 +5,11 @@ import HotelListingThree from '../../../Components/HotelListingThree/HotelListin
 import HotalMap from '../../../Components/HotalMap/HotalMap'
 import Amenities from '../../../Components/Amenities/Amenities'
 import Reviews from '../../../Components/Reviews/Reviews'
-
-export default function HotelDetail() {
+import Navigation from '../../../Components/Nav/Nav'
+export default function HotelDetail({navButtons, navButtonsForMobile, navList}) {
   return (
     <div>
+      <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList} />
       <HotelListingOne/>
       < HotelListingTow/>
       <HotelListingThree/>
