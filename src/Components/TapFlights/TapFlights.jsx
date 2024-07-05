@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './TapFlights.css'
-import'aos/dist/aos.css'
-import Aos from 'aos'
 export default function TapFlights  () {
     const OSArrowFlight=[{
         img:'./src/assets/images/Emirates-line.png',
@@ -66,12 +64,11 @@ export default function TapFlights  () {
     btnContent1:'Download Ticket',
     btnContent2:'./src/assets/images/chevron_forward.svg'}
     ]
-    useEffect(()=>{Aos.init();},[])
-   return (
+  return (
     <>
        <div className='OS-big-Style'>
            {OSArrowFlight.map((item)=>{
-             return<div className='OS-Fl-Style'data-aos="fade-up-right"data-aos-easing="linear"data-aos-duration="3000">
+             return<div className='OS-Fl-Style'>
                 <div className='OS-Emirates-line'> <img src={item.img} alt="Emirates-line" /></div>
                 <div className=' OS-Text-Style'>
                     <div className='OS-Text'>
