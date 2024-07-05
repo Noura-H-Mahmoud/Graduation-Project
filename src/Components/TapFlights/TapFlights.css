@@ -6,6 +6,7 @@
     background-color: var( --second-text-color);
     margin-bottom: 16px;
     width: 100%;
+    box-shadow: 0px 4px 16px 0px var(--third-bgcolor);
 }
 
 .css-19kzrtu {

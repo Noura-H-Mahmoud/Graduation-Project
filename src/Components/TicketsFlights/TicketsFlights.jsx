@@ -49,7 +49,7 @@ export default  function TicketsFlights  ()  {
     useEffect(()=>{Aos.init();},[])
  return (
    
-    <section className='OS-con Tab-section' data-aos="fade-up"data-aos-easing="linear"data-aos-duration="3000">
+    <section className=' Tab-section' data-aos="fade-up"data-aos-easing="linear"data-aos-duration="3000">
     <div className='OS-Title-Flight'>
         <h1  className='OS-T-Flight' >Tickets/Bookings</h1>
         <div className='OS-Titlee-Flight'>

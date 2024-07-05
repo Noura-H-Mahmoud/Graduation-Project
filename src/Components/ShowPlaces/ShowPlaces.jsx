@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./ShowPlaces.css"
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -11,11 +11,16 @@ import user from"./../../assets/images/User.svg"
 
 
 export default function ShowPlaces() {
+  const [destination,setDestination]=useState(false)
+ const toggleHandler = () => {
+    setDestination(!destination)
+  };
   return (
     <>
       <div className='MS-showFlight MS-ShowPlaces container'>
             <p>Where are you flying? </p>
             <div className="MS-textfields">
+              
               <TextField
                InputProps={{
                 startAdornment: (
@@ -28,8 +33,21 @@ export default function ShowPlaces() {
                 id="outlined-size-small"
                 defaultValue="Istanbul, Turkey"
                 size="large"
-                className="MS-firstfield"
+                className="MS-firstfield OS-firstfiled"
+                onClick={toggleHandler}
               />
+           
+             <div className={destination?"OS-Destination":"OS-DestinationDisplay"}>
+            <h1>popular cities</h1>
+              <div>
+                <div className='OS-DestinationFlex'>
+                <p>Makkah</p>
+                <p>Dubai</p>
+                <p>Al Madinah</p>
+                <p>Cairo</p>
+                </div>
+</div>
+             </div>
               <TextField
                 label="Check In"
                 id="outlined-size-small"

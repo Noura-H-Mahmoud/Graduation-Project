@@ -21,7 +21,7 @@ export default function ShowFlight() {
         <Tabs
           defaultActiveKey="Flights"
           id="uncontrolled-tab-example"
-          className="mb-3 MS-tabs"
+          className="mb-3 MS-tabs "
         >
           <Tab eventKey="Flights" title={<spsn className="MS-span MS-border"><img src={plane} alt="plane" className="MS_icon" />Flights</spsn>} className="Ms-tabhome">
 
