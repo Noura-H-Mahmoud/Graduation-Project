@@ -16,6 +16,7 @@
 .MS_HeroSearch p{
     font-weight: var( --second-font-weight);
     font-size: var(  --small-font-size);
+    display: block;
 }
 @media (max-width: 576px) {
     .MS_HeroSearch h1{
