@@ -11,7 +11,6 @@ export default function Favorites({navButtons,navButtonsForMobile,navList}) {
       <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList} />
       <Favoriteshead/>
       <Favoritesmain/>
-      </div>
       {/* <Newsletter/> */}
       <Footer/>
     </section>
