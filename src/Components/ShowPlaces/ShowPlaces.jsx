@@ -14,12 +14,10 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-
 export default function ShowPlaces() {
   let index=1
-  const [destination,setDestination]=useState(false)
+
+const [destination,setDestination]=useState(false)
  const toggleHandler = () => {
     setDestination(!destination)
   };
@@ -27,13 +25,22 @@ export default function ShowPlaces() {
   const RoomHandler = () => {
      setRoom(!room)
    };
-const[val,setVal]=useState('')
-const click=()=>{
-(newValue) => setVal(newValue)
-alert (val)
+const[selectedCity,setSelectedCity]=useState('')
+const click=(e)=>{
+  setSelectedCity(selectedCity)
+  alert("1")
+  alert(selectedCity)
+  alert(e.target.value)
+}
+const[add,setadd]=useState('')
+const changeRoom=()=>{
+setadd(add)
 }
 const [count,setcount]=useState(0)
+const [count1,setcount1]=useState(0)
 
+let Count=count+count1
+let Room =index
   const OSdataDes=[
     {des1:'Makkah, Saudi Arabia',des2:'Dubai, United Arab Emirates',des3:'Al Madinah, Saudi Arabia',des4:'Cairo, Egypt'},
     {des1:'Hurghada, Egypt',des2:'Sharm El Sheikh, Egypt',des3:'Alexandria, Egypt',des4:'Istanbul, Turkey'},
@@ -47,17 +54,22 @@ const [count,setcount]=useState(0)
       year:">17years",
       btn1contact:"-",
       btn2contact:"+",
-      class:"OS-Ti-Flex "
+      class:"OS-Ti-Flex",
+      id:"1"
     }, {
       Title:"Children",
       year:"<17years",
       btn1contact:"-",
       btn2contact:"+",  
-      class:"OS-Ti-Flex OS-Ti-Padding1"
+      class:"OS-Ti-Flex OS-Ti-Padding1",
+      id:"2"
     },
-    
-   
-  ]
+] 
+const OSRoom=[{Title:`Room ${index}`,
+ 
+}
+
+]
  
   return (
     <>
@@ -89,7 +101,7 @@ const [count,setcount]=useState(0)
               {OSdataDes.map((item)=>{
               return <>
                 <div className='OS-DestinationFlex'  >
-                <div className='OS-Destination-Par'onClick={click}>{item.des1}</div>
+                <div className='OS-Destination-Par' value={item.des1} onClick={click} >{item.des1}</div>
                 <p className='OS-Destination-Par'onClick={click}>{item.des2}</p>
                 <p className='OS-Destination-Par'onClick={click}>{item.des3}</p>
                 <p className='OS-Destination-Par'onClick={click}>{item.des4}</p>
@@ -147,6 +159,7 @@ const [count,setcount]=useState(0)
                 label="Rooms & Guests"
                 id="outlined-size-small"
                 defaultValue="1 room, 2 guests"
+                value={`${Room} Room, ${Count} guests`}
                 size="large"
                 className="MS-field1 OS-firstfiled1"
                 onClick={RoomHandler}
@@ -164,8 +177,9 @@ const [count,setcount]=useState(0)
                   }}
               />
               <div className={room?"OS-Room":"OS-DestinationDisplay"}>
-            <h1 className='OS-Destination-h1 OS-Room-h1'>Room{index}</h1>
-            <div className='OS-Ti-Flex OS-All-Padding'>
+               {OSRoom.map((item)=>{return<>
+              <h1 className='OS-Destination-h1 OS-Room-h1'>{item.Title}</h1>
+              <div className='OS-Ti-Flex OS-All-Padding'>
               {OSdataRoom.map((item)=>{
               return <>
               <div className={item.class}>
@@ -175,21 +189,24 @@ const [count,setcount]=useState(0)
               <p  className='OS-p-Room'> {item.year} </p>
               </div>
               <div className='OS-Ti-Flex'>
-              <button className='OS-btn-Room' onClick={()=> {if(count<=0){setcount(count)}else{setcount(count-1)}}}>{item.btn1contact}</button>
-              <p className='OS-pp-Room'>{count}</p>
-              <button className='OS-btn-Room'onClick={()=>setcount(count+1)}>{item.btn2contact}</button>
+              <button className='OS-btn-Room'id={item.id} onClick={()=> {if(item.id==1){if(count<=0) {setcount(count)}else{setcount(count-1)}}
+              else{if(count1<=0) {setcount1(count1)}else{setcount1(count1-1)}} Count=count+count1}}>{item.btn1contact}</button>
+              <p className='OS-pp-Room' id={item.id}>{count}</p>
+              <p className='OS-pp-Room' id={item.id}>{count1}</p>
+              <button className='OS-btn-Room' id={item.id}onClick={()=>{if(item.id==1){ setcount(count+1)}else{setcount1(count1+1)}}}>{item.btn2contact}</button>
               </div>
               </div>
                 </>})}
                 </div>
                 <div className='OS-Ti-FlexStyle'>
-                <div className='OS-Ti-Flex OS-Ti-Style'>
+                <div className='OS-Ti-Flex OS-Ti-Style' onClick={changeRoom}>
                   <div className='OS-Plus-Style'>+</div>
                   <h6 className='OS-AddRoom-Style'> add room</h6>
                   </div>
                 <div className='OS-applyDiv-Style' onClick={RoomHandler}><p className='OS-apply-Style'>Apply</p></div>
               </div>
-             </div>
+                </>})}
+            </div>
             </div>
             <div className="MS-right">
             <a><img src={plus} alt="plus" className="MS-plus" />Add Promo Code</a>
