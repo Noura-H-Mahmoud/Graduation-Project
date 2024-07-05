@@ -14,8 +14,8 @@
   import img7 from './../../../assets/images/door.svg'
   import img8 from './../../../assets/images/person.svg'
   import imgmap from './../../../assets/images/Booking-map.png'
-import imgticket from './../../../assets/images/flight-ticket.png'
   import imgticket from './../../../assets/images/flight-ticket.png'
+
 
 
 export default function FlightBooking2() {
