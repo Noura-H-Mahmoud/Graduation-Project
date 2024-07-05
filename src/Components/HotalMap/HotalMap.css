@@ -9,6 +9,10 @@
     border-bottom: 1px solid #11221140;
 }
 
+.NM_Map{
+    border-top: none;
+}
+
 .NM_Map h2,
 .NM_Amenities h2,
 .NM_Reviews h2 {

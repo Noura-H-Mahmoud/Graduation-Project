@@ -250,6 +250,20 @@ const State = () => {
                             navList={navList}    
                             />
                         } />
+                        <Route path="booking2" element={
+                            <FlightBooking2
+                            navButtons={navButtons(true, false)}
+                            navButtonsForMobile={navButtonsForMobile}
+                            navList={navList}    
+                            />
+                        } />
+                        <Route path="booking3" element={
+                            <FlightBooking3
+                            navButtons={navButtons(true, false)}
+                            navButtonsForMobile={navButtonsForMobile}
+                            navList={navList}    
+                            />
+                        } />
                     </Route>
                     <Route path="/Graduation-Project/hotelflow" element={<HotelFlow />}>
                         <Route index element={<HotelSearch
@@ -263,8 +277,22 @@ const State = () => {
                             navButtonsForMobile={navButtonsForMobile}
                             navList={navList}    
                             />} />
-                        <Route path="detail" element={<HotelDetail />} />
-                        <Route path="booking" element={<HotelBooking />} />
+                        <Route path="detail" element={<HotelDetail 
+                        navButtons={navButtons(true, false)}
+                        navButtonsForMobile={navButtonsForMobile}
+                        navList={navList}
+                        />} />
+                        <Route path="booking" element={<HotelBooking/>} />
+                        <Route path="booking2" element={<HotelBooking2 
+                        navButtons={navButtons(true, false)}
+                        navButtonsForMobile={navButtonsForMobile}
+                        navList={navList}
+                        />} />
+                        <Route path="booking4" element={<HotelBookingpage4 
+                        navButtons={navButtons(true, false)}
+                        navButtonsForMobile={navButtonsForMobile}
+                        navList={navList}
+                        />} />
                         <Route path="favorites" element={<Favorites
                          navButtons={navButtons(true, false)}
                          navButtonsForMobile={navButtonsForMobile}
