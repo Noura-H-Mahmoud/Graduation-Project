@@ -39,7 +39,7 @@ export default function RecentSearch() {
     <>
       <section className='MS-recentsearch'>
       <h3 className='MS-Head3'>Your recent searches</h3>
-      <div className="MS-RecentCards">
+      <div className="MS-RecentCards"  data-aos="fade-right">
                     {PlacesData.map((cardPlace, id) => (
                         <CardPlaces key={id} image={cardPlace.image} title={cardPlace.title} description={cardPlace.description}className={cardPlace.className} />
                     )

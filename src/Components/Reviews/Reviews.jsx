@@ -15,8 +15,7 @@ import './Reviews.css';
 import { TextField, createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 
-
-const reviews = [
+const initialReviews = [
     {
         id: 1,
         img: Omar,
@@ -57,11 +56,10 @@ const reviews = [
         review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         alt: 'Terry',
     },
-    ...Array(35).fill(0).map((_, i) => ({ id: i + 6, img: Omar, valuation: '5.0 Amazing', name: `Reviewer ${i + 6}`, review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', alt: 'Reviewer' })),
 ];
 
-const steps = Array.from({ length: 40 }, (_, index) => ({
-    reviews: reviews.slice(index * 5, index * 5 + 5),
+const steps = Array.from({ length: 8 }, (_, index) => ({
+    reviews: initialReviews.slice(index * 5, index * 5 + 5),
 }));
 
 // for style
@@ -86,10 +84,13 @@ const localTheme = createTheme({
         },
     },
 });
+
 export default function Reviews() {
     const theme = useTheme();
-    const [activeStep, setActiveStep] = React.useState(0);
-    const maxSteps = steps.length;
+    const [allReviews, setAllReviews] = useState(initialReviews);
+    const [activeStep, setActiveStep] = useState(0);
+    const [showPopup, setShowPopup] = useState(false);
+    const maxSteps = Math.ceil(allReviews.length / 5);
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -98,8 +99,7 @@ export default function Reviews() {
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
-    // for popup
-    const [showPopup, setShowPopup] = useState(false);
+
     const handleLinkClick = (event) => {
         event.preventDefault();
         setShowPopup(true);
@@ -108,6 +108,23 @@ export default function Reviews() {
     const handleClosePopup = () => {
         setShowPopup(false);
     };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const newReview = {
+            id: allReviews.length + 1, 
+            img: Omar, 
+            valuation: '5.0 Amazing', 
+            name: 'New Reviewer', 
+            review: event.target.review.value,
+            alt: 'New Reviewer',
+        };
+
+        setAllReviews([...allReviews, newReview]);
+        setShowPopup(false);
+    };
+
     return (
         <ThemeProvider theme={localTheme}>
             <Box sx={{ width: '100%' }}>
@@ -125,8 +142,8 @@ export default function Reviews() {
                             <p className='NM_Para2'>371 verified reviews</p>
                         </div>
                     </div>
-                    <Box sx={{ maxWidth: '100%', width: '100%', flexGrow: 1 }}>
-                        {steps[activeStep].reviews.map(review => (
+                    <Box sx={{ maxWidth: '100%', width: '100%', flexGrow: 1 }} data-aos='fade-up'>
+                        {allReviews.slice(activeStep * 5, activeStep * 5 + 5).map(review => (
                             <div key={review.id} className="NM_ItemReview">
                                 <img className='NM_Person' src={review.img} alt={review.alt} />
                                 <div className="NM_Box">
@@ -154,7 +171,7 @@ export default function Reviews() {
                     <div className="NM_Popup">
                         <div className="NM_Popup_Content">
                             <span className="NM_Close Review" onClick={handleClosePopup}>&times;</span>
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <Box sx={{ width: '100%', height: 'auto' }}>
                                     <TextField
                                         id="outlined-required"
@@ -162,10 +179,11 @@ export default function Reviews() {
                                         fullWidth
                                         multiline
                                         rows={5}
+                                        name="review" 
                                     />
                                 </Box>
 
-                                <input type="submit" value="Send" className='NM_Submit ForCode' onClick={handleClosePopup} />
+                                <input type="submit" value="Send" className='NM_Submit ForCode' />
                             </form>
                         </div>
                     </div>

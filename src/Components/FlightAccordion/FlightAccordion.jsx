@@ -1,4 +1,6 @@
 import './FlightAccordion.css'
+import iconActive from '../../assets/images/iconActive.svg'
+import icon2 from '../../assets/images/icon2.png'
 import { useState } from 'react'
 import Aos from "aos";
 import 'aos/dist/aos.css'

@@ -9,21 +9,23 @@
     border-bottom: 1px solid #11221140;
 }
 
+.NM_Map{
+    border-top: none;
+}
+
 .NM_Map h2,
 .NM_Amenities h2,
 .NM_Reviews h2 {
     font-size: var(--small-font-size);
     font-weight: var(--fourth-font-weight);
     line-height: 25.26px;
-    height: 25px;
-
+    /* height: 25px; */
 }
 
 .NM_Line {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
 }
 
 .NM_btn {
@@ -32,7 +34,7 @@
     width: 189px;
     height: 48px;
     border-radius: 4px;
-    transition:all .5s ease;
+    transition: all .5s ease;
 }
 
 .NM_btn a {
@@ -41,7 +43,7 @@
     font-family: var(--main-font);
     font-size: var(--xxsmall-font-size);
     font-weight: var(--third-font-weight);
-    transition:all .5s ease;
+    transition: all .5s ease;
 }
 
 .NM_MapImg {
@@ -49,6 +51,9 @@
     height: 450px;
     border-radius: var(--second-border-radius);
     margin-bottom: 8px;
+    margin-top: 32px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
 }
 
 .NM_Address {
@@ -78,12 +83,21 @@
 .NM_MapImg-mobile {
     display: none;
 }
-.NM_btn:hover a{
-    color:#fff;
-  }
-.NM_btn:hover{
+
+.NM_btn:hover a {
+    color: #fff;
+}
+
+.NM_btn:hover {
     transform: scale(.97);
-  }
+}
+
+/* for animation */
+.NM_MapImg-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media screen and (max-width:992px) {
     .NM_MapImg-desktop {
         display: none;

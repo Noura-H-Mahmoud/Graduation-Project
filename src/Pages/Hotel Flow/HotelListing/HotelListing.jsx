@@ -1,16 +1,24 @@
 import React from 'react'
-import HotelListingOne from '../../../Components/HotelListingOne/HotelListingOne'
-import HotelListingTow from '../../../Components/HotelListingTwo/HotelListingTow'
-import HotelListingThree from '../../../Components/HotelListingThree/HotelListingThree'
+import TabsHotelListing from '../../../Components/TabsHotelListing/TabsHotelListing'
+import Navigation from '../../../Components/Nav/Nav'
+import Newsletter from '../../../Components/Newsletter/Newsletter'
+import Footer from '../../../Components/Footer/Footer'
+// import HotelListingOne from '../../../Components/HotelListingOne/HotelListingOne'
+// import HotelListingTow from '../../../Components/HotelListingTwo/HotelListingTow'
+// import HotelListingThree from '../../../Components/HotelListingThree/HotelListingThree'
 
-export default function HotelListing() {
+export default function HotelListing({ navButtons, navButtonsForMobile,navList }) {
   return (
     <>
- <HotelListingOne/>
+      <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList}/>
+      {/* <HotelListingOne/>
  <HotelListingTow/>
- <HotelListingThree/>
-    
+ <HotelListingThree/> */}
+      <TabsHotelListing />
+      <Newsletter />
+      <Footer />
+
     </>
-    
+
   )
 }

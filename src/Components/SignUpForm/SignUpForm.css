@@ -27,9 +27,13 @@
 .NM_SignUpF .NM_FormLogin {
     display: flex;
     flex-direction: column;
+}
+.NM_FormLogin{
     gap: 24px;
 }
-
+.NM_Line{
+    margin-bottom: 0;
+}
 .NM_Line {
     width: 100%;
     display: flex;

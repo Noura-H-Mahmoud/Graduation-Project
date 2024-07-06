@@ -17,6 +17,8 @@
   --main-font:'Montserrat', sans-serif;
   --second-font:'TradeGothic LT Extended Regular', sans-serif;
   --main-padding: 104px;
+  --main-padding-home: 30px;
+  --small-padding: 7px;
   --main-border-radius: 20px;
   --second-border-radius: 16px;
   --third-border-radius: 12px;
@@ -86,6 +88,7 @@
     --xxlarge-line-hieght: 56.84px;
     --xlarge-line-hieght: 54px;
     --large-line-hieght: 50.52px;
+    --olarge-line-hieght: 40.42px;
     --xxxmedium-line-hieght: 39.01px;
     --xxmedium-line-hieght: 30.31px;
     --omedium-line-hieght: 25.26px;
@@ -93,7 +96,7 @@
     --xmedium-line-hieght: 24.38px;
     --medium-line-hieght: 20.21px;
     --xxxsmall-line-hieght: 19.5px;
-    --xxsmall-line-hieght: 17.07px;
+    --fourth-font-weight: 17.07px;
     --xsmall-line-hieght: 15.16px;
     --small-line-hieght: 14.63px;
     --xxxxsmall-line-hieght: 12.63px;
@@ -102,17 +105,27 @@
     --meduim-width-icon: 18px;
     --small-width-icon: 16px;
 }
-
 *{
+  font-family: var(--main-font);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-family: var(--main-font);
-  scroll-behavior: smooth;
+    font-family: var(--main-font);
+    scroll-behavior: smooth;
 }
-h1,h2,h3,h4,h5,h6 {
-  font-family: var(--second-font) !important;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--second-font) !important;
+}
+#root{
+  max-width: 2200px;
+  margin: auto;
 }

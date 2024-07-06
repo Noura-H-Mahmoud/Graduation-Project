@@ -28,14 +28,16 @@
     height: 24px;
 }
 
-.NM_Item h3 ,.NM_More h3 {
+.NM_Item h3,
+.NM_More h3 {
     margin-bottom: 0;
     font-family: var(--main-font) !important;
     font-size: var(--xsmall-font-size);
     font-weight: var(--second-font-weight);
     line-height: var(--xxxsmall-line-hieght);
 }
-.NM_More h3{
+
+.NM_More h3 {
     margin-bottom: 23px;
     font-weight: var(--third-font-weight);
 }
@@ -67,18 +69,20 @@
     width: 90%;
     max-width: 1200px;
     text-align: center;
-    overflow-y: auto; 
-    max-height: 80%; 
+    overflow-y: auto;
+    max-height: 80%;
+    position: relative;
 }
 
 .NM_Close {
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 20px;
+    right: 33px;
     font-size: var(--large-font-size);
     color: var(--price-color);
     cursor: pointer;
 }
+
 .NM_More {
     display: flex;
     gap: 8px;
@@ -89,14 +93,56 @@
 .NM_Popup h2 {
     margin-bottom: 32px;
 }
-.NM_More ul{
+
+.NM_More ul {
     padding: 0;
 }
+
 .NM_More ul li {
     list-style-type: none;
     line-height: var(--xxmedium-line-hieght);
 }
-.NM_Amenity{
+
+.NM_Amenity {
     width: 200px;
 }
 
+.NM_Item_EndText::after {
+    position: absolute;
+    top: 74%;
+    left: 45%;
+    width: 50px;
+    height: 72px;
+    content: '';
+    display: inline-block;
+    background: url(../../assets/images/NManimation.jpg) no-repeat left top;
+    animation: NM_frame-animation 1s steps(10) infinite;
+}
+
+@keyframes NM_frame-animation {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -500px 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .NM_Items {
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 2rem;
+    }
+
+    .NM_Item_EndText::after {
+        top: 100%;
+        left: 2%;
+    }
+}
+
+@media screen and (min-width:1400px) {
+    .NM_Item_EndText::after {
+        left: 47%;
+    }
+}

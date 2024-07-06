@@ -1,52 +1,37 @@
 import React from 'react'
 import './Footer.css'
-const logofooter='.././src/assets/images/logofooter.svg';
-const facebook ='.././src/assets/images/facebook.svg';
-const twitter ='.././src/assets/images/twitter.svg';
-const youtube ='.././src/assets/images/youtube.svg';
-const instagram ='.././src/assets/images/instagram.svg';
-
+import logofooter from '../../assets/images/logofooter.svg';
+import facebook from '../../assets/images/facebook.svg';
+import twitter from '../../assets/images/twitter.svg';
+import youtube from '../../assets/images/youtube.svg';
+import instagram from '../../assets/images/instagram.svg';
 
 export default function Footer() {
   return (
     <section className='NM_Footer'>
         <div className='NM_Content'>
             <div className='NM_LogoIcons'>
-
                 <img src={logofooter} alt="logo" />
                 <div className='NM_Icons'>
                     <div className='NM_Facebook'>
                         <a href="#" target="_blank" rel="noopener noreferrer">
                             <img src={facebook} alt="facebook" />
-
                         </a>
-                        {/* <span>Facebook</span> */}
                     </div>
                     <div className='NM_Twitter'>
                         <a href="#" target="_blank" rel="noopener noreferrer">
-
                             <img src={twitter} alt="twitter" />
-
                         </a>
-                        {/* <span>Twitter</span> */}
                     </div>
                     <div className='NM_Youtube'>
                         <a href="#" target="_blank" rel="noopener noreferrer">
-
                             <img src={youtube} alt="youtube" />
-
                         </a>
-                        {/* <span>Youtube</span> */}
                     </div>
                     <div className='NM_Instagram'>
                         <a href="#" target="_blank" rel="noopener noreferrer">
-
-                        
-
                             <img src={instagram} alt="instagram" />
-
                         </a>
-                        {/* <span>Instagram</span> */}
                     </div>
                 </div>
             </div>
