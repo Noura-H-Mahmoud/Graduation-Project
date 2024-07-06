@@ -1,5 +1,8 @@
 import './FlightForm.css'
-
+import facebook from '../../assets/images/Facebook.png'
+import google from '../../assets/images/google.png'
+import apple from '../../assets/images/apple.png'
+import email from '../../assets/images/email.png'
 const FlightForm = () => {
     return (
     <section className='Aya-Flight-Form'>
@@ -15,13 +18,13 @@ const FlightForm = () => {
         <p className='Line2'></p>
     </div>
     <div className="Form-Part3">
-        <button className='facebook'><img src="./../src/assets/images/Facebook.png" alt="Facebook" /></button>
-        <button className='google'><img src="./../src/assets/images/google.png" alt="google" /></button>
-        <button className='apple'><img src="./../src/assets/images/apple.png" alt="apple" /></button>
+        <button className='facebook'><img src={facebook} alt="Facebook" /></button>
+        <button className='google'><img src={google} alt="google" /></button>
+        <button className='apple'><img src={apple} alt="apple" /></button>
     </div>
     <div className="Form-Part4">
         <button className='Continue-with-email'>
-            <img src="./../src/assets/images/email.png" alt="email" />
+            <img src={email} alt="email" />
             <span>Continue with email</span>
         </button>
     </div>

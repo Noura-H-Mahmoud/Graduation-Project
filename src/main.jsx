@@ -282,7 +282,13 @@ const State = () => {
                         navButtonsForMobile={navButtonsForMobile}
                         navList={navList}
                         />} />
-                        <Route path="booking" element={<HotelBooking/>} />
+                        <Route path="booking" element={<HotelBooking
+                         navButtons={navButtons(true, false)}
+                         navButtonsForMobile={navButtonsForMobile}
+                         navList={navList}
+                        />
+                    }
+                         />
                         <Route path="booking2" element={<HotelBooking2 
                         navButtons={navButtons(true, false)}
                         navButtonsForMobile={navButtonsForMobile}

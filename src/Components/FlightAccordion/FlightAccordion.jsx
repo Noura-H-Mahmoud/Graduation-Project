@@ -1,4 +1,6 @@
 import './FlightAccordion.css'
+import iconActive from '../../assets/images/iconActive.svg'
+import icon2 from '../../assets/images/icon2.png'
 import { useState } from 'react'
 const FlightAccordion = ({Header_Title , Header_Body , Header_Title2 ,Header_Body2 ,Header_More}) => {
     const [active, setActive] = useState(null)
@@ -13,7 +15,7 @@ const FlightAccordion = ({Header_Title , Header_Body , Header_Title2 ,Header_Bod
                 <p className='Header-Body-para2'>{Header_Body}</p>
             </div>
             <div className="Header-icon">
-                <img onClick={() => ActivePanel(1)} src= {active===1 ? "./../src/assets/images/icon2.png" : "./../src/assets/images/iconActive.svg" } alt="iconActive" />
+                <img onClick={() => ActivePanel(1)} src= {active===1 ? icon2 : iconActive } alt="iconActive" />
             </div>
         </div>
         <div className="Accordion-Header-Hiden" style={{background : active ===2 ? "#FF8500" : "#fff"}} >
@@ -23,7 +25,7 @@ const FlightAccordion = ({Header_Title , Header_Body , Header_Title2 ,Header_Bod
                 <p className='Header-Body-Hiden-para3'>{Header_More}</p>
             </div>
             <div className="Header-icon">
-                <img onClick={() => ActivePanel(2)} src= {active===2 ? "./../src/assets/images/icon2.png" : "./../src/assets/images/iconActive.svg" } alt="iconActive" />
+                <img onClick={() => ActivePanel(2)} src= {active===2 ? icon2 : iconActive } alt="iconActive" />
             </div>
         </div>
     </section>
