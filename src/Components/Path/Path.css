@@ -27,7 +27,7 @@
     opacity: 75%;
 }
 .Aya-path {
-    padding: 8.4375rem 0 1.8rem 6.5rem;
+    padding: 8.43rem 0 1.8rem 6.5rem;
     background: #FAFAFA;
     width: max-content;
     top: 135px;
@@ -40,17 +40,17 @@
 
 @media(min-width : 768px) and (max-width : 991px) {
     .Aya-path {
-        padding: 3rem 0 1.8rem 1.875rem;
+        padding: 8.43rem 0 1.8rem 1.875rem;
     }
 }
 @media(min-width : 576px) and (max-width : 767px)  {
     .Aya-path {
-        padding: 3rem 0 1.8rem 1.875rem;
+        padding: 8.43rem 0 1.8rem 1.875rem;
     }
 }
 @media(min-width : 400px) and (max-width : 575px) {
     .Aya-path {
-        padding: 3rem 0 1.8rem 1.875rem;
+        padding: 8.43rem 0 1.8rem 1.875rem;
     }
     .Aya-path .Aya-path-p .Aya-path-span1 ,.Aya-path .Aya-path-p .Aya-path-span2 ,.Aya-path .Aya-path-p .Aya-path-span3 {
         font-size: var(--xxxsmall-font-size);
@@ -58,10 +58,10 @@
 }
 @media(min-width : 320px) and (max-width : 399px) {
     .Aya-path {
-        padding: 3rem 0 1.8rem 1.875rem;
+        padding: 8.43rem 0 1.8rem 1.875rem;
     }
     .Aya-path .Aya-path-p .Aya-path-span3 {
         display: block;
         margin-top: 10px;
     }
-}
+} 
