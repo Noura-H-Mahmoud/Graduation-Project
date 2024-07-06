@@ -5,9 +5,9 @@ import FlightDetailsHero from '../../../Components/FlightDetailsHero/FlightDetai
 import EmiratesAirlinesPolicies from '../../../Components/EmiratesAirlinesPolicies/EmiratesAirlinesPolicies';
 import FlightDeatailsGalary from '../../../Components/FlightDeatailsGalary/FlightDeatailsGalary';
 import Footer from '../../../Components/Footer/Footer'
-//import CardEmirates from '../../../Components/CardEmirates/CardEmirates';
 import Navigation from '../../../Components/Nav/Nav';
-
+import Newsletter from '../../../Components/Newsletter/Newsletter';
+import CardFlightDetailFinal from '../../../Components/CardFlightDetailFinal/CardFlightDetailFinal';
 export default function FlightDetail({navButtons, navButtonsForMobile, navList}) {
   return (
     <section className='RH_FlightDetail'>
@@ -15,8 +15,8 @@ export default function FlightDetail({navButtons, navButtonsForMobile, navList})
       <FlightDetailsHero />
       <FlightDeatailsGalary />
       <EmiratesAirlinesPolicies />
-     
-
+<CardFlightDetailFinal />
+<Newsletter />
       <Footer />
 
 

@@ -7,6 +7,8 @@ import loc from '../../assets/images/Location.png';
 import heart from '../../assets/images/heart.png';
 import sharing from '../../assets/images/sharing.png';
 import booking  from '../../assets/images/book.png';
+import './../../../src/index.css'
+
 
 
 
@@ -42,7 +44,7 @@ export default function FlightDetailsHero() {
           <span className='RH_IS'>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</span>
         </div>
 
-        <div className='RH_4'>
+        <div className='RH_4' >
           <button className='RH_4btn' >4.2</button>
           <span className='RH_rev'><strong className='RH_strong'>Very Good </strong> <span className='RH_54rev'>54 reviews</span></span>
         </div>
@@ -50,7 +52,7 @@ export default function FlightDetailsHero() {
 <div>
 <img src={heart} alt="plane" className='RH_Heart' />
 <img src={sharing} alt="plane" className='RH_sharing' />
-<button className='RH_book' >Book now</button>
+<button className='RH_book' ><a href='http://localhost:5173/Graduation-Project/flightflow/booking'>Book now</a></button>
 
 </div>
 

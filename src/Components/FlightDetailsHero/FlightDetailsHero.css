@@ -49,6 +49,7 @@
 
 .RH_bread {
     padding-bottom: 32px;
+    margin-top: 80px;
 }
 
 .RH_Pice {
@@ -167,6 +168,11 @@ border-radius: 4px;
 border: 1px solid #FF8500;
 opacity: 0px;
 
+}
+
+.RH_book a, .RH_book a:visited{
+    text-decoration: none;
+    color: var(--main-text-color);
 }
 
 

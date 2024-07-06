@@ -6,6 +6,8 @@ import visa from '../../assets/images/visacard2.png'
 
 
 
+
+
 export default function PaymentMethods() {
   return (
     <section className='RH_PaymentMethods'>
