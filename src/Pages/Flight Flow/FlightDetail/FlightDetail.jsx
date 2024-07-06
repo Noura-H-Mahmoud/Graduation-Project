@@ -5,7 +5,7 @@ import FlightDetailsHero from '../../../Components/FlightDetailsHero/FlightDetai
 import EmiratesAirlinesPolicies from '../../../Components/EmiratesAirlinesPolicies/EmiratesAirlinesPolicies';
 import FlightDeatailsGalary from '../../../Components/FlightDeatailsGalary/FlightDeatailsGalary';
 import Footer from '../../../Components/Footer/Footer'
-import CardEmirates from '../../../Components/CardEmirates/CardEmirates';
+//import CardEmirates from '../../../Components/CardEmirates/CardEmirates';
 import Navigation from '../../../Components/Nav/Nav';
 
 export default function FlightDetail({navButtons, navButtonsForMobile, navList}) {
@@ -15,8 +15,7 @@ export default function FlightDetail({navButtons, navButtonsForMobile, navList})
       <FlightDetailsHero />
       <FlightDeatailsGalary />
       <EmiratesAirlinesPolicies />
-      <CardEmirates />   
-      <CardEmirates />
+     
 
       <Footer />
 
