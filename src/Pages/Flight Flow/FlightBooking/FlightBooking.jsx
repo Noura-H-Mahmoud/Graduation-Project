@@ -1,25 +1,17 @@
-import CardFlightDetailFinal from "../../../Components/CardFlightDetailFinal/CardFlightDetailFinal";
-import Path from "../../../Components/Path/Path";
 import './FlightBooking.css'
-import Footer from "../../../Components/Footer/Footer";
-import FlightCard from "../../../Components/FlightCard/FlightCard";
+import Navigation from "../../../Components/Nav/Nav";
+import Path from "../../../Components/Path/Path";
+import CardFlightDetailFinal from "../../../Components/CardFlightDetailFinal/CardFlightDetailFinal";
 import FlightAccordion from "../../../Components/FlightAccordion/FlightAccordion";
 import FlightForm from "../../../Components/FlightForm/FlightForm";
-import imgFlightCard from './../../../assets/images/Booking detail.png'
-<<<<<<< HEAD
+import FlightCard from "../../../Components/FlightCard/FlightCard";
 import Newsletter from "../../../Components/Newsletter/Newsletter";
-import Navigation from "../../../Components/Nav/Nav";
-export default function FlightBooking(navButtons ,navButtonsForMobile ) {
-  return (
-    <section className="FlightBooking">
-    <Navigation navButtons={navButtons} navButtonsForMobile={navButtonsForMobile}/>
-=======
-import Navigation from "../../../Components/Nav/Nav";
+import Footer from "../../../Components/Footer/Footer";
+import imgFlightCard from './../../../assets/images/Booking detail.png'
 export default function FlightBooking({navButtons, navButtonsForMobile,navList}) {
   return (
     <section className="FlightBooking">
     <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList} />
->>>>>>> d86307436aad282dcae1fcc1e547dc08628feb9b
     <Path country={'Turkey'} city={'Istanbul'} hotel_name={'CVK Park Bosphorus Hotel Istanbul'} />
     <div className='FlightBookingRow'>
       <div className="FlightContainer" >
