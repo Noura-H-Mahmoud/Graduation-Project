@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import './AuthPage.css';
 import ImageSlider from '../ImageSlider/ImageSlider';
 import ImageLogo from '../../assets/images/NMGroup.svg';
-const facebook = "../../src/assets/images/NMfacebook.svg";
-const google = "../../src/assets/images/NMgoogle.svg";
-const apple = "../../src/assets/images/NMapple.svg";
-const Back ='../.././src/assets/images/NMBack.svg'
+import facebook from "../../assets/images/NMfacebook.svg";
+import google from "../../assets/images/NMgoogle.svg";
+import apple from "../../assets/images/NMapple.svg";
+import Back from '../../assets/images/NMBack.svg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

@@ -7,13 +7,13 @@ import Footer from '../../../Components/Footer/Footer'
 // import HotelListingTow from '../../../Components/HotelListingTwo/HotelListingTow'
 // import HotelListingThree from '../../../Components/HotelListingThree/HotelListingThree'
 
-export default function HotelListing({ navButtons, navButtonsForMobile }) {
+export default function HotelListing({ navButtons, navButtonsForMobile,navList }) {
   return (
     <>
+      <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList}/>
       {/* <HotelListingOne/>
  <HotelListingTow/>
  <HotelListingThree/> */}
-      <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} />
       <TabsHotelListing />
       <Newsletter />
       <Footer />

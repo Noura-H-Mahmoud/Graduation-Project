@@ -29,7 +29,7 @@ export default function ShowFlight() {
       setValue(`${parts[1]} - ${parts[0]}`);
     }
   };
-  const [trip, setTrip] = React.useState('Return');
+  const [trip, setTrip] = useState('Return');
   const handleChange = (event) => {
     setTrip(event.target.value);
   };
@@ -115,20 +115,20 @@ export default function ShowFlight() {
         <MenuItem value="Multi-City">Multi-City</MenuItem>
       </CustomSelect>
     </FormControl>
-               <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <TextField
-        label="Depart - Return"
-        value={`${startDate.format('DD MMM YY')} - ${endDate.format('DD MMM YY')}`}
-        size="large"
-        onClick={handleClickOpen}
-        readOnly
-        variant="outlined"
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <TextField
+                 label="Depart - Return"
+                 value={`${startDate.format('DD MMM YY')} - ${endDate.format('DD MMM YY')}`}
+                 size="large"
+                 onClick={handleClickOpen}
+                readOnly
+                variant="outlined"
+                className="MS-field"
       />
-
-      <Dialog open={open} onClose={handleCloseDate }>
+            <Dialog open={open} onClose={handleCloseDate }>
         <DialogTitle>Choose Dates</DialogTitle>
         <DialogContent>
-          <Box display="flex" flexDirection="column" gap={2}>
+          <Box display="flex" flexDirection="column" gap={2} mt={2}>
             <DatePicker
               label="Start Date"
               value={startDate}

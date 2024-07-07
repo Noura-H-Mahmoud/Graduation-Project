@@ -45,9 +45,9 @@ const data2=[ {img:"./src/assets/images/Travel-3.png",
   useEffect(()=>{Aos.init();},[])
   return (
     <>
- <section className='OS_Travel_Section' data-aos="fade-up" data-aos-easing="linear"
+<section className='OS_Travel_Section' data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1500">
-    <div className='OS_oone_Title' >
+    <div className='OS_one_Title ' >
             <div className='OS_Title_Book'>
             <h3>Fall into travel</h3>
             <p>Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.</p>
@@ -92,7 +92,7 @@ const data2=[ {img:"./src/assets/images/Travel-3.png",
 <div className='OS-BackPacking'data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1500">
   
- <div className='OS-one-Backing'>
+<div className='OS-one-Backing'>
         <div className='OS-Back_Par'> 
         <h1>Backpacking Sri Lanka</h1>
         <div className='OS-paragraf'>
