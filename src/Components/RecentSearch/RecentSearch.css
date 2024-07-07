@@ -26,7 +26,7 @@
     font-size: var(  --xsmall-font-size);
 }
 .MS-recentsearch{
-    padding: 80px 104px 0 104px;
+    padding: 80px var(  --main-padding) 0 var(  --main-padding);
 }
 @media (max-width: 576px) {
     .MS-RecentCards{

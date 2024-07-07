@@ -51,6 +51,14 @@ border: none;
     margin-left: 16px;
     font-size: var( --xxsmall-font-size);
     font-weight: 600;
+    transition: all 0.7s;
+}
+.MS-btnnewsletter:hover{
+    background-color: var(--main-bgcolor);
+}
+.MS-inputnewsletter:focus{
+    outline: none;
+    border: 2px solid var(--main-bgcolor);
 }
 @media (max-width:  1200px) {
     .MS-btnnewsletter{

@@ -30,11 +30,11 @@ export default function Accordion() {
         <div className="accordion-title" onClick={() => toggleOpen('item1')}>
           <div className='MS-headAcord'>
           <p>Price</p>
-          <img src={arrowTop} alt="arrowTop" />
+          <img src={arrowTop} alt="arrowTop" className={`arrow ${openItems.item1 ? 'open' : ''}`} />
           </div>
         </div>
         {openItems.item1 && <div className="accordion-content">
-          <Box sx={{ width: 300, margin: 'auto' }}>
+          <Box  sx={{width: {xs: 200,sm: 250,md: 300,}}}>
       <Typography id="range-slider" gutterBottom>
       </Typography>
       <Slider
@@ -70,7 +70,7 @@ export default function Accordion() {
         <div className="accordion-title" onClick={() => toggleOpen('item2')}>
           <div className='MS-headAcord'>
           <p>Rating</p>
-          <img src={arrowTop} alt="arrowTop" />
+          <img src={arrowTop} alt="arrowTop" className={`arrow ${openItems.item2 ? 'open' : ''}`} />
           </div>
         </div>
         {openItems.item2 && <div className="accordion-content">
@@ -87,7 +87,7 @@ export default function Accordion() {
         <div className="accordion-title" onClick={() => toggleOpen('item3')}>
           <div className='MS-headAcord'>
           <p>Freebies</p>
-          <img src={arrowTop} alt="arrowTop" />
+          <img src={arrowTop} alt="arrowTop" className={`arrow ${openItems.item3 ? 'open' : ''}`} />
           </div>
         </div>
         {openItems.item3 && <div className="accordion-content">
@@ -119,7 +119,7 @@ export default function Accordion() {
         <div className="accordion-title" onClick={() => toggleOpen('item4')}>
           <div className='MS-headAcord'>
           <p>Amenities</p>
-          <img src={arrowTop} alt="arrowTop" />
+          <img src={arrowTop} alt="arrowTop" className={`arrow ${openItems.item4 ? 'open' : ''}`} />
           </div>
         </div>
         {openItems.item4 && <div className="accordion-content">
