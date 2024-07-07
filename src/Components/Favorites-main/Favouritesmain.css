@@ -1,6 +1,4 @@
-.MH-favorites-main {
-    padding: 100px 7% 0 7% ;
-}
+
 .MH-favorites-main .MH-favorites-box {
     display: flex;
     margin-bottom:24px ;
@@ -15,7 +13,7 @@
     height: 100%;
 }
 .MH-favorites-main .MH-favorites-box .MH-favorites-info  {
-    width: 70%;
+    width: 792px;
     padding: 24px;
     background-color: var( --second-text-color);
 }
@@ -139,6 +137,7 @@
     align-items: center;
     border: 1px solid var(--main-bgcolor);
     border-radius: 4px;
+    cursor: pointer;
 }
 .MH-favorites-info .MH-box-button .MH-box-button2 {
     width: 90%;
@@ -178,6 +177,20 @@
 }
 @media (max-width:992px ) {
 
+}
+.MH-favorites-main .MH-favorites-box .MH-image .MH-number-img p{
+    opacity: .7;
+    font-size: var(--xxxsmall-font-size);
+    font-weight: var(--second-font-weight);
+    line-height: 1.2;
+    color: #112211;
+    margin-bottom: 0;
+}
+@media (max-width:992px ) {
+    .MH-favorites-main .MH-favorites-box .MH-image
+    {
+        height:auto;
+    }
     .MH-info2 {
         text-align: center;
         display: flex;

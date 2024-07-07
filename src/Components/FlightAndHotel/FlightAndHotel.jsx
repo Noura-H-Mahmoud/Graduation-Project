@@ -11,7 +11,7 @@ export default function FlightAndHotel() {
       heading: "Flights",
       text: "Search Flights & Places Hire to our most popular destinations",
       btn: "Show Flights",
-      route:"/flightflow/listing"
+      route:"/Graduation-Project/flightflow/listing"
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ export default function FlightAndHotel() {
       heading: "Hotels",
       text: "Search Flights & Places Hire to our most popular destinations",
       btn: "Show Hotels",
-      route:"/hotelflow/listing"
+      route:"/Graduation-Project/hotelflow/listing"
     },
   ]
   return (
