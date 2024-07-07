@@ -43,7 +43,6 @@
     font-family: var(--main-font);
     font-size: var(--xxsmall-font-size);
     font-weight: var(--third-font-weight);
-    transition: all .5s ease;
 }
 
 .NM_MapImg {
@@ -84,12 +83,10 @@
     display: none;
 }
 
-.NM_btn:hover a {
-    color: #fff;
-}
-
 .NM_btn:hover {
-    transform: scale(.97);
+    background-color: var(--fourth-bgcolor);
+    color: var( --main-bgcolor);
+    border: 1px solid var(--main-bgcolor);
 }
 
 /* for animation */
