@@ -6,20 +6,14 @@ import FlightCard from "../../../Components/FlightCard/FlightCard";
 import FlightAccordion from "../../../Components/FlightAccordion/FlightAccordion";
 import FlightForm from "../../../Components/FlightForm/FlightForm";
 import imgFlightCard from './../../../assets/images/Booking detail.png'
-<<<<<<< HEAD
+import Navigation from "../../../Components/Nav/Nav";
 import Newsletter from "../../../Components/Newsletter/Newsletter";
-import Navigation from "../../../Components/Nav/Nav";
-export default function FlightBooking(navButtons ,navButtonsForMobile ) {
-  return (
-    <section className="FlightBooking">
-    <Navigation navButtons={navButtons} navButtonsForMobile={navButtonsForMobile}/>
-=======
-import Navigation from "../../../Components/Nav/Nav";
+import earth from './../../../assets/images/Earth.png'
+import plane from './../../../assets/images/Vector1.svg'
 export default function FlightBooking({navButtons, navButtonsForMobile,navList}) {
   return (
     <section className="FlightBooking">
     <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList} />
->>>>>>> d86307436aad282dcae1fcc1e547dc08628feb9b
     <Path country={'Turkey'} city={'Istanbul'} hotel_name={'CVK Park Bosphorus Hotel Istanbul'} />
     <div className='FlightBookingRow'>
       <div className="FlightContainer" >
@@ -29,8 +23,17 @@ export default function FlightBooking({navButtons, navButtonsForMobile,navList})
           Header_More={'More info'}/>
           <FlightForm/>
       </div>
-      <FlightCard page={'FlightBooking'} imgFlightCard={imgFlightCard} title={'Economy'} subtitle={<p className="subtitle" style={{marginBottom: '20px'}}>Emirates A380 Airbus</p>} button={'4.2'}
-      price_Base_Fare={'400 $'} price_Discount={'400 $'} price_taxes={'400 $'} price_Service_Fee={'400 $'} price_total={'400 $'}/>
+      <div>
+        <FlightCard page={'FlightBooking'} imgFlightCard={imgFlightCard} title={'Economy'} subtitle={<p className="subtitle" style={{marginBottom: '20px'}}>Emirates A380 Airbus</p>} button={'4.2'}
+        price_Base_Fare={'400 $'} price_Discount={'400 $'} price_taxes={'400 $'} price_Service_Fee={'400 $'} price_total={'400 $'}/>
+        <div  className="plane">
+          <img src={plane} alt="plane" />
+        </div>
+        <div className="earth">
+          <img src={earth} alt="earth" />
+        </div>
+        
+      </div>
     </div>
     <Newsletter/>
     <Footer/>

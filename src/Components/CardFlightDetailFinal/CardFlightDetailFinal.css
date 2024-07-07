@@ -416,6 +416,9 @@
     .Aya_Flight_Details_Final .part3 , .Aya_Flight_Details_Final .part4 {
         width: 29rem;
     }
+    .Aya_Flight_Details_Final .part4 {
+        gap: 5px;
+    }
     .Aya_Flight_Details_Final .part3  {
         height: 7rem;
         flex-direction: column;
@@ -425,6 +428,7 @@
     }
     .Aya_Flight_Details_Final .part4 .part4-2 {
         margin-top: 3rem;
+        gap: 3px;
     }
     .Aya_Flight_Details_Final .part1 , .Aya_Flight_Details_Final .part2 {
         width: 29rem;
