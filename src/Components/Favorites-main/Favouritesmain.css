@@ -176,17 +176,6 @@
     margin-bottom: 0;
 }
 @media (max-width:992px ) {
-
-}
-.MH-favorites-main .MH-favorites-box .MH-image .MH-number-img p{
-    opacity: .7;
-    font-size: var(--xxxsmall-font-size);
-    font-weight: var(--second-font-weight);
-    line-height: 1.2;
-    color: #112211;
-    margin-bottom: 0;
-}
-@media (max-width:992px ) {
     .MH-favorites-main .MH-favorites-box .MH-image
     {
         height:auto;

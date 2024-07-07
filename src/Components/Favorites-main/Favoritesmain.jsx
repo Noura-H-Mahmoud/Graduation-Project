@@ -13,8 +13,7 @@ import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react'
-
+import { useEffect, useState } from 'react'
 
 export default function Favoritesmain() {
     useEffect(() => {
@@ -27,14 +26,16 @@ export default function Favoritesmain() {
 
     const location = useLocation();
     const isListingPage = location.pathname === '/Graduation-Project/hotelflow/listing';
-    let info = [
+
+    const initialInfo = [
         {
             id: 1,
             title: "CVK Park Bosphorus Hotel Istanbul",
             location: "Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437",
             reviews: "371 reviews",
             price: "240 $",
-            image: img1
+            image: img1,
+            isFavorite: false
         },
         {
             id: 2,
@@ -42,7 +43,8 @@ export default function Favoritesmain() {
             location: "Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
             reviews: "54 reviews",
             price: "104 $",
-            image: img5
+            image: img5,
+            isFavorite: isListingPage ? true :false
         },
         {
             id: 3,
@@ -50,24 +52,26 @@ export default function Favoritesmain() {
             location: "Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
             reviews: "54 reviews",
             price: "104 $",
-            image: img6
+            image: img6,
+            isFavorite: isListingPage ? true :false
         }
     ];
 
-    // Check if it's the listing page and modify info array accordingly
-    if (isListingPage) {
-        info = [
-            ...info,
-            {
-                id: 4,
-                title: "Eresin Hotels Sultanahmet - Boutique Class",
-                location: "Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
-                reviews: "54 reviews",
-                price: "104 $",
-                image: img7
-            }
-        ];
-    }
+    const [info, setInfo] = useState(isListingPage ? initialInfo.concat({
+        id: 4,
+        title: "Eresin Hotels Sultanahmet - Boutique Class",
+        location: "Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
+        reviews: "54 reviews",
+        price: "104 $",
+        image: img7,
+        isFavorite: isListingPage ? true :false
+    }) : initialInfo);
+
+    const toggleFavorite = (index) => {
+        const updatedInfo = [...info];
+        updatedInfo[index].isFavorite = !updatedInfo[index].isFavorite;
+        setInfo(updatedInfo);
+    };
 
     return (
         <section className={isListingPage ? 'MH-favorites-main NM' : 'MH-favorites-main'}>
@@ -98,7 +102,7 @@ export default function Favoritesmain() {
                                     </div>
                                     <div className={isListingPage ? 'MH-star2 NM' : 'MH-star2'}>
                                         <img src={img4} alt="" />
-                                        <p>  <span>20+ </span>Aminities</p>
+                                        <p> <span>20+ </span>Aminities</p>
                                     </div>
                                 </div>
                                 <div className={isListingPage ? 'MH-evaluation NM' : 'MH-evaluation'}>
@@ -115,8 +119,8 @@ export default function Favoritesmain() {
                             </div>
                         </div>
                         <div className={isListingPage ? 'MH-box-button NM' : 'MH-box-button'}>
-                            <div className={isListingPage ? 'MH-box-button1 NM' : 'MH-box-button1'}>
-                                {isListingPage && index >= 1 ? (
+                            <div className={isListingPage ? 'MH-box-button1 NM' : 'MH-box-button1'} onClick={() => toggleFavorite(index)}>
+                                {item.isFavorite ? (
                                     <img src={whiteHeart} alt="white-heart" />
                                 ) : (
                                     <FontAwesomeIcon icon={faHeart} />
@@ -125,9 +129,11 @@ export default function Favoritesmain() {
 
                             <div className={isListingPage ? 'MH-box-button2 NM' : 'MH-box-button2'} data-aos='flip-up'>
                                 {isListingPage ? (
-                                    <button>
-                                        <Link className='NM_ViewPlaceBtn' to="/Graduation-Project/hotelflow/detail" rel="noopener noreferrer">View Place </Link>
-                                    </button>
+                                    <Link className='NM_ViewPlaceBtn' to="/Graduation-Project/hotelflow/detail" rel="noopener noreferrer">
+                                        <button>
+                                            View Place
+                                        </button>
+                                    </Link>
                                 ) : (
                                     <button>View Place</button>
                                 )}
