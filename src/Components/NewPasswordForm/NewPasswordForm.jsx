@@ -66,7 +66,7 @@ export default function NewPasswordForm() {
     );
 
     localStorage.setItem('users', JSON.stringify(updatedUsers));
-    navigate('/');
+    navigate('/Graduation-Project');
   };
 
   return (

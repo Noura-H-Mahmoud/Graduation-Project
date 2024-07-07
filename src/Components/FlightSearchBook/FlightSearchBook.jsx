@@ -3,6 +3,10 @@ import './FlightSearchBook.css'
 import {  Row } from 'react-bootstrap'
 import'aos/dist/aos.css'
 import Aos from 'aos'
+import travel1 from '../../assets/images/Travel-1.png'
+import travel2 from '../../assets/images/Travel-2.png'
+import travel3 from '../../assets/images/Travel-3.png'
+import travel4 from '../../assets/images/Travel-4.png'
 
 export default function FlightSearchBook () {
 const data =[
@@ -32,22 +36,22 @@ const data =[
         },
 ];
 
-const data2=[ {img:"./src/assets/images/Travel-3.png",
+const data2=[ {img: travel3,
      class:" img1 img2"},
-    {img:"./src/assets/images/Travel-4.png",  
+    {img: travel4,  
         class:" img img2"},  
    ]
-   const data3=[ {img:"./src/assets/images/Travel-1.png",
+   const data3=[ {img: travel1,
     class:" img1 "},
-   {img:"./src/assets/images/Travel-2.png",  
+   {img:travel2,  
        class:" img  img4"},  
   ]
   useEffect(()=>{Aos.init();},[])
   return (
     <>
- <section className='OS_Travel_Section' data-aos="fade-up" data-aos-easing="linear"
+<section className='OS_Travel_Section' data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1500">
-    <div className='OS_oone_Title' >
+    <div className='OS_one_Title ' >
             <div className='OS_Title_Book'>
             <h3>Fall into travel</h3>
             <p>Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.</p>
@@ -92,7 +96,7 @@ const data2=[ {img:"./src/assets/images/Travel-3.png",
 <div className='OS-BackPacking'data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1500">
   
- <div className='OS-one-Backing'>
+<div className='OS-one-Backing'>
         <div className='OS-Back_Par'> 
         <h1>Backpacking Sri Lanka</h1>
         <div className='OS-paragraf'>

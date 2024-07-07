@@ -81,7 +81,7 @@ export default function ShowPlaces() {
             </div>
             <div className="MS-right">
             <a><img src={plus} alt="plus" className="MS-plus" />Add Promo Code</a>
-              <Link to="/hotelflow/listing"> <button className="MS-btnFlight"><img src={building} alt="arrow" />Show Places  </button></Link>
+              <Link to="/Graduation-Project/hotelflow/listing"> <button className="MS-btnFlight"><img src={building} alt="arrow" />Show Places  </button></Link>
             </div>
       </div>
     </>

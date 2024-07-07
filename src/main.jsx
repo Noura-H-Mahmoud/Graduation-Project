@@ -37,21 +37,45 @@ import AddPayment from './Pages/Auth/AddPayment.jsx';
 import VerifyCode from './Pages/Auth/VerifyCode.jsx';
 import favourite from './assets/images/favourites.svg';
 import client from './assets/images/Client-1.png';
-import arrow from './assets/images/Arrow_Down.svg'
+import arrow from './assets/images/Arrow_Down.svg';
 import HotelBooking2 from './Pages/Hotel Flow/Hotel-Booking-page2/HotelBooking2.jsx';
+import profileBlack from './assets/images/profile-black.svg';
+import card from './assets/images/card.svg';
+import setting from './assets/images/setting.svg';
+import support from './assets/images/support.svg';
+import logout from './assets/images/logout.svg';
 
 const title = 'LIVE & TRAVEL';
 const para = 'Special offers to suit your plan';
-const className = 'NM_Hero'
+const className = 'NM_Hero';
 const head2 = 'Helping Others';
+
 const State = () => {
     const [isLoginActive, setIsLoginActive] = useState(true);
     const [currentPage, setCurrentPage] = useState('landingpage');
-    const [listingPage, setListingPage] = useState('listingpage');
+    const [showDiv, setShowDiv] = useState(false); 
     const location = useLocation();
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    // for scroll by Noura
+        useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     useEffect(() => {
-        if (location.pathname === '/') {
+        if (location.pathname === '/Graduation-Project/') {
             setCurrentPage('landingpage');
         } else {
             setCurrentPage('otherpage');
@@ -62,11 +86,16 @@ const State = () => {
         setIsLoginActive(prevState => !prevState);
     };
 
-    const NM_Login2 = isLoginActive ? 'NM_Login' : 'NM_Signup';
-    const NM_Signup2 = isLoginActive ? 'NM_Signup' : 'NM_LoginN';
-    const NM_LinkLog = isLoginActive ? 'NM_LinkLogin' : 'NM_LinkSignup';
-    const NM_LinkSign = isLoginActive ? 'NM_LinkSignup' : 'NM_LinkLogin';
-
+    const handleLinkClick = (e) => {
+        e.preventDefault();
+        setShowDiv(!showDiv);
+      };
+    
+    // for scroll and active by Noura
+    const NM_Login2 = isLoginActive ? (isScrolled ? 'NM_Login Scrolled' : 'NM_Login') : (isScrolled ? 'NM_Signup Scrolled' : 'NM_Signup');
+    const NM_Signup2 = isLoginActive ? (isScrolled ? 'NM_Signup Scrolled' : 'NM_Signup') : (isScrolled ? 'NM_LoginN Scrolled' : 'NM_LoginN');
+    const NM_LinkLog = isLoginActive ? (isScrolled ? 'NM_LinkLogin Scrolled' : 'NM_LinkLogin') : (isScrolled ? 'NM_LinkSignup Scrolled' : 'NM_LinkSignup');
+    const NM_LinkSign = isLoginActive ? (isScrolled ? 'NM_LinkSignup Scrolled' : 'NM_LinkSignup') : (isScrolled ? 'NM_LinkLogin Scrolled' : 'NM_LinkLogin');
 
     const Navlinks = ({ type, className, linkTo, linkText, imgSrc, imgAlt, onClick, classNameLink, afterImage, arrowAlt, arrowclass, textClass, imgClass }) => {
         if (type === 'button') {
@@ -100,7 +129,7 @@ const State = () => {
                         <Navlinks
                             type="button"
                             className={NM_Login2}
-                            linkTo="/auth/login"
+                            linkTo="/Graduation-Project/auth/login"
                             linkText="Login"
                             onClick={toggleButtons}
                             classNameLink={NM_LinkLog}
@@ -108,7 +137,7 @@ const State = () => {
                         <Navlinks
                             type="button"
                             className={NM_Signup2}
-                            linkTo="/auth"
+                            linkTo="/Graduation-Project/auth"
                             linkText="Sign up"
                             onClick={toggleButtons}
                             classNameLink={NM_LinkSign}
@@ -120,7 +149,7 @@ const State = () => {
                         <Navlinks
                             type="list"
                             className="AM_Link"
-                            linkTo="/hotelflow/favorites"
+                            linkTo="/Graduation-Project/hotelflow/favorites"
                             imgSrc={favourite}
                             imgAlt="favourite"
                             linkText="Favourites"
@@ -131,11 +160,10 @@ const State = () => {
                         <Navlinks
                             type="list"
                             className="AM_Link"
-                            linkTo="/myaccount"
                             imgSrc={client}
                             imgAlt="John D."
                             linkText="John D."
-                            onClick={() => { }}
+                            onClick={handleLinkClick}
                             afterImage={arrow}
                             arrowAlt={"arrow"}
                             arrowclass={'arrowDown'}
@@ -147,18 +175,19 @@ const State = () => {
             </>
         );
     };
+
     const navButtonsForMobile = (
         <>
             <li className={currentPage === 'landingpage' ? "" : 'd-none'}>
-                <Link className='NM_Link' to="/auth/login" rel="noopener noreferrer"> Login
+                <Link className='NM_Link' to="/Graduation-Project/auth/login" rel="noopener noreferrer"> Login
                 </Link>
             </li>
             <li className={currentPage === 'landingpage' ? '' : 'd-none'}>
-                <Link className='NM_Link' to="/auth" rel="noopener noreferrer"> Sign Up
+                <Link className='NM_Link' to="/Graduation-Project/auth" rel="noopener noreferrer"> Sign Up
                 </Link>
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
-                <Link className='AM_Link' to='/hotelflow/favorites'>
+                <Link className='AM_Link' to='/Graduation-Project/hotelflow/favorites'>
                     <img src={favourite} alt="" />Favourites</Link>
             </li>
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
@@ -168,7 +197,30 @@ const State = () => {
                 <img src={client} alt="" /></li>
         </>
     );
-
+    const navList = (
+        <>
+              {showDiv && (
+        <div className={currentPage === 'landingpage' ? 'd-none' : 'AM_AccountList'}>
+          <div className='AM_Toplist'>
+            <img src={client} className='account-client' alt="client" />
+            <div className='AM_Toptextlist'>
+              <h5 className='username-accountlist'>John Doe.</h5>
+              <p className='connect-status'>Online</p>
+            </div>
+          </div>
+          <div className='AM_AccountLinks'>
+            <Link className='AM_Link1' to="/Graduation-Project/myaccount"><img src={profileBlack} alt=""/>My Account</Link>
+            <Link className='AM_Link1'><img src={card} alt="" />Payments</Link>
+            <Link className='AM_Link1'><img src={setting} alt="" />Setting</Link>
+          </div>
+          <div className='AM_SupportLinks'>
+            <Link className='AM_Link1'><img src={support} alt="" />Support</Link>
+            <Link className='AM_Link1'><img src={logout} alt="" />Logout</Link>
+          </div>
+        </div>
+      )}
+        </>
+    )
 
     const navButtons = (showAccountButtons, isLandingPage) => (
         <Navbuttons toggleButtons={toggleButtons} favourite={favourite} client={client} showAccountButtons={showAccountButtons} isLandingPage={isLandingPage} />
@@ -177,7 +229,7 @@ const State = () => {
     return (
         <React.StrictMode>
             <Routes>
-                <Route path="/" element={<App />}>
+                <Route path="/Graduation-Project/" element={<App />}>
                     <Route index element={
                         <LandingPage
                             head2={head2}
@@ -188,57 +240,99 @@ const State = () => {
                             navButtonsForMobile={navButtonsForMobile}
                         />
                     } />
-                    <Route path="flightflow" element={<FlightFlow />}>
+                    <Route path="/Graduation-Project/flightflow" element={<FlightFlow />}>
                         <Route index element={
                             <FlightsSearch
                                 navButtons={navButtons(true, false)}
                                 navButtonsForMobile={navButtonsForMobile}
-                            />
-                        } />
+                                navList={navList}
+                                />
+                            } />
                         <Route path="listing" element={
                             <FlightListing
-                                navButtons={navButtons(true, false)}
-                                navButtonsForMobile={navButtonsForMobile}
+                            navButtons={navButtons(true, false)}
+                            navButtonsForMobile={navButtonsForMobile}
+                            navList={navList}    
                             />
                         } />
                         <Route path="detail" element={
                             <FlightDetail
-                                navButtons={navButtons(true, false)}
-                                navButtonsForMobile={navButtonsForMobile}
+                            navButtons={navButtons(true, false)}
+                            navButtonsForMobile={navButtonsForMobile}
+                            navList={navList}    
                             />
                         } />
                         <Route path="booking" element={
                             <FlightBooking
-                                navButtons={navButtons(true, false)}
-                                navButtonsForMobile={navButtonsForMobile}
+                            navButtons={navButtons(true, false)}
+                            navButtonsForMobile={navButtonsForMobile}
+                            navList={navList}    
+                            />
+                        } />
+                        <Route path="booking2" element={
+                            <FlightBooking3
+                            navButtons={navButtons(true, false)}
+                            navButtonsForMobile={navButtonsForMobile}
+                            navList={navList}    
+                            />
+                        } />
+                        <Route path="booking3" element={
+                            <FlightBooking2
+                            navButtons={navButtons(true, false)}
+                            navButtonsForMobile={navButtonsForMobile}
+                            navList={navList}    
                             />
                         } />
                     </Route>
-                    <Route path="hotelflow" element={<HotelFlow />}>
+                    <Route path="/Graduation-Project/hotelflow" element={<HotelFlow />}>
                         <Route index element={<HotelSearch
                             navButtons={navButtons(true, false)}
                             navButtonsForMobile={navButtonsForMobile}
-                        />
+                            navList={navList}    
+                            />
                         } />
                         <Route path="listing" element={<HotelListing
                             navButtons={navButtons(true, false)}
                             navButtonsForMobile={navButtonsForMobile}
+                            navList={navList}    
+                            />} />
+                        <Route path="detail" element={<HotelDetail 
+                        navButtons={navButtons(true, false)}
+                        navButtonsForMobile={navButtonsForMobile}
+                        navList={navList}
                         />} />
-                        <Route path="detail" element={<HotelDetail />} />
-                        <Route path="booking" element={<HotelBooking />} />
+                        <Route path="booking" element={<HotelBooking
+                         navButtons={navButtons(true, false)}
+                         navButtonsForMobile={navButtonsForMobile}
+                         navList={navList}
+                        />
+                    }
+                         />
+                        <Route path="booking2" element={<HotelBooking2 
+                        navButtons={navButtons(true, false)}
+                        navButtonsForMobile={navButtonsForMobile}
+                        navList={navList}
+                        />} />
+                        <Route path="booking3" element={<HotelBookingpage4 
+                        navButtons={navButtons(true, false)}
+                        navButtonsForMobile={navButtonsForMobile}
+                        navList={navList}
+                        />} />
                         <Route path="favorites" element={<Favorites
                          navButtons={navButtons(true, false)}
                          navButtonsForMobile={navButtonsForMobile}
-                        />} />
+                         navList={navList}    
+                         />} />
                     </Route>
-                    <Route path="myaccount" element={<AccountFlow />}>
+                    <Route path="/Graduation-Project/myaccount" element={<AccountFlow />}>
                         <Route index element={<MyAccount
                             navButtons={navButtons(true, false)}
                             navButtonsForMobile={navButtonsForMobile}
+                            navList={navList}    
                         />
                         } />
                     </Route>
-                    <Route path="auth" element={<Authenticate />}>
+                    <Route path="/Graduation-Project/auth" element={<Authenticate />}>
                         <Route index element={<SignUp />} />
                         <Route path="login" element={<Login />} />
                         <Route path="new_password" element={<NewPassword />} />
@@ -257,3 +351,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <State />
     </Router>
 );
+

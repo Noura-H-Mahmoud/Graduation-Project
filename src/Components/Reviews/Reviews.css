@@ -101,7 +101,11 @@
 }
 
 .NM_Close.Review {
+    cursor: pointer;
+    font-size: var(--large-font-size);
+    position: absolute;
     color: var(--main-bgcolor);
+    z-index: 1000;
 }
 
 .NM_Line2 h4:hover {

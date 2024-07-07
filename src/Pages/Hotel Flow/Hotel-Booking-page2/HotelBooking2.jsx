@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 export default function HotelBooking2 () {
     const linkto = [
-        <Link className='MH-addbtn ' to={"/hotelflow/booking4"}>Add Card</Link>
+        <Link className='MH-addbtn ' to={"/Graduation-Project/hotelflow/booking4"}>Add Card</Link>
     ]
     return (
         <section className="MH-Hotelbooking2">

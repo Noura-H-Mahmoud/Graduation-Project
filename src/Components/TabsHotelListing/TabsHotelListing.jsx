@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Favoritesmain from '../Favorites-main/Favoritesmain'
 import './TabsHotelListing.css'
 import chevrondown from '../../assets/images/NMchevrondown.svg'
 import { Tab, Tabs } from 'react-bootstrap'
-
+import FormWithOutTab from '../FormWithOutTab/FormWithOutTab'
+import Accordion from '../Accordion/Accordion'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSliders} from '@fortawesome/free-solid-svg-icons';
 export default function TabsHotelListing() {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+    const togglePopup = () => {
+        setIsPopupOpen(!isPopupOpen);
+    };
     return (
         <section className='NM_HotelListing'>
-            <div>box</div>
+            <div><FormWithOutTab /></div>
             <div className='NM_MainSection'>
-                <div className='NM_filter'>filter</div>
+                <div className='NM_filter'>
+                <button className='MS-filterBtn' onClick={togglePopup}><FontAwesomeIcon icon={faSliders} size="lg" style={{color: "#ffffff",}} /> Filters</button>
+                <p className='MS-filter'>Filters</p>
+                <div data-aos="fade-right" className='MS-filterContent'>
+                    <Accordion />
+                    </div>
+                </div>
                 <div className='NM_Part2'>
                     <div className='NM_Tabs'>
                         <div className='NM_Head'>
@@ -56,6 +70,15 @@ export default function TabsHotelListing() {
                     <input className='NM_btnListing' type="button" value="Show more results" />
                 </div>
             </div>
+            {isPopupOpen && (
+                <div className='popup-overlay'>
+                    <div className='popup-content'>
+                        <button className='popup-close-btn' onClick={togglePopup}>Close</button>
+                        <Accordion />
+                    </div>
+                </div>
+            )}
         </section>
     )
 }
+

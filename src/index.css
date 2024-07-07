@@ -96,7 +96,7 @@
     --xmedium-line-hieght: 24.38px;
     --medium-line-hieght: 20.21px;
     --xxxsmall-line-hieght: 19.5px;
-    --xxsmall-line-hieght: 17.07px;
+    --fourth-font-weight: 17.07px;
     --xsmall-line-hieght: 15.16px;
     --small-line-hieght: 14.63px;
     --xxxxsmall-line-hieght: 12.63px;
@@ -106,6 +106,7 @@
     --small-width-icon: 16px;
 }
 *{
+  font-family: var(--main-font);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -123,4 +124,8 @@ h4,
 h5,
 h6 {
     font-family: var(--second-font) !important;
+}
+#root{
+  max-width: 2200px;
+  margin: auto;
 }
