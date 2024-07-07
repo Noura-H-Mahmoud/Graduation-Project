@@ -115,3 +115,9 @@ font-weight: var( --fourth-font-weight);
         width:100px;
     }
   }
+  @media (max-width: 420px){
+    .MS-input-filed{
+      margin-left: 0;
+      width: 200px;
+    }
+  }
