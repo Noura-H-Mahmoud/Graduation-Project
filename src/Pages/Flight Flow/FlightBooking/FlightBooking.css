@@ -16,6 +16,50 @@
 .FlightContainer {
     width: 49.375rem;
 }
+.FlightBookingRow .earth {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 40% 20% 0 10% ;
+    animation: earth 30s linear infinite;
+}
+@keyframes earth {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.FlightBookingRow .earth img {
+    /* margin: 100px 100px 0 0; */
+    transform: scale(1.3);
+    width: 100%;
+}
+.FlightBookingRow .plane img {
+    width: 100%;
+    transform: rotate(-50deg);
+}
+.FlightBookingRow .plane {
+    width: 75px;
+    position: absolute;
+    margin: 120px 0 0 0;
+    animation: plane 10s linear infinite;
+    transform-origin: 220px 220px;
+}
+@keyframes plane {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@media (max-width : 1439px) {
+    .FlightBookingRow .earth  , .FlightBookingRow .earth img , .FlightBookingRow .plane img , .FlightBookingRow .plane {
+        display: none;
+    }
+}
 @media (min-width : 1310px) and (max-width : 1400px) {
     .FlightContainer {
         width: 46.375rem;
