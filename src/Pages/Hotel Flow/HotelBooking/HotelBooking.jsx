@@ -8,6 +8,8 @@ import CardHotelDetailFinal from "../../../Components/CardHotelDetailFinal/CardH
 import Navigation from "../../../Components/Nav/Nav";
 import Newsletter from "../../../Components/Newsletter/Newsletter";
 import Footer from "../../../Components/Footer/Footer";
+import earth from './../../../assets/images/Earth.png'
+import plane from './../../../assets/images/Vector1.svg'
 export default function HotelBooking({
   navButtons,
   navButtonsForMobile,
@@ -44,22 +46,32 @@ export default function HotelBooking({
               />
               <FlightForm />
             </div>
-            <FlightCard
-              page={"HotelBooking"}
-              imgFlightCard={imgHotelCard}
-              title={"CVK Park Bosphorus..."}
-              subtitle={
-                <p className="subtitle" style={{ marginBottom: "16px" }}>
-                  Superior room - 1 double bed or 2 twin beds
-                </p>
-              }
-              button={"4.2"}
-              price_Base_Fare={"240 $"}
-              price_Discount={"0 $"}
-              price_taxes={"20 $"}
-              price_Service_Fee={"5 $"}
-              price_total={"265 $"}
-            />
+            <div>
+              <FlightCard
+                page={"HotelBooking"}
+                imgFlightCard={imgHotelCard}
+                title={"CVK Park Bosphorus..."}
+                subtitle={
+                  <p className="subtitle" style={{ marginBottom: "16px" }}>
+                    Superior room - 1 double bed or 2 twin beds
+                  </p>
+                }
+                button={"4.2"}
+                price_Base_Fare={"240 $"}
+                price_Discount={"0 $"}
+                price_taxes={"20 $"}
+                price_Service_Fee={"5 $"}
+                price_total={"265 $"}
+              />
+              <div className="animation">
+                <div  className="plane">
+                  <img src={plane} alt="plane" />
+                </div>
+                <div className="earth">
+                  <img src={earth} alt="earth" />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       < Newsletter/>
