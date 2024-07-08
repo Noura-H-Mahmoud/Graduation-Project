@@ -198,6 +198,7 @@ const OSRoom=[{Title:`Room ${index}`,
               </div>
                 </>})}
                 </div>
+                </>})}
                 <div className='OS-Ti-FlexStyle'>
                 <div className='OS-Ti-Flex OS-Ti-Style' onClick={changeRoom}>
                   <div className='OS-Plus-Style'>+</div>
@@ -205,7 +206,6 @@ const OSRoom=[{Title:`Room ${index}`,
                   </div>
                 <div className='OS-applyDiv-Style' onClick={RoomHandler}><p className='OS-apply-Style'>Apply</p></div>
               </div>
-                </>})}
             </div>
             </div>
             <div className="MS-right">

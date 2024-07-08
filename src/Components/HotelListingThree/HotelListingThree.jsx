@@ -45,7 +45,7 @@ export default function HotelListingThree  ()  {
         ]
         useEffect(()=>{Aos.init();},[])
   return (
-    <section className='OS-Section-three'data-aos="fade-up"data-aos-easing="linear"data-aos-duration="3000">
+    <section className='OS-Section-three'data-aos="fade-up"data-aos-easing="linear"data-aos-duration="1500">
       <div className='OS-Line_Img'><img className='line' src={OSLine} alt="Line" />
       </div>
       <div>
