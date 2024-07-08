@@ -13,7 +13,10 @@ import imgticket from './../../../assets/images/hotel-ticket.png'
 
 import Footer from '../../../Components/Footer/Footer'
 import Newsletter from '../../../Components/Newsletter/Newsletter'
-export default function HotelBookingpage4() {
+export default function HotelBookingpage4({  
+  navButtons,
+  navButtonsForMobile,
+  navList,}) {
     const information = [
       {  id:1,
       time:"Thur, Dec 8",
@@ -66,10 +69,15 @@ export default function HotelBookingpage4() {
       ]
     return (
        <section className='MH-HotelBooking'>
-        <Navigation/>
+               <Navigation
+          buttons={navButtons}
+          navMobile={navButtonsForMobile}
+          isLandingPage={false}
+          navList={navList}
+        />
         <BookingTicket Main1={information} head={head} card={card}/>
         <Bookinginfo/>
-        {/* <Newsletter/> */}
+        <Newsletter/>
         <Footer/>
        </section>
     )

@@ -1,5 +1,5 @@
 .MH-info {
-    padding: 0 7% 200px 7%;
+    padding: 0 104px 120px 104px;
 }
 .MH-info h2 {
     font-family: var(--main-font);
@@ -43,4 +43,14 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
+}
+@media (max-width:992px) {
+    .MH-info {
+        padding: 0 50px 80px 50px;
+    }
+}
+@media (max-width:576px) {
+    .MH-info {
+        padding: 0 35px 50px 35px;
+    }
 }

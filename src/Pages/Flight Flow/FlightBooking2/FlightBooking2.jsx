@@ -17,7 +17,10 @@ import imgmap from './../../../assets/images/Booking-map.png'
 import imgticket from './../../../assets/images/flight-ticket.png'
 
 
-export default function FlightBooking2() {
+export default function FlightBooking2({  
+  navButtons,
+  navButtonsForMobile,
+  navList,}) {
   const information = [
 {  id:1,
   time:"12:00 pm",
@@ -82,10 +85,15 @@ export default function FlightBooking2() {
   ]
   return (
     <section className='MH-FlightBooking2'>
-      <Navigation/>
+        <Navigation
+          buttons={navButtons}
+          navMobile={navButtonsForMobile}
+          isLandingPage={false}
+          navList={navList}
+        />
       <BookingTicket  Main1={information} head={head} card={card}/>
       <Bookinginfo/>
-      {/* <Newsletter/> */}
+      <Newsletter/>
       <Footer/>
     </section>
   )

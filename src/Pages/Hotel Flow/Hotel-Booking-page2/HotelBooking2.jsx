@@ -7,15 +7,23 @@ import FlightCard from "./../../../Components/FlightCard/FlightCard";
 import imgHotelCard from './../../../assets/images/Booking detail (2).png'
 import Footer from './../../../Components/Footer/Footer';
 import Navigation from './../../../Components/Nav/Nav';
+import Newsletter from "../../../Components/Newsletter/Newsletter";
 import { Link } from 'react-router-dom';
 
-export default function HotelBooking2 () {
+export default function HotelBooking2 ({  navButtons,
+  navButtonsForMobile,
+  navList,}) {
     const linkto = [
-        <Link className='MH-addbtn ' to={"/Graduation-Project/hotelflow/booking4"}>Add Card</Link>
+        <Link className='MH-addbtn ' to={"/Graduation-Project/hotelflow/booking3"}>Add Card</Link>
     ]
     return (
         <section className="MH-Hotelbooking2">
-            <Navigation/>
+         <Navigation
+          buttons={navButtons}
+          navMobile={navButtonsForMobile}
+          isLandingPage={false}
+          navList={navList}
+        />
             <div className="MH-Hotel-main">
             <Path country={'Turkey'} city={'Istanbul'} hotel_name={'CVK Park Bosphorus Hotel Istanbul'}/>
               <div className="MH-booking-content">
@@ -32,6 +40,7 @@ export default function HotelBooking2 () {
                 </div>
               </div>
             </div>
+            <Newsletter/>
               <Footer/>
         </section>
     )

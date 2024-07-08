@@ -1,5 +1,5 @@
 .MH-container {
-    padding: 135px 105px 60px 104px;
+    padding: 135px 105px 0px 104px;
 }
 .MH-head {
     margin-bottom: 40px;
@@ -81,6 +81,7 @@
 }
 .MH-main {
     display: flex;
+    justify-content: space-between;
     padding-bottom: 64px;
 }
 .MH-main .MH-main-1-2 {
@@ -314,7 +315,7 @@
         border-radius:16px;
     }
     .MH-container {
-        padding: 135px 60px 60px 60px;
+        padding: 135px 50px 60px 50px;
     }
 @media (max-width:768px) {
 
