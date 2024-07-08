@@ -540,6 +540,7 @@
     background: #FAFAFA;
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 40px;
 }
 .RH_Flight_Details_Final .part1 .span {
     width: 92px;
@@ -594,7 +595,7 @@
     padding-bottom: 4px;
 }
 .RH_Flight_Details_Final .cards {
-    width: 1232px;
+   width: auto;
     height: 349px;
     padding: 32px 24px 32px 24px;
     gap: 24px;
@@ -604,6 +605,8 @@
     box-shadow: 0px 4px 16px 0px #1122110D;
     border: none;
     margin: 0 auto;
+    margin-left:104px ;
+    margin-right: 104px;
 }
 .RH_Flight_Details_Final .card-body {
     padding: 0;
@@ -697,6 +700,13 @@
     /* margin-right: 12px; */
 }
 
+.RH_Flight_Details_Final .part4-2 img.img1 {
+   padding-right: 24px;
+}
+.RH_Flight_Details_Final .part4-2 img.img3 {
+    padding-left: 24px;
+ }
+
 .RH_Flight_Details_Final .part3 .part3-2 .card-img{
     width: 24px;
     height: 24px;
@@ -762,6 +772,26 @@
     opacity: 0px;
      margin: 24px 0;
 }
+
+.RH_Flight_Details_Final .part4-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.RH_Flight_Details_Final .part4-3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.RH_Flight_Details_Final .part4-2{
+padding: 0 80px;
+}
+
+
+
 .RH_Flight_Details_Final .part4 .image-vector {
     width: 48px;
     height: 39px;
@@ -837,11 +867,14 @@
 
 }
 
-@media screen and (max-width: 934px)
+@media screen and (max-width: 930px)
 {
     .RH_plane-mobile{
         margin: 0 20px!important;
     }
+    .RH_Flight_Details_Final .part4-2 {
+        padding: 0 10px!important;
+      }
 }
 
 @media screen and (max-width: 864px)
@@ -871,11 +904,14 @@
     
 
 {
+
+    .RH_Flight_Details_Final .part4{
+        margin-top: 65px!important;
+    }
    
     .RH_Flight_Details_Final .part4{
         width: auto!important;
-        margin-top: 100px!important;
-    }
+height: auto;    }
 
     
     .RH_Flight_Details_Final .part4 .span1,.RH_Flight_Details_Final .part4 .span3{
@@ -884,8 +920,8 @@
     }
     .RH_Flight_Details_Final .part4 {
         width: auto !important;
-        margin-top: 100px !important;
-        flex-wrap: warp;
+height: auto;     
+   flex-wrap: warp;
         justify-content: center;
         flex-wrap: wrap;
     }

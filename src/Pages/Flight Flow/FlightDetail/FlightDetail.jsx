@@ -16,6 +16,8 @@ export default function FlightDetail({navButtons, navButtonsForMobile, navList})
       <FlightDeatailsGalary />
       <EmiratesAirlinesPolicies />
 <CardFlightDetailFinal />
+<CardFlightDetailFinal />
+<div style={{marginBottom:'80px'}}></div>
 <Newsletter />
       <Footer />
 

@@ -29,8 +29,10 @@
 
 
 .RH_Hero {
-    width: 1232px;
+   /* width: 1232px;*/
     margin: 0 auto;
+    margin-left:104px ;
+    margin-right: 104px;
     padding-top: 48px;
 }
 
@@ -65,7 +67,7 @@
     opacity: 0px;
     font-family: var(--second-font);
     font-size: var(--second-medium-font-size);
-    font-weight: var(--fourth-font-weight);
+    font-weight: 700;
     color: var(--main-text-color);
     line-height: var(--xxmedium-line-hieght);
     text-align: left;
@@ -77,9 +79,9 @@
     height: 39px;
     gap: 0px;
     opacity: 0px;
-    font-family: var(--main-font);
-    font-size: var(--medium-font-size);
-    font-weight: var(--fourth-font-weight);
+    font-family: 'Montserrat', sans-serif;;
+    font-size:32px;
+    font-weight: 700;
     line-height: var(--xxmedium-line-hieght);
     text-align: right;
     color: var(--price-color);
@@ -184,19 +186,28 @@ opacity: 0px;
    
   
         .RH_Hero {
-            width: 100%;
-            padding-left:20px!important;
-            padding-right: 20px!important;
+            width: auto;
+            
+        }
+
+        .RH_imgplane img{
+            width:100%!important;
         }
 
     }
 
     @media (max-width:1360px) and (min-width:1000px){
       
-        .RH_Hero {
-            width: 100%;
-            padding-left:20px!important;
-            padding-right: 20px!important;
+       
+    .RH_Hero {
+        /* width: 1232px;*/
+         margin: 0 auto;
+         margin-left:20px ;
+         margin-right: 20px;
+         padding-top: 48px;
+     }
+        .RH_imgplane img{
+            width:100%!important;
         }
     
     }
@@ -204,7 +215,14 @@ opacity: 0px;
 
 @media screen and (max-width:992px){
 
-    
+    .RH_Hero {
+        /* width: 1232px;*/
+         margin: 0 auto;
+         margin-left:20px ;
+         margin-right: 20px;
+         padding-top: 48px;
+     }
+     
     
 }
 
