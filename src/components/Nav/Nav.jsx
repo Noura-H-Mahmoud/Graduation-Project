@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom';
-import LandingPage from '../../Pages/LandingPage/LandingPage';
 import plane from '../../assets/images/plane.svg';
 import bed from '../../assets/images/bed.svg';
 import Logo from '../../assets/images/Logo.svg';
@@ -35,13 +34,17 @@ export default function Navigation({ buttons, navMobile, page, navList }) {
     <nav className={`${isScrolled ? 'scrolled' : ''} ${page === "landingpage" ? "NM_NavBar" : "AM_Navbar"}`}>
       <div className={page === 'landingpage' ? 'NM_Start' : 'AM_Start'}>
         <Link to="/Graduation-Project/flightflow" className={page === "landingpage" ? 'NM_FindFlight' : "AM_FindFlight"} rel="noopener noreferrer">
-          <img className={page === 'landingpage' ? '' : 'AM_Plane'} src={page === "landingpage" ? plane : blackPlane} alt="plane icon" /> Find Flight
+          <img className={page === "landingpage" ? (isScrolled ? '' : '') : 'AM_Plane'} src={page === "landingpage" ? (isScrolled ? blackPlane : plane) : blackPlane} alt="plane icon" />
+          Find Flight
         </Link>
         <Link to="/Graduation-Project/hotelflow" className={page === 'landingpage' ? 'NM_FindStays' : 'AM_FindStays'} rel="noopener noreferrer">
-          <img className='AM_Bed' src={page === "landingpage" ? bed : blackBed} alt="bed icon" /> Find Stays
+        <img className={page === "landingpage" ? (isScrolled ? 'AM-Bed' : '') : 'AM-Bed AM-margin'} src={page === "landingpage" ? (isScrolled ? blackBed : bed) : blackBed} alt="bed icon" />
+          Find Stays
         </Link>
       </div>
-      <img className={page === 'landingpage' ? 'NM_Logo' : 'AM_Logo'} src={page === "landingpage" ? Logo : blackLogo} alt="logo" />
+      <Link to="/Graduation-Project/" >
+        <img className={page === "landingpage" ? (isScrolled ? 'NM_Logo' : 'NM_Logo') : 'AM_Logo'} src={page === "landingpage" ? (isScrolled ? blackLogo : Logo) : blackLogo} alt="logo" />
+      </Link>
       <div className={page === "landingpage" ? 'NM_Buttons' : "AM_Buttons"}>
         {buttons}
       </div>

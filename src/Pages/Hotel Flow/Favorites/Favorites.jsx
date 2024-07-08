@@ -13,7 +13,9 @@ export default function Favorites({navButtons, navButtonsForMobile, navList}) {
       <Favoriteshead/>
       <Favoritesmain/>
       </div>
-      {/* <Newsletter/> */}
+      <div className='MH-Newsletter'>
+        <Newsletter/>
+        </div>
       <Footer/>
     </section>
   )

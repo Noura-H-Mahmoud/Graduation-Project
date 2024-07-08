@@ -15,12 +15,12 @@
 }
 
 .NM_NavBar.scrolled {
-    background: rgba(0, 0, 0, 0.8);
+    background-color: var(--fourth-bgcolor); 
+    box-shadow: 0px 4px 16px 0px #1122110D;
     top: 0;
     width: 100%;
     right: 0;
     left: 0;
-    /* backdrop-filter: blur(10px); */
 }
 
 .NM_Start {
@@ -42,13 +42,14 @@
     transition: .1s all ease-in-out;
 }
 
+.NM_NavBar.scrolled a,
+.AM_Navbar.scrolled a {
+  color: var(--main-text-color); 
+}
+
 .NM_Start a img {
     width: 22.5px;
     height: 19.5px;
-}
-
-.NM_Start a:hover {
-    color: var(--main-bgcolor);
 }
 
 .NM_FindFlight {
@@ -65,6 +66,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    top: 30px;
 }
 
 .NM_Buttons {
@@ -89,6 +91,16 @@
     padding: 15.5px 24px;
     border-radius: 8px;
     background-color: var(--second-text-color);
+}
+
+.NM_Signup.Scrolled {
+    background-color: var(--main-text-color);
+    color: var(--second-text-color);
+}
+
+.NM_Signup a.Scrolled {
+    background-color: var(--main-text-color);
+    color: var(--second-text-color);
 }
 
 .NM_LoginN {
@@ -148,11 +160,10 @@
     padding-top: 10rem;
     align-items: start;
     gap: 2rem;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--fourth-bgcolor);
     width: 14rem;
     border-top-left-radius: 30px;
     box-shadow: -31px 0px 20px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
 }
 
 .NM_End {
@@ -184,7 +195,7 @@
 
 .NM_End.open .NM_Link {
     text-decoration: none;
-    color: var(--second-text-color);
+    color: var(--main-text-color);
     position: relative;
 }
 
@@ -499,6 +510,11 @@
     border: 1.5px ;
     background-image: url(../../assets/images/rightarrow.svg);
 
+}
+/* by Noura */
+
+.AM-Bed.AM-margin{
+    margin-right: 3.5px;
 }
 /* ------------------------------------------------Whitebg nav------------------------------------------------ */
 /* ------------------------------------------------Whitebg nav------------------------------------------------ */

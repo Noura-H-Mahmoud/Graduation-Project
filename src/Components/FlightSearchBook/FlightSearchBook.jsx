@@ -3,6 +3,10 @@ import './FlightSearchBook.css'
 import {  Row } from 'react-bootstrap'
 import'aos/dist/aos.css'
 import Aos from 'aos'
+import travel1 from '../../assets/images/Travel-1.png'
+import travel2 from '../../assets/images/Travel-2.png'
+import travel3 from '../../assets/images/Travel-3.png'
+import travel4 from '../../assets/images/Travel-4.png'
 
 export default function FlightSearchBook () {
 const data =[
@@ -32,14 +36,14 @@ const data =[
         },
 ];
 
-const data2=[ {img:"./src/assets/images/Travel-3.png",
+const data2=[ {img: travel3,
      class:" img1 img2"},
-    {img:"./src/assets/images/Travel-4.png",  
+    {img: travel4,  
         class:" img img2"},  
    ]
-   const data3=[ {img:"./src/assets/images/Travel-1.png",
+   const data3=[ {img: travel1,
     class:" img1 "},
-   {img:"./src/assets/images/Travel-2.png",  
+   {img:travel2,  
        class:" img  img4"},  
   ]
   useEffect(()=>{Aos.init();},[])

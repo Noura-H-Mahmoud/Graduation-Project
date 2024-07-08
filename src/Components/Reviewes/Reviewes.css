@@ -3,7 +3,7 @@
     padding-bottom: 241px;
 }
 .MS-container{
-    margin: 0 104px;
+    margin: 0 var(  --main-padding);
 }
 .MS-pargraphReview{
     font-weight:var(  --main-font-weight);
@@ -17,14 +17,24 @@
     background-color: var(--second-text-color);
     font-size:var(  --xxsmall-font-size) ;
     font-weight: var(  --second-font-weight);
+    transition: all 0.7s;
 }
 .MS-reviewCards{
     display: flex;
     align-items: center;
     justify-content:start;
     gap: 48px;
-    margin-left:104px  !important;
+    margin-left:var(  --main-padding)  !important;
 }
+.MS-ReviewesSection button:hover{
+    background-color: var(--main-bgcolor);
+    }
+    @media (min-width:1500px) {
+        .MS-reviewCards{
+            margin: 0 var(--main-padding);
+            justify-content: space-between;
+        }
+    }
 @media (max-width:992px) {
     .MS-ReviewesSection{
         overflow-x:visible;

@@ -3,26 +3,27 @@ import './HotelListingTwo.css'
 import OSLine from './../../assets/images/line.svg'
 import'aos/dist/aos.css'
 import Aos from 'aos'
+import stars from '../../assets/images/Stars.svg'
 export default function HotelListingTow  ()  {
     const OSArrayReview=[
         {
         paragraf:'Near park',
-        img:'../src/assets/images/Stars.svg',
+        img: stars,
        
         },
         {
          paragraf:'Near nightlife',
-         img:"../src/assets/images/Stars.svg", 
+         img:stars, 
     
         },
         {
         paragraf:'Near theater',
-        img:"../src/assets/images/Stars.svg", 
+        img: stars, 
       
         }, 
         {
         paragraf:'Clean Hotel',
-        img:"../src/assets/images/Stars.svg", 
+        img: stars, 
         
         }, 
         ]; 
@@ -45,8 +46,8 @@ export default function HotelListingTow  ()  {
             </div>  
         </div>
            <div className='OS-Two-review' data-aos="fade-right"data-aos-easing="linear"data-aos-duration="1500">
-           {OSArrayReview.map((item)=>{
-             return<div className='OS-Twoo-review'> 
+           {OSArrayReview.map((item, index)=>{
+             return<div key={index} className='OS-Twoo-review'> 
              <img className='' src={item.img} alt="reviews" />
              <p className='OS-Two-review-par'>{item.paragraf}</p>
              </div>})}

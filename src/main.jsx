@@ -55,6 +55,24 @@ const State = () => {
     const [currentPage, setCurrentPage] = useState('landingpage');
     const [showDiv, setShowDiv] = useState(false); 
     const location = useLocation();
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    // for scroll by Noura
+        useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     useEffect(() => {
         if (location.pathname === '/Graduation-Project/') {
@@ -73,10 +91,11 @@ const State = () => {
         setShowDiv(!showDiv);
       };
     
-    const NM_Login2 = isLoginActive ? 'NM_Login' : 'NM_Signup';
-    const NM_Signup2 = isLoginActive ? 'NM_Signup' : 'NM_LoginN';
-    const NM_LinkLog = isLoginActive ? 'NM_LinkLogin' : 'NM_LinkSignup';
-    const NM_LinkSign = isLoginActive ? 'NM_LinkSignup' : 'NM_LinkLogin';
+    // for scroll and active by Noura
+    const NM_Login2 = isLoginActive ? (isScrolled ? 'NM_Login Scrolled' : 'NM_Login') : (isScrolled ? 'NM_Signup Scrolled' : 'NM_Signup');
+    const NM_Signup2 = isLoginActive ? (isScrolled ? 'NM_Signup Scrolled' : 'NM_Signup') : (isScrolled ? 'NM_LoginN Scrolled' : 'NM_LoginN');
+    const NM_LinkLog = isLoginActive ? (isScrolled ? 'NM_LinkLogin Scrolled' : 'NM_LinkLogin') : (isScrolled ? 'NM_LinkSignup Scrolled' : 'NM_LinkSignup');
+    const NM_LinkSign = isLoginActive ? (isScrolled ? 'NM_LinkSignup Scrolled' : 'NM_LinkSignup') : (isScrolled ? 'NM_LinkLogin Scrolled' : 'NM_LinkLogin');
 
     const Navlinks = ({ type, className, linkTo, linkText, imgSrc, imgAlt, onClick, classNameLink, afterImage, arrowAlt, arrowclass, textClass, imgClass }) => {
         if (type === 'button') {
@@ -250,6 +269,20 @@ const State = () => {
                             navList={navList}    
                             />
                         } />
+                        <Route path="booking2" element={
+                            <FlightBooking3
+                            navButtons={navButtons(true, false)}
+                            navButtonsForMobile={navButtonsForMobile}
+                            navList={navList}    
+                            />
+                        } />
+                        <Route path="booking3" element={
+                            <FlightBooking2
+                            navButtons={navButtons(true, false)}
+                            navButtonsForMobile={navButtonsForMobile}
+                            navList={navList}    
+                            />
+                        } />
                     </Route>
                     <Route path="/Graduation-Project/hotelflow" element={<HotelFlow />}>
                         <Route index element={<HotelSearch
@@ -263,8 +296,28 @@ const State = () => {
                             navButtonsForMobile={navButtonsForMobile}
                             navList={navList}    
                             />} />
-                        <Route path="detail" element={<HotelDetail />} />
-                        <Route path="booking" element={<HotelBooking />} />
+                        <Route path="detail" element={<HotelDetail 
+                        navButtons={navButtons(true, false)}
+                        navButtonsForMobile={navButtonsForMobile}
+                        navList={navList}
+                        />} />
+                        <Route path="booking" element={<HotelBooking
+                         navButtons={navButtons(true, false)}
+                         navButtonsForMobile={navButtonsForMobile}
+                         navList={navList}
+                        />
+                    }
+                         />
+                        <Route path="booking2" element={<HotelBooking2 
+                        navButtons={navButtons(true, false)}
+                        navButtonsForMobile={navButtonsForMobile}
+                        navList={navList}
+                        />} />
+                        <Route path="booking3" element={<HotelBookingpage4 
+                        navButtons={navButtons(true, false)}
+                        navButtonsForMobile={navButtonsForMobile}
+                        navList={navList}
+                        />} />
                         <Route path="favorites" element={<Favorites
                          navButtons={navButtons(true, false)}
                          navButtonsForMobile={navButtonsForMobile}
@@ -298,3 +351,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <State />
     </Router>
 );
+

@@ -7,7 +7,7 @@ export default  function HeroFlowSearch  (){
     const className="MS_HeroSearch OS_HeroSearch"
   return (
     <>
-       <Hero title={title} para={para} className={className} />
+       <Hero title={title} para={para} className={className}  disableAnimation = {true}/>
     </>
   )
 }

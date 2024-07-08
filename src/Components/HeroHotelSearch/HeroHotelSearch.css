@@ -12,6 +12,7 @@
     width: 440px;
     font-size: var(  --xxlarge-font-size);
     font-weight: var(  --fourth-font-weight);
+    display: block;
 }
 .MS_HeroSearch p{
     font-weight: var( --second-font-weight);

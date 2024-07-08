@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
     position: relative;
     height: 350px;
-    margin: 135px 104px 0px 104px;
+    margin: 135px var(  --main-padding) 0px var(  --main-padding);
     border-radius:var(--third-border-radius);
 }
 .MS-heroAccountImg button{
