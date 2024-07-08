@@ -135,7 +135,7 @@
     box-shadow: 0px 4px 16px 0px #1122110D;
 }
 
-.nav-item {
+.NM_Tabs .nav-item {
     width: 31.2%;
 }
 
@@ -212,7 +212,44 @@
     line-height: var(--xmedium-line-hieght);
     color: var(--main-text-color);
 }
+.MS-filterBtn {
+    display: none;
+    font-weight: var(  --third-font-weight);
+}
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 
+.popup-content {
+    background: var( --second-text-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.popup-close-btn {
+    background: var(--main-bgcolor);
+    color:var( --second-text-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: var(  --third-font-weight);
+}
 @media screen and (max-width: 1200px) {
     .NM_MainSection {
         flex-direction: column;
@@ -226,13 +263,30 @@
     .NM_Part2 {
         width: 100%;
     }
+    .MS-filter {
+        display: none;
+    }
+    
+    .MS-filterBtn {
+        display: block;
+        background-color:var(--main-bgcolor);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .MS-filterContent {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 992px) {
     .NM_HotelListing {
         padding: 48px var(--main-padding-home) 120px var(--main-padding-home);
     }
-
 }
 
 @media screen and (max-width: 768px) {

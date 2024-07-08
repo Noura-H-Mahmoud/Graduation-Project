@@ -57,6 +57,12 @@ z-index: 1;
     width: 14px;
     padding-right:1px;
 }
+.MS-FlightHotelCard button{
+    transition: all 0.7s;
+}
+.MS-FlightHotelCard button:hover{
+background-color:  #d86304;
+}
 @media (max-width: 576px) {
     .MS-FlightHotelCard{
         width: 100%;

@@ -1,21 +1,20 @@
-  import React from 'react'
-  import Navigation from '../../../Components/Nav/Nav'
-  import Footer from '../../../Components/Footer/Footer';
-  import Newsletter from '../../../Components/Newsletter/Newsletter';
-  import './FlightBooking2.css'
-  import BookingTicket from '../../../Components/Booking-detail-Tick/Bookingdetailticket';
-  import Bookinginfo from '../../../Components/Booking-detail-info/Bookingdetailinfo';
-  import img1 from './../../../assets/images/Vector 1.svg'
-  import img2 from './../../../assets/images/airplane2.svg'
-  import img3 from './../../../assets/images/Vector 4.svg'
-  import img4 from './../../../assets/images/Client-1.png'
-  import img5 from './../../../assets/images/calendar.svg'
-  import img6 from './../../../assets/images/timmer.svg'
-  import img7 from './../../../assets/images/door.svg'
-  import img8 from './../../../assets/images/person.svg'
-  import imgmap from './../../../assets/images/Booking-map.png'
-  import imgticket from './../../../assets/images/flight-ticket.png'
-
+import React from 'react'
+import Navigation from '../../../Components/Nav/Nav'
+import Footer from '../../../Components/Footer/Footer';
+import Newsletter from '../../../Components/Newsletter/Newsletter';
+import './FlightBooking2.css'
+import BookingTicket from '../../../Components/Booking-detail-Tick/Bookingdetailticket';
+import Bookinginfo from '../../../Components/Booking-detail-info/Bookingdetailinfo';
+import img1 from './../../../assets/images/Vector 1.svg'
+import img2 from './../../../assets/images/airplane2.svg'
+import img3 from './../../../assets/images/Vector 4.svg'
+import img4 from './../../../assets/images/Client-1.png'
+import img5 from './../../../assets/images/calendar.svg'
+import img6 from './../../../assets/images/timmer.svg'
+import img7 from './../../../assets/images/door.svg'
+import img8 from './../../../assets/images/person.svg'
+import imgmap from './../../../assets/images/Booking-map.png'
+import imgticket from './../../../assets/images/flight-ticket.png'
 
 
 export default function FlightBooking2() {

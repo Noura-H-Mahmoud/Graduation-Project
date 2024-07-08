@@ -21,6 +21,7 @@ color: var(--main-text-color);
 }
 .MS-rating{
     display: flex;
+    flex-wrap: wrap;
 }
 .MS-rating p{
     padding: 8px 16px ;
@@ -36,6 +37,9 @@ color: var(--main-text-color);
     font-weight: var( --second-font-weight);
     line-height: var( --small-line-hieght);
     cursor: pointer;
+}
+.MS-rating p:hover{
+background-color: var(--main-bgcolor);
 }
 .MS-RedPargraph{
 font-size: var(--xxsmall-font-size);
@@ -55,6 +59,7 @@ color:var(  --second-acount-color);
     display: flex;
     align-items: center;
     padding-bottom: 8px;
+    width: max-content;
 }
 .MS-check-box input[type="checkbox"] {
     appearance: none;
@@ -68,5 +73,12 @@ color:var(  --second-acount-color);
 }
 
 .MS-check-box input[type="checkbox"]:checked {
-    background-color: orange; 
+    background-color: var(--main-bgcolor); 
 }
+.arrow {
+    transition: transform 0.5s ease;
+  }
+  
+  .arrow.open {
+    transform: rotate(180deg);
+  }

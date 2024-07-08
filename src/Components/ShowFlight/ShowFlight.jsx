@@ -29,7 +29,7 @@ export default function ShowFlight() {
       setValue(`${parts[1]} - ${parts[0]}`);
     }
   };
-  const [trip, setTrip] = React.useState('Return');
+  const [trip, setTrip] = useState('Return');
   const handleChange = (event) => {
     setTrip(event.target.value);
   };
@@ -128,7 +128,7 @@ export default function ShowFlight() {
             <Dialog open={open} onClose={handleCloseDate }>
         <DialogTitle>Choose Dates</DialogTitle>
         <DialogContent>
-          <Box display="flex" flexDirection="column" gap={2}>
+          <Box display="flex" flexDirection="column" gap={2} mt={2}>
             <DatePicker
               label="Start Date"
               value={startDate}

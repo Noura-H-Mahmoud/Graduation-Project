@@ -1,5 +1,5 @@
 .MS-TabContainer{
-    padding: 0 104px;
+    padding: 0 var(  --main-padding);
 }
 .MS-TabAccount{
     width: 100%;
@@ -68,12 +68,23 @@ font-weight: var( --fourth-font-weight);
     color: var(   --main-text-color);
     padding: 8px 16px;
     border-radius: 4px;
+    transition: all 0.7s;
+  }
+  .MS-accountbtn:hover{
+    background-color: var(--first-account-color);
   }
   .MS-accountbtn img{
     padding-right: 4px;
   }
   .MS-accountbtn1{
     margin-right:8px ;
+  }
+  .MS-input-filed{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    outline: none;
+    border: 2px solid var(--first-account-color);
   }
   @media (max-width: 1300px){
     .MS-TabAccount .nav-link{
