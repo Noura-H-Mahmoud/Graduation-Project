@@ -1,12 +1,11 @@
 .RH_Emirates {
     background-color: #fcb365;
-   width: 1232px;
+   width: auto;
     height: 102px;
     padding: 16px;
     margin: 0 auto;
     border-radius: 8px;
-  margin-top: 80px!important;
-    margin-bottom: 40px;
+  margin: 40px 104px!important;
 }
 
 .RH_title{
@@ -69,8 +68,8 @@ text-align: left;
       flex-wrap: wrap;
       width: auto!important;
       height: auto!important;
-      margin-left: 40px;
-      margin-right: 40px;
+      margin-left: 40px!important;
+      margin-right: 40px!important;
 
     }
     .RH_container_time {
