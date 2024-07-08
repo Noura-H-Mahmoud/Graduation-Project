@@ -1,13 +1,9 @@
-import './FlightBooking.css'
-import Navigation from "../../../Components/Nav/Nav";
-import Path from "../../../Components/Path/Path";
 import CardFlightDetailFinal from "../../../Components/CardFlightDetailFinal/CardFlightDetailFinal";
 import FlightAccordion from "../../../Components/FlightAccordion/FlightAccordion";
 import FlightForm from "../../../Components/FlightForm/FlightForm";
-import FlightCard from "../../../Components/FlightCard/FlightCard";
-import Newsletter from "../../../Components/Newsletter/Newsletter";
-import Footer from "../../../Components/Footer/Footer";
 import imgFlightCard from './../../../assets/images/Booking detail.png'
+import Navigation from "../../../Components/Nav/Nav";
+import Newsletter from "../../../Components/Newsletter/Newsletter";
 export default function FlightBooking({navButtons, navButtonsForMobile,navList}) {
   return (
     <section className="FlightBooking">
