@@ -1,19 +1,19 @@
-import './Favouritesmain.css'
-import img1 from './../../assets/images/Hotel-listing-1.png'
-import img2 from './../../assets/images/Location-f.svg'
-import img3 from './../../assets/images/star-f.svg'
-import img4 from './../../assets/images/cafe-f.svg'
-import img5 from './../../assets/images/Place-2-f.png'
-import img6 from './../../assets/images/Place-3-f.png'
-import img7 from './../../assets/images/NMLastInfo.jpeg'
-import whiteHeart from '../.././assets/images/NMwhiteheart.svg'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './Favouritesmain.css';
+import img1 from './../../assets/images/Hotel-listing-1.png';
+import img2 from './../../assets/images/Location-f.svg';
+import img3 from './../../assets/images/star-f.svg';
+import img4 from './../../assets/images/cafe-f.svg';
+import img5 from './../../assets/images/Place-2-f.png';
+import img6 from './../../assets/images/Place-3-f.png';
+import img7 from './../../assets/images/NMLastInfo.jpeg';
+import whiteHeart from '../.././assets/images/NMwhiteheart.svg';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Favoritesmain() {
     useEffect(() => {
@@ -26,6 +26,7 @@ export default function Favoritesmain() {
 
     const location = useLocation();
     const isListingPage = location.pathname === '/Graduation-Project/hotelflow/listing';
+    const isFavoritesPage = location.pathname === '/Graduation-Project/hotelflow/favorites';
 
     const initialInfo = [
         {
@@ -35,7 +36,7 @@ export default function Favoritesmain() {
             reviews: "371 reviews",
             price: "240 $",
             image: img1,
-            isFavorite: false
+            isFavorite: true
         },
         {
             id: 2,
@@ -44,7 +45,7 @@ export default function Favoritesmain() {
             reviews: "54 reviews",
             price: "104 $",
             image: img5,
-            isFavorite: isListingPage ? true :false
+            isFavorite: true
         },
         {
             id: 3,
@@ -53,29 +54,51 @@ export default function Favoritesmain() {
             reviews: "54 reviews",
             price: "104 $",
             image: img6,
-            isFavorite: isListingPage ? true :false
+            isFavorite: true
+        },
+        {
+            id: 4,
+            title: "Eresin Hotels Sultanahmet - Boutique Class",
+            location: "Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
+            reviews: "54 reviews",
+            price: "104 $",
+            image: img7,
+            isFavorite: false
         }
     ];
 
-    const [info, setInfo] = useState(isListingPage ? initialInfo.concat({
-        id: 4,
-        title: "Eresin Hotels Sultanahmet - Boutique Class",
-        location: "Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
-        reviews: "54 reviews",
-        price: "104 $",
-        image: img7,
-        isFavorite: isListingPage ? true :false
-    }) : initialInfo);
+    const [info, setInfo] = useState(() => {
+        const savedInfo = JSON.parse(localStorage.getItem('hotelInfo'));
+        return savedInfo || initialInfo;
+    });
 
-    const toggleFavorite = (index) => {
-        const updatedInfo = [...info];
-        updatedInfo[index].isFavorite = !updatedInfo[index].isFavorite;
+    useEffect(() => {
+        localStorage.setItem('hotelInfo', JSON.stringify(info));
+    }, [info]);
+
+    const toggleFavorite = (id) => {
+        const updatedInfo = info.map(item => {
+            if (item.id === id) {
+                return {
+                    ...item,
+                    isFavorite: !item.isFavorite
+                };
+            }
+            return item;
+        });
         setInfo(updatedInfo);
     };
 
+    const removeFromFavorites = (id) => {
+        const updatedInfo = info.filter(item => item.id !== id);
+        setInfo(updatedInfo);
+    };
+
+    const displayedInfo = isFavoritesPage ? info.filter(item => item.isFavorite) : info;
+
     return (
         <section className={isListingPage ? 'MH-favorites-main NM' : 'MH-favorites-main'}>
-            {info.map((item, index) => (
+            {displayedInfo.map(item => (
                 <div key={item.id} className={isListingPage ? 'MH-favorites-box NM' : 'MH-favorites-box'}>
                     <div className={isListingPage ? 'MH-image NM' : 'MH-image'} data-aos='flip-right'>
                         <div className={isListingPage ? 'MH-number-img NM' : 'MH-number-img'}>
@@ -119,11 +142,11 @@ export default function Favoritesmain() {
                             </div>
                         </div>
                         <div className={isListingPage ? 'MH-box-button NM' : 'MH-box-button'}>
-                            <div className={isListingPage ? 'MH-box-button1 NM' : 'MH-box-button1'} onClick={() => toggleFavorite(index)}>
+                            <div className={isListingPage ? 'MH-box-button1 NM' : 'MH-box-button1'} onClick={() => toggleFavorite(item.id)}>
                                 {item.isFavorite ? (
-                                    <img src={whiteHeart} alt="white-heart" />
+                                    <FontAwesomeIcon icon={faHeart} onClick={() => removeFromFavorites(item.id)}/>
                                 ) : (
-                                    <FontAwesomeIcon icon={faHeart} />
+                                    <img src={whiteHeart} alt="white-heart" />
                                 )}
                             </div>
 
@@ -145,3 +168,4 @@ export default function Favoritesmain() {
         </section>
     )
 }
+
