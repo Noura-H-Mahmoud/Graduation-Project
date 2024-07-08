@@ -49,7 +49,7 @@
 .OS-Div-review:hover {
     background-color: transparent;
     border: 1px solid var(--main-bgcolor);
-    transition: all 1s;
+    transition: all .5s;
 }
 
 .OS-Par-review {
@@ -87,7 +87,7 @@
 
 .OS-Two-review :hover {
     background-color: var(--main-bgcolor);
-    transition: all 1s;
+    transition: all.5s;
 }
 
 .OS-Twoo-review img {

@@ -63,7 +63,7 @@
     .OS-Btn-Room:hover {
         background-color: transparent;
         border: 1px solid var(--main-bgcolor);
-        transition: all 1s;
+        transition: all .5s;
     }
     
     .line1 {

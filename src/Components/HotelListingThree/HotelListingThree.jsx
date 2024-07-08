@@ -7,6 +7,7 @@ import room2 from "../../assets/images/Room-2.png";
 import room3 from "../../assets/images/Room-3.png";
 import room4 from "../../assets/images/Room-4.png";
 import line from "../../assets/images/line.svg";
+import{Link} from 'react-router-dom'
 export default function HotelListingThree() {
   const OSArrayRoom = [
     {
@@ -67,7 +68,7 @@ export default function HotelListingThree() {
                         {item.paragraff}{" "}
                         <span className="OS-TextSpan-style">{item.span}</span>
                       </p>
-                      <button className="OS-Btn-Room">{item.btn}</button>
+                      <Link className='' to='/Graduation-Project/hotelflow/booking'>  <button className="OS-Btn-Room">{item.btn}</button></Link>    
                     </div>
                   </div>
                 </div>

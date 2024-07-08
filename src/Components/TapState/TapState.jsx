@@ -1,56 +1,63 @@
 import React from 'react'
 import './TapState.css'
+import cvk from '../../assets/images/cvk.png'
+import linel from '../../assets/images/LineL.svg'
+
+import HourIcon from '../../assets/images/timmer.svg'
+import GateIcon from '../../assets/images/doorclosed.svg'
+
+import btnContent2 from '../../assets/images/chevron_forward.svg'
 export default  function TapState  ()  {
     const OSArrowFlight=[{
-        img:'./src/assets/images/cvk.png',
+        img:cvk,
         paragraf:'Check-In',
         number1:'Thur, Dec 8',
-        linel:'./src/assets/images/LineL.svg',
+        linel:linel,
         number2:'Fri, Dec 9',
        dateText:'Check-In time',
         Date:'12:00pm',
-        HourIcon:'./src/assets/images/timmer.svg',
+        HourIcon:HourIcon,
         time:'Check-In out',
         TimeText:'11:30am',
-        GateIcon:'./src/assets/images/doorclosed.svg',
+        GateIcon:GateIcon,
         gate:'Room no.',
         GateText:'On arrival',
         btnContent1:'Download Ticket',
-        btnContent2:'./src/assets/images/chevron_forward.svg'
+        btnContent2:btnContent2
     },
     {
-        img:'./src/assets/images/cvk.png',
-        paragraf:'Check-In',
-        number1:'Thur, Dec 8',
-        linel:'./src/assets/images/LineL.svg',
-        number2:'Fri, Dec 9',
-       dateText:'Check-In time',
-        Date:'12:00pm',
-        HourIcon:'./src/assets/images/timmer.svg',
-        time:'Check-In out',
-        TimeText:'11:30am',
-        GateIcon:'./src/assets/images/doorclosed.svg',
-        gate:'Room no.',
-        GateText:'On arrival',
-        btnContent1:'Download Ticket',
-        btnContent2:'./src/assets/images/chevron_forward.svg'
+      img:cvk,
+      paragraf:'Check-In',
+      number1:'Thur, Dec 8',
+      linel:linel,
+      number2:'Fri, Dec 9',
+     dateText:'Check-In time',
+      Date:'12:00pm',
+      HourIcon:HourIcon,
+      time:'Check-In out',
+      TimeText:'11:30am',
+      GateIcon:GateIcon,
+      gate:'Room no.',
+      GateText:'On arrival',
+      btnContent1:'Download Ticket',
+      btnContent2:btnContent2
     },
     {
-    img:'./src/assets/images/cvk.png',
-    paragraf:'Check-In',
-    number1:'Thur, Dec 8',
-        linel:'./src/assets/images/LineL.svg',
-        number2:'Fri, Dec 9',
-       dateText:'Check-In time',
-        Date:'12:00pm',
-        HourIcon:'./src/assets/images/timmer.svg',
-        time:'Check-In out',
-        TimeText:'11:30am',
-        GateIcon:'./src/assets/images/doorclosed.svg',
-        gate:'Room no.',
-        GateText:'On arrival',
-        btnContent1:'Download Ticket',
-        btnContent2:'./src/assets/images/chevron_forward.svg'
+      img:cvk,
+      paragraf:'Check-In',
+      number1:'Thur, Dec 8',
+      linel:linel,
+      number2:'Fri, Dec 9',
+     dateText:'Check-In time',
+      Date:'12:00pm',
+      HourIcon:HourIcon,
+      time:'Check-In out',
+      TimeText:'11:30am',
+      GateIcon:GateIcon,
+      gate:'Room no.',
+      GateText:'On arrival',
+      btnContent1:'Download Ticket',
+      btnContent2:btnContent2
     },
 ]
   return (
