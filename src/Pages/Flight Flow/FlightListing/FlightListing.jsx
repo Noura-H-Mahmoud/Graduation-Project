@@ -4,21 +4,17 @@ import FormWithOutTab from '../../../Components/FormWithOutTab/FormWithOutTab';
 import Footer from '../../../Components/Footer/Footer';
 import FilterFlight from '../../../Components/FilterFlight/FilterFLight';
 import './FlightListing.css';
+import Newsletter from '../../../Components/Newsletter/Newsletter';
+import TabsFlightListing from '../../../Components/TabsFlightListing/TabsFlightListing'
 
 export default function FlightListing({ navButtons, navButtonsForMobile,navList }) {
   return (
-    <div className='AM_flightListing'>
-      <header className='header'>
+    < >
         <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList} />
-        <FormWithOutTab />
-      </header>
-      {/* <main>
-        <FilterFlight />
-      </main>
-      <footer>
-        <Footer />
-      </footer> */}
-    </div>
+        <TabsFlightListing/>
+        <Newsletter/>
+        <Footer/>
+    </>
   );
 }
   

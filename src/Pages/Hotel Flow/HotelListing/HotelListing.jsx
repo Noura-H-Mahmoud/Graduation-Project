@@ -11,14 +11,11 @@ export default function HotelListing({ navButtons, navButtonsForMobile,navList }
   return (
     <>
       <Navigation buttons={navButtons} navMobile={navButtonsForMobile} isLandingPage={false} navList={navList}/>
-      {/* <HotelListingOne/>
- <HotelListingTow/>
- <HotelListingThree/> */}
       <TabsHotelListing />
       <Newsletter />
       <Footer />
-
     </>
 
   )
 }
+
