@@ -1,7 +1,7 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import "./ShowFlight.css"
 import * as React from 'react';
-import { Select, MenuItem, InputLabel, FormControl, Popover,OutlinedInput, Dialog, DialogActions, DialogContent, DialogTitle, Button, Box } from '@mui/material';
+import { Select, MenuItem, InputLabel, FormControl, Popover, OutlinedInput, Dialog, DialogActions, DialogContent, DialogTitle, Button, Box } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import Tab from 'react-bootstrap/Tab';
@@ -12,17 +12,17 @@ import btn from "./../../assets/images/Vector (3).svg"
 import plus from "./../../assets/images/Vector (10).svg"
 import arrowdown from "./../../assets/images/Vector (7).svg"
 import twoArrow from "./../../assets/images/Vector (5).svg"
-import date from"./../../assets/images/date.svg"
-import building from"./../../assets/images/building.svg"
-import user from"./../../assets/images/User.svg"
+import date from "./../../assets/images/date.svg"
 import { styled } from '@mui/system';
-import { Link } from 'react-router-dom';
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
-export default function ShowFlight() {
-  const [value, setValue] = useState('Lahore - Karachi');
+import { useNavigate } from 'react-router-dom';
 
+export default function ShowFlight() {
+  const navigate = useNavigate();
+  const token = localStorage.getItem('authToken');
+  const [value, setValue] = useState('Lahore - Karachi');
   const handleImageClick = () => {
     const parts = value.split(' - ');
     if (parts.length === 2) {
@@ -69,6 +69,15 @@ export default function ShowFlight() {
   const handleCloseDate = () => {
     setOpen(false);
   };
+
+  const handleShowPlaces = () => {
+    if (token) {
+      navigate('/Graduation-Project/flightflow/listing');
+    } else {
+      navigate('/Graduation-Project/auth/login');
+    }
+  };
+
   return (
     <>
       <div className='MS-showFlight container'>
@@ -77,8 +86,7 @@ export default function ShowFlight() {
           id="uncontrolled-tab-example"
           className="mb-3 MS-tabs"
         >
-          <Tab eventKey="Flights" title={<spsn className="MS-span MS-border"><img src={plane} alt="plane" className="MS_icon" />Flights</spsn>} className="Ms-tabhome">
-
+          <Tab eventKey="Flights" title={<span className="MS-span MS-border"><img src={plane} alt="plane" className="MS_icon" />Flights</span>} className="Ms-tabhome">
             <div className="MS-textfields">
               <TextField
                 label="From - To"
@@ -90,133 +98,131 @@ export default function ShowFlight() {
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
-                      <img src={twoArrow} alt="icon" className="MS-field-icon" onClick={handleImageClick}
-              style={{ cursor: 'pointer' }}/>
+                      <img src={twoArrow} alt="icon" className="MS-field-icon" onClick={handleImageClick} style={{ cursor: 'pointer' }} />
                     </InputAdornment>
                   ),
                 }}
               />
-                  <FormControl variant="outlined" size="large" className="MS-Returnfield">
-      <InputLabel id="trip-label">Trip</InputLabel>
-      <CustomSelect
-        labelId="trip-label"
-        id="outlined-size-small"
-        value={trip}
-        onChange={handleChange}
-        endAdornment={
-          <InputAdornment position="end">
-            <img src={arrowdown} alt="icon" className="MS-field-icon" />
-          </InputAdornment>
-        }
-        label="Trip"
-      >
-        <MenuItem value="Return">Return</MenuItem>
-        <MenuItem value="One-Way">One-Way</MenuItem>
-        <MenuItem value="Multi-City">Multi-City</MenuItem>
-      </CustomSelect>
-    </FormControl>
+              <FormControl variant="outlined" size="large" className="MS-Returnfield">
+                <InputLabel id="trip-label">Trip</InputLabel>
+                <CustomSelect
+                  labelId="trip-label"
+                  id="outlined-size-small"
+                  value={trip}
+                  onChange={handleChange}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <img src={arrowdown} alt="icon" className="MS-field-icon" />
+                    </InputAdornment>
+                  }
+                  label="Trip"
+                >
+                  <MenuItem value="Return">Return</MenuItem>
+                  <MenuItem value="One-Way">One-Way</MenuItem>
+                  <MenuItem value="Multi-City">Multi-City</MenuItem>
+                </CustomSelect>
+              </FormControl>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
-    <TextField
-                 label="Depart - Return"
-                 value={`${startDate.format('DD MMM YY')} - ${endDate.format('DD MMM YY')}`}
-                 size="large"
-                 onClick={handleClickOpen}
-                readOnly
-                variant="outlined"
+                <TextField
+                  label="Depart - Return"
+                  value={`${startDate.format('DD MMM YY')} - ${endDate.format('DD MMM YY')}`}
+                  size="large"
+                  onClick={handleClickOpen}
+                  readOnly
+                  variant="outlined"
+                  className="MS-field"
+                />
+                <Dialog open={open} onClose={handleCloseDate}>
+                  <DialogTitle>Choose Dates</DialogTitle>
+                  <DialogContent>
+                    <Box display="flex" flexDirection="column" gap={2} mt={2}>
+                      <DatePicker
+                        label="Start Date"
+                        value={startDate}
+                        onChange={(newValue) => setStartDate(newValue)}
+                        renderInput={(params) => <TextField {...params} />}
+                      />
+                      <DatePicker
+                        label="End Date"
+                        value={endDate}
+                        onChange={(newValue) => setEndDate(newValue)}
+                        renderInput={(params) => <TextField {...params} />}
+                      />
+                    </Box>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={handleCloseDate} color="primary">
+                      Close
+                    </Button>
+                  </DialogActions>
+                </Dialog>
+              </LocalizationProvider>
+              <TextField
+                label="Passenger - Class"
+                id="outlined-size-small"
+                value={`${passengerCount} Passenger, ${classType}`}
+                size="large"
                 className="MS-field"
-      />
-            <Dialog open={open} onClose={handleCloseDate }>
-        <DialogTitle>Choose Dates</DialogTitle>
-        <DialogContent>
-          <Box display="flex" flexDirection="column" gap={2} mt={2}>
-            <DatePicker
-              label="Start Date"
-              value={startDate}
-              onChange={(newValue) => setStartDate(newValue)}
-              renderInput={(params) => <TextField {...params} />}
-            />
-            <DatePicker
-              label="End Date"
-              value={endDate}
-              onChange={(newValue) => setEndDate(newValue)}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </Box>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCloseDate} color="primary">
-            Close
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </LocalizationProvider>
-          <TextField
-        label="Passenger - Class"
-        id="outlined-size-small"
-        value={`${passengerCount} Passenger, ${classType}`}
-        size="large"
-        className="MS-field"
-        onClick={handleClick}
-        variant="outlined"
-      />
-
-      <Popover
-        open={Boolean(anchorEl)}
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-      >
-        <div style={{ padding: 20 }}>
-          <FormControl variant="outlined" size="small" fullWidth>
-            <InputLabel id="passenger-label">Passenger</InputLabel>
-            <OutlinedInput
-              id="passenger-input"
-              type="number"
-              value={passengerCount}
-              onChange={handlePassengerChange}
-              inputProps={{min:0}}
-              label="Passenger"
-            />
-          </FormControl>
-          <FormControl variant="outlined" size="small" fullWidth style={{ marginTop: 10 }}>
-            <InputLabel id="class-label">Class</InputLabel>
-            <Select
-              labelId="class-label"
-              id="class-select"
-              value={classType}
-              onChange={handleClassChange}
-              label="Class"
-            >
-              <MenuItem value="Economy">Economy</MenuItem>
-              <MenuItem value="Business class">Business class</MenuItem>
-              <MenuItem value="First class">First class</MenuItem>
-            </Select>
-          </FormControl>
-        </div>
-      </Popover>
+                onClick={handleClick}
+                variant="outlined"
+              />
+              <Popover
+                open={Boolean(anchorEl)}
+                anchorEl={anchorEl}
+                onClose={handleClose}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'left',
+                }}
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'left',
+                }}
+              >
+                <div style={{ padding: 20 }}>
+                  <FormControl variant="outlined" size="small" fullWidth>
+                    <InputLabel id="passenger-label">Passenger</InputLabel>
+                    <OutlinedInput
+                      id="passenger-input"
+                      type="number"
+                      value={passengerCount}
+                      onChange={handlePassengerChange}
+                      inputProps={{ min: 0 }}
+                      label="Passenger"
+                    />
+                  </FormControl>
+                  <FormControl variant="outlined" size="small" fullWidth style={{ marginTop: 10 }}>
+                    <InputLabel id="class-label">Class</InputLabel>
+                    <Select
+                      labelId="class-label"
+                      id="class-select"
+                      value={classType}
+                      onChange={handleClassChange}
+                      label="Class"
+                    >
+                      <MenuItem value="Economy">Economy</MenuItem>
+                      <MenuItem value="Business class">Business class</MenuItem>
+                      <MenuItem value="First class">First class</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+              </Popover>
             </div>
             <div className="MS-right">
               <a><img src={plus} alt="plus" className="MS-plus" />Add Promo Code</a>
-              <Link to="/Graduation-Project/flightflow/listing"> <button className="MS-btnFlight"><img src={btn} alt="arrow" />Show Filghts</button> </Link>
+              <button className="MS-btnFlight" onClick={handleShowPlaces}><img src={btn} alt="arrow" />Show Flights</button>
             </div>
           </Tab>
-          <Tab eventKey="Stays" title={<spsn className="MS-span MS-Stays"><img src={car} alt="car" className="MS_icon" />Stays</spsn>}>
-          <div className="MS-textfields">
+          <Tab eventKey="Stays" title={<span className="MS-span MS-Stays"><img src={car} alt="car" className="MS_icon" />Stays</span>}>
+            <div className="MS-textfields">
               <TextField
-               InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                     <img src={car} alt="icon" className="MS-field-icon" />
-                  </InputAdornment>
-                ),
-              }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <img src={car} alt="icon" className="MS-field-icon" />
+                    </InputAdornment>
+                  ),
+                }}
                 label="Enter Destination"
                 id="outlined-size-small"
                 defaultValue="Istanbul, Turkey"
@@ -228,11 +234,11 @@ export default function ShowFlight() {
                 id="outlined-size-small"
                 defaultValue="Fri 12/2"
                 size="large"
-                 className="MS-field1"
+                className="MS-field1"
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
-                       <img src={date} alt="icon" className="MS-field-icon" />
+                      <img src={date} alt="icon" className="MS-field-icon" />
                     </InputAdornment>
                   ),
                 }}
@@ -244,12 +250,12 @@ export default function ShowFlight() {
                 size="large"
                 className="MS-field1"
                 InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                         <img src={date} alt="icon" className="MS-field-icon" />
-                      </InputAdornment>
-                    ),
-                  }}
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <img src={date} alt="icon" className="MS-field-icon" />
+                    </InputAdornment>
+                  ),
+                }}
               />
               <TextField
                 label="Rooms & Guests"
@@ -257,29 +263,22 @@ export default function ShowFlight() {
                 defaultValue="1 room, 2 guests"
                 size="large"
                 className="MS-field1"
-                InputProps={{
-                    startAdornment: (
-                        <InputAdornment position="end">
-                           <img src={user} alt="icon" className="MS-field-icon" />
-                        </InputAdornment>
-                    ),
-                    endAdornment: (
-                      <InputAdornment position="end">
-                         <img src={arrowdown} alt="icon" className="MS-field-icon" />
-                      </InputAdornment>
-                    ),
-                  }}
+              />
+              <TextField
+                label="Offer Code"
+                id="outlined-size-small"
+                defaultValue="CJHYE56"
+                size="large"
+                className="MS-field1"
               />
             </div>
             <div className="MS-right">
-            <a><img src={plus} alt="plus" className="MS-plus" />Add Promo Code</a>
-            <Link to="/Graduation-Project/hotelflow/listing">
-              <button className="MS-btnFlight"><img src={building} alt="arrow" />Show Places</button>
-              </Link>
+              <a><img src={plus} alt="plus" className="MS-plus" />Add Promo Code</a>
+              <button className="MS-btnFlight"><img src={btn} alt="arrow" />Show Stays</button>
             </div>
           </Tab>
         </Tabs>
       </div>
     </>
-  )
+  );
 }

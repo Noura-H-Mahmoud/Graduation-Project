@@ -51,7 +51,7 @@ const data2=[ {img: travel3,
     <>
 <section className='OS_Travel_Section' data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1500">
-    <div className='OS_one_Title ' >
+    <div className='OS-line'>
             <div className='OS_Title_Book'>
             <h3>Fall into travel</h3>
             <p>Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.</p>

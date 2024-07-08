@@ -274,7 +274,9 @@
         padding-left: 24px;
         padding-right: 20px;
     }
-    
+    .OS-line{
+        display: flex;
+    }
     @media screen and (max-width:1431px) {
         .OS-Travel4 {
             margin-top: 10px;

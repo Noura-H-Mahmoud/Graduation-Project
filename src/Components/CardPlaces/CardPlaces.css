@@ -24,6 +24,11 @@ font-size: var(  --xxsmall-font-size);
 font-weight: var(  --second-font-weight);
 line-height: var(  --xxsmall-line-hieght);
 }
+.MS-CardPlace:hover{
+    scale: 1.1;
+    box-shadow: 0px 4px 5px 0px var(--main-bgcolor);
+    cursor: pointer;
+}
 @media (max-width:576px) {
     .MS-CardPlace{
         width: 100%;
