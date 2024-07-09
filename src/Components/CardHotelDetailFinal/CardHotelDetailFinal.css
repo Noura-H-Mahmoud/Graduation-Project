@@ -111,7 +111,15 @@
     justify-content: center;
     align-items: center;
 }
-
+.Aya_Hotel_Details_Final .part2:hover {
+    box-shadow: 1px 1px 12px 0px #FF8500;
+    cursor: pointer;
+}
+.Aya_Hotel_Details_Final .part3-2 .img2:hover {
+    margin-bottom: 10px;
+    transition-duration: .3s;
+    cursor: pointer;
+}
 @media (min-width : 1310px) and (max-width : 1400px) {
     .Aya_Hotel_Details_Final ,.Aya_Hotel_Details_Final .cards {
         width: 46.375rem;

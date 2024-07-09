@@ -9,15 +9,23 @@ import  Footer from "../../../Components/Footer/Footer";
 import imgFlightCard from './../../../assets/images/Booking detail.png'
 import './FlightBooking3.css'
 import { Link } from "react-router-dom";
+import Newsletter from "../../../Components/Newsletter/Newsletter";
 
-export default function FlightBooking3() {
+export default function FlightBooking3({  navButtons,
+    navButtonsForMobile,
+    navList,}) {
     const linkto = [
         // eslint-disable-next-line react/jsx-key
-        <Link className='MH-addbtn ' to={"/Graduation-Project/flightflow/booking1"}>Add Card</Link>
+        <Link className='MH-addbtn ' to={"/Graduation-Project/flightflow/booking3"}>Add Card</Link>
     ]
     return (
         <section className="MH-FlightBooking">
-            <Navigation/>
+                           <Navigation
+          buttons={navButtons}
+          navMobile={navButtonsForMobile}
+          isLandingPage={false}
+          navList={navList}
+        />
             
             <div className="MH-FlightBooking3">
             <Path country={'Turkey'} city={'Istanbul'} hotel_name={'CVK Park Bosphorus Hotel Istanbul'} />
@@ -37,6 +45,7 @@ export default function FlightBooking3() {
             </div>    
             </div>  
         </div>
+        <Newsletter/>
         <Footer/>
         </section>
     )

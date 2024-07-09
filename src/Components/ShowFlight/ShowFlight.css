@@ -93,6 +93,18 @@
       .MS-field-icon.is-open {
         transform: rotate(360deg);
       }
+      .MS-field .MuiInputLabel-root.Mui-focused,
+      .MS-Returnfield .MuiInputLabel-root.Mui-focused,
+      .MS-field1 .MuiInputLabel-root.Mui-focused,
+      .MS-firstfield.MuiInputLabel-root.Mui-focused{
+        color:var(--main-bgcolor);
+      }
+      .MS-field .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+      .MS-Returnfield .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+      .MS-firstfield .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline ,
+      .MS-field1 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+        border-color:var(--main-bgcolor);
+      }
       @media (max-width:1200px) {
       .MS-showFlight{
         width:85%;
