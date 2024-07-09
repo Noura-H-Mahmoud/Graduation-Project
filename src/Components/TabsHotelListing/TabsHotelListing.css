@@ -65,13 +65,31 @@
     box-shadow: 0px 4px 16px 0px #1122110D;
 }
 
+.MH-favorites-main .MH-favorites-box .MH-infos.NM {
+   gap: 24px;
+}
+
 .MH-favorites-main .MH-favorites-box .MH-favorites-info .MH-info1.NM {
     padding-right: 24px;
+    /* 355 * 100 /492  */
+    width: 72.15%;
+}
+
+.MH-favorites-main .MH-favorites-box .MH-favorites-info .MH-info2.NM {
+    /* 113 * 100 /492  */
+    width: 23%;
 }
 
 .MH-favorites-info .MH-box-button .MH-box-button2.NM {
     /* 428 * 100 /492  */
     width: 87%;
+}
+
+.MH-favorites-info .MH-box-button .MH-box-button2 button:hover,
+.NM_btnListing:hover {
+    background-color: var(--fourth-bgcolor);
+    color: var( --main-bgcolor);
+    border: 1px solid var(--main-bgcolor);
 }
 
 .NM_ViewPlaceBtn{
@@ -117,13 +135,6 @@
     color: var(--main-bgcolor);
 }
 
-.NM_Tabs,
-.NM_Head,
-.NM-tabs,
-#uncontrolled-tab-example {
-    width: 100%;
-}
-
 .NM_Tabs .nav-tabs {
     display: flex;
     flex-direction: column;
@@ -133,6 +144,7 @@
     padding: 17.5px 0 0 24px;
     margin-bottom: 0;
     box-shadow: 0px 4px 16px 0px #1122110D;
+    background-color: var(--fourth-bgcolor);
 }
 
 .NM_Tabs .nav-item {
@@ -289,7 +301,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
     .MH-favorites-main .MH-favorites-box.NM {
         display: flex;
         flex-direction: column;
@@ -305,8 +317,13 @@
 
     }
 
-    .MH-favorites-main .MH-favorites-box .MH-favorites-info.NM {
+    .MH-favorites-main .MH-favorites-box .MH-favorites-info.NM,
+    .MH-favorites-main .MH-favorites-box .MH-favorites-info .MH-info2.NM {
         width: 100%;
+    }
+
+    .MH-favorites-main .MH-favorites-box .MH-infos.NM{
+        flex-direction: column;
     }
 }
 
@@ -327,6 +344,7 @@
 
     .MH-favorites-main .MH-favorites-box .MH-favorites-info .MH-infos.NM {
         justify-content: start;
+        align-items: start;
     }
 
     .MH-favorites-main .MH-favorites-box 
@@ -342,6 +360,7 @@
     .MH-favorites-main .MH-favorites-box 
     .MH-favorites-info .MH-info1 .MH-star.NM {
         align-items: start;
+        flex-direction: column;
     }
 
     .MH-favorites-main .MH-favorites-box .MH-favorites-info .MH-info2.NM {
@@ -376,6 +395,10 @@
     }
     .NM_Tabs .nav-tabs {
         gap: 10px;
+    }
+
+    .MH-favorites-main .MH-favorites-box .MH-favorites-info .MH-info2.NM p{
+        text-align: start;
     }
     
 }

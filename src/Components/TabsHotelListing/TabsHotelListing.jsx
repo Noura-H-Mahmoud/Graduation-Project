@@ -13,6 +13,7 @@ export default function TabsHotelListing() {
     const togglePopup = () => {
         setIsPopupOpen(!isPopupOpen);
     };
+    const filters = ['price', 'rating', 'freebies', 'amenities'];
     return (
         <section className='NM_HotelListing'>
             <div><FormWithOutTab /></div>
@@ -21,7 +22,7 @@ export default function TabsHotelListing() {
                 <button className='MS-filterBtn' onClick={togglePopup}><FontAwesomeIcon icon={faSliders} size="lg" style={{color: "#ffffff",}} /> Filters</button>
                 <p className='MS-filter'>Filters</p>
                 <div data-aos="fade-right" className='MS-filterContent'>
-                    <Accordion />
+                    <Accordion filters={filters} />
                     </div>
                 </div>
                 <div className='NM_Part2'>
@@ -74,7 +75,7 @@ export default function TabsHotelListing() {
                 <div className='popup-overlay'>
                     <div className='popup-content'>
                         <button className='popup-close-btn' onClick={togglePopup}>Close</button>
-                        <Accordion />
+                        <Accordion filters={filters} />
                     </div>
                 </div>
             )}

@@ -1,18 +1,17 @@
 .RH_Emirates {
     background-color: #fcb365;
-    width: 1232px;
+   width: auto;
     height: 102px;
     padding: 16px;
     margin: 0 auto;
     border-radius: 8px;
-    margin-top: 80px!important;
-    margin-bottom: 40px;
+  margin: 40px 104px!important;
 }
 
 .RH_title{
 font-family: var(--second-font);
 font-size: var(--second-medium-font-size);
-font-weight: var(--fourth-font-weight);
+font-weight: 700;
 color: var(--main-text-color);
 line-height: var(--xxmedium-line-hieght);
 text-align: left;
@@ -42,7 +41,7 @@ text-align: left;
 
 .RH_w1{
     width: 571px;
-    height: 24px;
+    height: auto;
     gap: 16px;
 
 }
@@ -57,7 +56,7 @@ text-align: left;
 }
 .RH_w2{
     width: 508px;
-    height: 24px;
+    height: auto;
     gap: 16px;
 }
 
@@ -69,8 +68,8 @@ text-align: left;
       flex-wrap: wrap;
       width: auto!important;
       height: auto!important;
-      margin-left: 40px;
-      margin-right: 40px;
+      margin-left: 40px!important;
+      margin-right: 40px!important;
 
     }
     .RH_container_time {
@@ -102,7 +101,6 @@ text-align: left;
 
  
 .RH_w2{
-  margin-top: 30px;
 }
   
 
@@ -121,7 +119,6 @@ text-align: left;
   
  
       .RH_w2{
-        margin-top: 30px;
       }
         
       
@@ -132,7 +129,7 @@ text-align: left;
  
         
       .RH_w2{
-        margin-top: 50px;
+        margin-top: 20px;
       }
         
           }
