@@ -4,20 +4,56 @@
 .MH-flight-content {
     display: flex;  
     justify-content: space-between;
-    padding: 0 5rem;
+    padding: 0 80px;
 }
 .MH-FlightBooking .MS-newsletter {
     margin-top: 188.17px;
+}
+.MH-FlightBooking .MH-content1 .RH_Flight_Details_Final .cards {
+    margin-left: 0;
+    margin-right: 40px;
+}
+.MH-FlightBooking .MH-content1 .RH_Flight_Details_Final .cards {
+    width: 95% !important;
+}
+ .MH-FlightBooking .MH-content1 .Aya-Accordion {
+    width: 95% !important;
+} 
+.MH-FlightBooking .MH-content1 .Aya-Accordion .Accordion-Header {
+    width: 100% !important;
+}
+.MH-FlightBooking .MH-content1 .Aya-Accordion .Accordion-Header-Hiden{
+    width: 100% !important;
+} 
+.MH-FlightBooking .MH-content1 .Aya-Accordion .Header-Body-Hiden {
+    width: 100%;
+}
+.MH-FlightBooking .MH-content2 .Aya-Flight_Card .flightCards {
+    width: 100% !important;
+}
+.MH-content2 {
+    width: 100%;
+
+}
+.MH-content1 {
+    width: 100%;
+
+}
+.MH-FlightBooking .Aya-Flight_Card .Line1 {
+    width: 90%;
+}
+.MH-FlightBooking .Aya-Flight_Card .Line2 {
+    width:100%;
+}
+@media (max-width:1250px) {
+    .MH-flight-content {
+        padding: 0 50px;
+    }
 }
  @media (max-width:1100px) {
     .MH-flight-content {
         flex-wrap: wrap-reverse;
         justify-content: center;
-    }
-    .MH-content1 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
     .MH-FlightBooking3 .MH-content1 .Aya_Flight_Details_Final {
         margin-right: 0;
@@ -26,7 +62,22 @@
         width: 100%;
         text-align: center;
     }
- }
+    .MH-FlightBooking .MH-content1 .RH_Flight_Details_Final .cards {
+        margin-right: 0;
+        width: 100%;
+    }
+    .MH-FlightBooking .MH-content2 .Aya-Flight_Card {
+        margin-bottom: 16px;
+        width: 100%;
+    }
+    .MH-FlightBooking .MH-content1 .Aya-Accordion {
+        width: 100% !important;
+    } 
+    .MH-FlightBooking .MH-content1 .RH_Flight_Details_Final .cards {
+        width: 100% !important;
+    }
+ 
+}
  @media (max-width:992px) {
     .MH-flight-content{
         padding: 0 1.875rem;
@@ -34,10 +85,13 @@
     .MH-FlightBooking .MS-newsletter {
         margin-top: 100px;
     }
-    .MH-FlightBooking {
-        padding-top: 96px;
-    }
-
  }
-
+@media (max-width:768px) {
+    .MH-FlightBooking .RH_Flight_Details_Final .part3 {
+        justify-content: center;
+    }
+    .MH-FlightBooking .RH_Flight_Details_Final .part2 {
+        justify-content: center !important;
+    }
+}
     
