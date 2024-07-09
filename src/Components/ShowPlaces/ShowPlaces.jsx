@@ -109,8 +109,8 @@ alert(value)
       <div className='MS-showFlight MS-ShowPlaces container'>
             <p>Where are you flying? </p>
             <div className="MS-textfields">
-              
-              <TextField
+             
+             <TextField
                InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -127,18 +127,19 @@ alert(value)
              
                
               />
+              
            
              <div className={destination?"OS-Destination":"OS-DestinationDisplay"}>
-            <h1 className='OS-Destination-h1'>popular cities</h1>
+               <h1 className='OS-Destination-h1'>popular cities</h1>
               <div>
               {dataCity.map((item,index)=>{
               return <>
-                <select className='OS-DestinationFlex'  >
-                <option className='OS-Destination-Par'key={index} onClick={(e)=>click(dataCity.id ,e.target.value)}>{item.des1}</option>
-                <option className='OS-Destination-Par' key={index}>{item.des2}</option>
-                <option className='OS-Destination-Par' key={index}>{item.des3}</option>
-                <option className='OS-Destination-Par' key={index}>{item.des4}</option>
-                </select>
+                <div className='OS-DestinationFlex'  >
+                <p className='OS-Destination-Par'key={index} onClick={(e)=>click(dataCity.id ,e.target.value)}>{item.des1}</p>
+                <p className='OS-Destination-Par' key={index}>{item.des2}</p>
+                <p className='OS-Destination-Par' key={index}>{item.des3}</p>
+                <p className='OS-Destination-Par' key={index}>{item.des4}</p>
+                </div>
                 </>})}
               </div>
              </div>

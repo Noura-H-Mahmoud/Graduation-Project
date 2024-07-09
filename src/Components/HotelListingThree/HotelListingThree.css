@@ -60,7 +60,7 @@
         border: none;
     }
     
-    .OS-Btn-Room:hover {
+    .OS-Btn-Room:active {
         background-color: transparent;
         border: 1px solid var(--main-bgcolor);
         transition: all .5s;

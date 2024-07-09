@@ -63,12 +63,11 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: 80px;
         padding-bottom: 13px;
         cursor: pointer;
     }
     
-    .OS-Destination-Par:hover {
+    .OS-Destination-Par:active {
         color: var(--main-bgcolor)!important;
         border-radius: 2px;
         background-color: var(--third-bgcolor);
@@ -122,7 +121,7 @@
         box-shadow: 0px 0px 10px 0px var(--main-bgcolor);
     }
     
-    .OS-btn-Room:hover {
+    .OS-btn-Room:active {
         border: 1px solid var(--third-bgcolor);
         background-color: var(--main-bgcolor);
         border-radius: 4px;
@@ -153,7 +152,7 @@
         font-weight: var( --main-font-weight)!important;
     }
     
-    .OS-applyDiv-Style:hover {
+    .OS-applyDiv-Style:active {
         background-color: var(--main-bgcolor);
         color: var(--main-text-color);
         transition: all 1s;
@@ -174,7 +173,7 @@
         color: var(--main-bgcolor);
     }
     
-    .OS-Ti-Style:hover {
+    .OS-Ti-Style:active {
         cursor: pointer;
         background-color: var(--third-bgcolor);
     }
@@ -207,7 +206,7 @@
         cursor: pointer;
     }
     
-    .OS-removeRoom-Style:hover {
+    .OS-removeRoom-Style:active {
         color: var(--main-bgcolor);
     }
     
