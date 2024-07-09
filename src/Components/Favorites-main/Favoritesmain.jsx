@@ -125,6 +125,7 @@ export default function Favoritesmain() {
                                     </div>
                                     <div className={isListingPage ? 'MH-star2 NM' : 'MH-star2'}>
                                         <img src={img4} alt="" />
+
                                         <p> <span>20+ </span>Aminities</p>
                                     </div>
                                 </div>

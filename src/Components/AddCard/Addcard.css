@@ -1,7 +1,10 @@
+.MH-add {
+    width: 95%;
+}
 .MH-add-card {
     margin: 0 0 40px 0px;
     padding: 16px;
-    width: 750px;
+    width: 100%;
     height: 316px;
     border-radius: 12px;
     box-shadow: 0px 4px 16px 0px #1122110D;
@@ -72,8 +75,8 @@
     font-weight: var(--second-font-weight);
     font-size: 12px;
 }
-@media (max-width:1200px) {
-    .MH-add-card {
+@media (max-width:1100px) {
+    .MH-add {
         width: 100%;
     }
 }

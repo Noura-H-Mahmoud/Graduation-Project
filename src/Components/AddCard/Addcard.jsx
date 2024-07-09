@@ -41,7 +41,7 @@ const link =[
    linkto
 ]
     return (
-        <div className='MH-add'>
+        <div className='MH-add' >
              {showNewCard && <Popup link={link}/> }
             <div className="MH-add-card" >
            
