@@ -35,7 +35,8 @@ const CardFlightDetailFinal = ({page}) => {
         Aos.init({duration : 2000})
     }, [])
     return (
-<section className={page==='FlightBooking' ? 'Aya_Flight_Details_Final' : 'RH_Flight_Details_Final'}>    <Card className='cards' data-aos='fade-right'>
+<section className={page==='FlightBooking' ? 'Aya_Flight_Details_Final' : 'RH_Flight_Details_Final'}>  
+      <Card className='cards' data-aos='fade-right'>
         <Card.Body>
         <div className='part1 d-flex justify-content-between'>
             <Card.Title className={page === 'FlightBooking' ? 'title' : 'd-none'}>Emirates A380 Airbus{data.title}</Card.Title>

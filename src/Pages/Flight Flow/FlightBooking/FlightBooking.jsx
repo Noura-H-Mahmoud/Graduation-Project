@@ -1,3 +1,7 @@
+import Path from "../../../Components/Path/Path";
+import './FlightBooking.css'
+import Footer from "../../../Components/Footer/Footer";
+import FlightCard from "../../../Components/FlightCard/FlightCard";
 import CardFlightDetailFinal from "../../../Components/CardFlightDetailFinal/CardFlightDetailFinal";
 import FlightAccordion from "../../../Components/FlightAccordion/FlightAccordion";
 import FlightForm from "../../../Components/FlightForm/FlightForm";
