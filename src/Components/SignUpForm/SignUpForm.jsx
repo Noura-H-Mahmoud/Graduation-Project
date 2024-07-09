@@ -57,7 +57,7 @@ export default function SignUpForm({ facebook, google, apple }) {
     setPhone('');
     setPassword('');
     setConfirmPassword('');
-    navigate('/', { state: { token } });
+    navigate('/Graduation-Project/auth/add_payment');
   }
   
   const theme = createTheme({

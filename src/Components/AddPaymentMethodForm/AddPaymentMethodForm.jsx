@@ -7,11 +7,12 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
 import { FormControlLabel, FormGroup, Select, FormControl, InputLabel, MenuItem, InputAdornment, IconButton } from '@mui/material';
-import { Link } from 'react-router-dom';
-const cardIcon = '../../src/assets/images/NMvisa.svg';
+import { Link, useNavigate } from 'react-router-dom';
+import cardIcon from '../../assets/images/NMvisa.svg';
 
 export default function AddPaymentMethodForm({Back}) {
   const [country, setCountry] = useState('');
+  const navigate = useNavigate();
   const handleChange = (event) => {
     setCountry(event.target.value);
   };
@@ -64,6 +65,11 @@ export default function AddPaymentMethodForm({Back}) {
       },
     },
   });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate('/Graduation-Project');
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -154,7 +160,7 @@ export default function AddPaymentMethodForm({Back}) {
               }}
             />
           </FormGroup>
-          <input type="submit" value="Add payment method" className='NM_Submit' />
+          <input onClick={handleSubmit} type="submit" value="Add payment method" className='NM_Submit' />
         </form>
         <p className='NM_Text'>
           By confirming your subscription, you allow The Outdoor Inn Crowd Limited to charge your card for this payment and future payments in accordance with their terms. You can always cancel your subscription.

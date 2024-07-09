@@ -57,7 +57,7 @@ export default function LoginForm({ facebook, google, apple }) {
     setEmail('');
     setPassword('');
     setError('');
-    navigate('/', { state: { token } });
+    navigate('/Graduation-Project', { state: { token } });
   };
   const theme = createTheme({
     components: {
