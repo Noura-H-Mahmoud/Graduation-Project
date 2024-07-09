@@ -106,7 +106,6 @@ function FavouritesMainFlight() {
     );
   };
 
-  // قسم الرحلات إلى مجموعتين
   const firstHalf = flights.slice(0, 2);
   const secondHalf = flights.slice(2, 4);
 
