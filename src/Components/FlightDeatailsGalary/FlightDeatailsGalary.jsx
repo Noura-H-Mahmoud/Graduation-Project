@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './FlightDeatailsGalary.css';
+import './../../../src/index.css';
 import img1 from '../../assets/images/Feature-1.png';
 import img2 from '../../assets/images/Feature-2.png';
 import img3 from '../../assets/images/Feature-3.png';

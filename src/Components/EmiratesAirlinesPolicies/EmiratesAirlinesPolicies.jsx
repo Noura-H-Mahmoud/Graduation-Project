@@ -1,6 +1,8 @@
 import React from 'react'
 import './EmiratesAirlinesPolicies.css'
 import watch from '../../assets/images/ion_stopwatch.png';
+import './../../../src/index.css'
+
 
 
 

@@ -1,10 +1,12 @@
 .RH_Galary{
-    width: 1232px;
-    height: 174px;
+   /* width: 1232px;*/
+   /* height: 174px;*/
     gap: 24px;
     margin: 0 auto;
     padding-top: 40px;
     padding-bottom: 24px;
+    margin-left:104px ;
+    margin-right: 104px;
     
    
 }
@@ -18,7 +20,7 @@
     height: 30px;
     font-family: var(--second-font);
 font-size: var(--second-medium-font-size);
-font-weight: var(--fourth-font-weight);
+font-weight: 700;
 color: var(--main-text-color);
 line-height: var(--xxmedium-line-hieght);
 
@@ -89,20 +91,13 @@ text-align: left;
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
-    gap: 19px;
+    gap: 19px!important;
     flex-direction: row;
-    width: 100%; /* Ensure it takes full width */
+    width: 100%; 
 }
 
 
-/* FlightDeatailsGalary.css */
-/* Assuming you have a CSS file named Checkboxes.module.css */
 
-/*
-input[type='checkbox'] {
-  accent-color:var( --main-bgcolor);
-  border-radius: 3px;
-}*/
 
 .RH_lable_check {
   font-family: var(--main-font);
@@ -118,7 +113,6 @@ color: var(--main-text-color);
 
 }
 
-/* Hide the browser's default checkbox */
 .RH_lable_check input {
   display: flex;
   position: absolute;
@@ -153,19 +147,16 @@ color: var(--main-text-color);
   border: none;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
 .RH_checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
 .RH_lable_check input:checked ~ .RH_checkmark:after {
   display: block;
 }
 
-/* Style the checkmark/indicator */
 .RH_lable_check .RH_checkmark:after {
   left: 7px;
   top: 4px;
@@ -190,13 +181,26 @@ color: var(--main-text-color);
     width: auto;
     margin: 0 auto;
 
+
     margin-bottom: 40px!important;
     padding-left: 40px;
     padding-right: 40px;
 
   }
+
+
 }
   
+
+@media (max-width:1440px) {
+ 
+
+
+  .RH_C {
+height: 174px!important;
+gap: 7px!important;
+  }
+}
  
 
 
@@ -207,10 +211,15 @@ color: var(--main-text-color);
     width: auto;
     margin: 0 auto;
 
-    margin-bottom: 200px!important;
+    margin-bottom: 75px!important;
   
 
   }
+  .RH_C {
+    height: auto!important;
+    gap: 7px!important;
+      }
+
 }
   
 
@@ -224,6 +233,10 @@ color: var(--main-text-color);
     margin: 0 auto;
 
   }
+  .RH_C {
+    height: auto!important;
+    gap: 7px!important;
+      }
 }
 
 
@@ -247,19 +260,12 @@ color: var(--main-text-color);
   @media (max-width:500px) {
  
     .RH_Container_check{
-    margin-bottom: 40px;
+   /* margin-bottom: 40px;*/
   
     }
   }
 
-  @media (max-width:366px) {
  
-    .RH_Container_check{
-    margin-bottom: 40px;
-    margin-top: 20px;
-  
-    }
-  }
 
   @media (max-width:786px) {
  
@@ -267,7 +273,7 @@ color: var(--main-text-color);
       width: auto;
       margin: 0 auto;
   
-      margin-bottom: 250px!important;
+     /* margin-bottom: 250px!important;*/
     
   
     }
@@ -279,7 +285,7 @@ color: var(--main-text-color);
       width: auto;
       margin: 0 auto;
   
-      margin-bottom: 380px!important;
+      /*margin-bottom: 136px!important;*/
     
   
     }
@@ -293,7 +299,7 @@ color: var(--main-text-color);
       width: auto;
       margin: 0 auto;
   
-      margin-bottom: 680px!important;
+      /*margin-bottom: 250px!important;*/
     
   
     }
@@ -305,7 +311,7 @@ color: var(--main-text-color);
       width: auto;
       margin: 0 auto;
   
-      margin-bottom: 1000px!important;
+      /*margin-bottom: 500px!important;*/
     
   
     }
@@ -317,7 +323,7 @@ color: var(--main-text-color);
       width: auto;
       margin: 0 auto;
   
-      margin-bottom: 1300px!important;
+      /*margin-bottom: 1300px!important;*/
     
   
     }
@@ -332,4 +338,19 @@ color: var(--main-text-color);
         .RH_checkmark{
           margin-left: -20px!important;
         }
+        .RH_Container_check{
+          gap:5px!important
+        }
+  }
+
+  @media (max-width:366px) {
+ 
+    .RH_Container_check{
+    margin-bottom: 40px;
+    margin-top: 20px;
+  
+    }
+    .RH_title_Galary{
+      font-size: 20px;
+    }
   }

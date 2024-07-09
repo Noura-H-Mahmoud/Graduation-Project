@@ -18,7 +18,7 @@ import img10 from './../../assets/images/Line5.svg'
 import img11 from './../../assets/images/Vector1.svg'
 import img12 from './../../assets/images/Line6.svg'
 import Emirates_line from './../../assets/images/Emirates-line.png'
-const CardFlightDetailFinal = () => {
+const CardFlightDetailFinal = ({page}) => {
     const data = {
         title : 'Emirates A380 Airbus' ,
         price : '240 $' ,
@@ -35,12 +35,11 @@ const CardFlightDetailFinal = () => {
         Aos.init({duration : 2000})
     }, [])
     return (
-    <section className='Aya_Flight_Details_Final'>
-    <Card className='cards' data-aos='fade-right'>
+<section className={page==='FlightBooking' ? 'Aya_Flight_Details_Final' : 'RH_Flight_Details_Final'}>    <Card className='cards' data-aos='fade-right'>
         <Card.Body>
         <div className='part1 d-flex justify-content-between'>
-            <Card.Title className='title'>{data.title}</Card.Title>
-            <span className='span'>{data.price}</span>
+            <Card.Title className={page === 'FlightBooking' ? 'title' : 'd-none'}>Emirates A380 Airbus{data.title}</Card.Title>
+            <span className={page === 'FlightBooking' ? 'span' : 'd-none'}>{data.price}</span>
         </div>
         <div className='part2 d-flex justify-content-between'>
             <Card.Title className='title'>{data.return}</Card.Title>
