@@ -15,32 +15,69 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 export default function ShowPlaces() {
-  let index=1
 
-const [destination,setDestination]=useState(false)
+const[roomCount,SetRoomCount]=useState(1)
+{/* USE State for Show Destination*/ }
+ const [destination,setDestination]=useState(false)
  const toggleHandler = () => {
     setDestination(!destination)
   };
+{/* USE State for Count ADULTS AND SHELDREN*/ }
+  const [count,setcount]=useState(0)
+  const [count1,setcount1]=useState(0)
+  let Count=count+count1
+{/* USE State for Btton Minus*/ }
+const handlerMinus=(index)=>{
+  if(item.id==1){
+    if(count<=0) 
+      {setcount(count)}else{setcount(count-1)}}
+  else{
+    if(count1<=0) 
+      {setcount1(count1)}
+    else{setcount1(count1-1)}} 
+  Count=count+count1
+}
+
+{/* USE State for Show Room*/ }
   const [room,setRoom]=useState(false)
   const RoomHandler = () => {
      setRoom(!room)
    };
-const[selectedCity,setSelectedCity]=useState('')
-const click=(e)=>{
-  setSelectedCity(selectedCity)
-  alert("1")
-  alert(selectedCity)
-  alert(e.target.value)
-}
-const[add,setadd]=useState('')
-const changeRoom=()=>{
-setadd(add)
-}
-const [count,setcount]=useState(0)
-const [count1,setcount1]=useState(0)
+{/* USE State for ADD Room*/ }
+  const[roomList ,setRoomList]=useState([{room:''}])
+ 
+  const handleRoomAdd=()=>{setRoomList([...roomList, {room:''}])
+  SetRoomCount(roomCount+1)};
+  
+  const handleRoomremove=(index)=>{
+    const list=[...roomList];
+    list.splice(index,1);
+    setRoomList(list);
+    SetRoomCount(roomCount-1)
+   
+  
+  }
+  {/* USE State for Change Value */ }
+const[dataCity,setSelectedCity]=useState([ 
+  {id:1,des1:'Makkah, Saudi Arabia',des2:'Dubai, United Arab Emirates',des3:'Al Madinah, Saudi Arabia',des4:'Cairo, Egypt'},
+  {id:2,des1:'Hurghada, Egypt',des2:'Sharm El Sheikh, Egypt',des3:'Alexandria, Egypt',des4:'Istanbul, Turkey'},
+  {id:3,des1:'Abu Dhabi, United Arab Emirates',des2:'Sharjah, United Arab Emirates',des3:'Riyadh, Saudi Arabia',des4:'Jeddah, Saudi Arabia'},
+  {d:4,des1:'Ain Sokhna, Egypt',des2:'Beirut, Lebanon',des3:'Dahab, Egypt',des4:'Doha, Qatar'},
+  {id:5,des1:'Aswan, Egypt',des2:'Kuwait',des3:'Ajman, United Arab Emirates',des4:'Amman, Jordan'},
+])
+const click=(id,value)=>{
+ alert("1")
+alert(dataCity.id)
+alert(id)
+alert(value)
 
-let Count=count+count1
-let Room =index
+ 
+
+}
+
+
+
+
   const OSdataDes=[
     {des1:'Makkah, Saudi Arabia',des2:'Dubai, United Arab Emirates',des3:'Al Madinah, Saudi Arabia',des4:'Cairo, Egypt'},
     {des1:'Hurghada, Egypt',des2:'Sharm El Sheikh, Egypt',des3:'Alexandria, Egypt',des4:'Istanbul, Turkey'},
@@ -65,11 +102,7 @@ let Room =index
       id:"2"
     },
 ] 
-const OSRoom=[{Title:`Room ${index}`,
- 
-}
 
-]
  
   return (
     <>
@@ -98,14 +131,14 @@ const OSRoom=[{Title:`Room ${index}`,
              <div className={destination?"OS-Destination":"OS-DestinationDisplay"}>
             <h1 className='OS-Destination-h1'>popular cities</h1>
               <div>
-              {OSdataDes.map((item)=>{
+              {dataCity.map((item,index)=>{
               return <>
-                <div className='OS-DestinationFlex'  >
-                <div className='OS-Destination-Par' value={item.des1} onClick={click} >{item.des1}</div>
-                <p className='OS-Destination-Par'onClick={click}>{item.des2}</p>
-                <p className='OS-Destination-Par'onClick={click}>{item.des3}</p>
-                <p className='OS-Destination-Par'onClick={click}>{item.des4}</p>
-                </div>
+                <select className='OS-DestinationFlex'  >
+                <option className='OS-Destination-Par'key={index} onClick={(e)=>click(dataCity.id ,e.target.value)}>{item.des1}</option>
+                <option className='OS-Destination-Par' key={index}>{item.des2}</option>
+                <option className='OS-Destination-Par' key={index}>{item.des3}</option>
+                <option className='OS-Destination-Par' key={index}>{item.des4}</option>
+                </select>
                 </>})}
               </div>
              </div>
@@ -159,7 +192,7 @@ const OSRoom=[{Title:`Room ${index}`,
                 label="Rooms & Guests"
                 id="outlined-size-small"
                 defaultValue="1 room, 2 guests"
-                value={`${Room} Room, ${Count} guests`}
+                value={`${roomCount} Room, ${Count} guests`}
                 size="large"
                 className="MS-field1 OS-firstfiled1"
                 onClick={RoomHandler}
@@ -177,10 +210,13 @@ const OSRoom=[{Title:`Room ${index}`,
                   }}
               />
               <div className={room?"OS-Room":"OS-DestinationDisplay"}>
-               {OSRoom.map((item)=>{return<>
-              <h1 className='OS-Destination-h1 OS-Room-h1'>{item.Title}</h1>
-              <div className='OS-Ti-Flex OS-All-Padding'>
-              {OSdataRoom.map((item)=>{
+               {roomList.map((SingleRoom,index)=>{return<>
+               <div className='OS-flex-remove'>
+               <h1 className='OS-Destination-h1 OS-Room-h1' key={index}>Room{index+1}</h1>
+               {roomList.length>1 &&(<h6  key={index} className='OS-removeRoom-Style' onClick={()=>handleRoomremove(index)} >remove</h6>)}
+               </div>
+              <div className='OS-Ti-Flex OS-All-Padding' key={index}>
+              {OSdataRoom.map((item ,index)=>{
               return <>
               <div className={item.class}>
                <img src={user} alt="icon" className="MS-field-icon" />
@@ -191,21 +227,26 @@ const OSRoom=[{Title:`Room ${index}`,
               <div className='OS-Ti-Flex'>
               <button className='OS-btn-Room'id={item.id} onClick={()=> {if(item.id==1){if(count<=0) {setcount(count)}else{setcount(count-1)}}
               else{if(count1<=0) {setcount1(count1)}else{setcount1(count1-1)}} Count=count+count1}}>{item.btn1contact}</button>
-              <p className='OS-pp-Room' id={item.id}>{count}</p>
-              <p className='OS-pp-Room' id={item.id}>{count1}</p>
+              <p className='OS-pp-Room'  key={index} id={item.id} >{count}</p>
+              <p className='OS-pp-Room' key={index} id={item.id}>{count1}</p>
               <button className='OS-btn-Room' id={item.id}onClick={()=>{if(item.id==1){ setcount(count+1)}else{setcount1(count1+1)}}}>{item.btn2contact}</button>
               </div>
               </div>
-                </>})}
+               </>})}
                 </div>
-                </>})}
+               
                 <div className='OS-Ti-FlexStyle'>
-                <div className='OS-Ti-Flex OS-Ti-Style' onClick={changeRoom}>
+                  {roomList.length-1 === index &&(
+                  <>
+                  <div className='OS-Ti-Flex OS-Ti-Style' onClick={handleRoomAdd}>
                   <div className='OS-Plus-Style'>+</div>
-                  <h6 className='OS-AddRoom-Style'> add room</h6>
+                  <h6  className='OS-AddRoom-Style'>add room</h6>
                   </div>
-                <div className='OS-applyDiv-Style' onClick={RoomHandler}><p className='OS-apply-Style'>Apply</p></div>
+                  <div className='OS-applyDiv-Style' onClick={RoomHandler}><p className='OS-apply-Style'>Apply</p></div>
+                  </>
+                )}
               </div>
+              </>})}
             </div>
             </div>
             <div className="MS-right">

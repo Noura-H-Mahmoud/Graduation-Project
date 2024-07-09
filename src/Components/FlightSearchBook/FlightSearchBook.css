@@ -256,6 +256,8 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        gap: 20px;
+        padding-left: 24px;
     }
     
     .OS_img_Travel {
@@ -268,11 +270,10 @@
     }
     
     .img {
-        width: 318px;
         height: 200px;
     }
     
-    .img1 {
+    .img {
         padding-left: 24px;
         padding-right: 20px;
     }
@@ -333,7 +334,7 @@
             width: max-content!important;
         }
         .img {
-            width: 200px;
+            width: 250px;
         }
         .img1 {
             width: 218px;
@@ -368,11 +369,14 @@
             width: 20.5rem;
             height: 28.5rem;
         }
+        .OS_img_Travel {
+            width: 300px!important;
+        }
         .img {
-            width: 130px;
+            width: 55%;
         }
         .img1 {
-            width: 148px;
+            width: 45%;
         }
         .OS_one_Title {
             display: flex;
