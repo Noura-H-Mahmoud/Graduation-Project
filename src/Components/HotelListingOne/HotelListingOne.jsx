@@ -59,7 +59,7 @@ const OSImgHotel2=[
 
  return (
     <>
-    <section className='OS-Listing_section'data-aos="fade-up"data-aos-easing="linear"data-aos-duration="3000">
+    <section className='OS-Listing_section'data-aos="fade-up"data-aos-easing="linear"data-aos-duration="1500">
         <div className='OS-Listing-one OS-Listing-onne'>
         {OSdata2.map((item, index)=>{
         return<div key={index} className='OS-Listing-one'> 

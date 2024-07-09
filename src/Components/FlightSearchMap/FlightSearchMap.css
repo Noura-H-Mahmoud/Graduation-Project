@@ -114,6 +114,41 @@
         left: 66.0625rem;
     }
     
+    @media screen and (min-width:1500px) {
+        .OS_Map {
+            display: flex;
+            justify-content: center;
+        }
+        .OS-ImgArrow2 {
+            left: 65%;
+        }
+        .OS-Map-frame4 {
+            left: 66%;
+        }
+        .OS-Map-frame5 {
+            left: 77%;
+        }
+        .OS-Map-frame3 {
+            left: 52%;
+        }
+        .OS-Map-frame2 {
+            left: 39%;
+            top: 57%
+        }
+        .OS-ImgArrow1 {
+            left: 38%;
+            top: 69%
+        }
+        .OS-ImgArrow {
+            left: 34%;
+            top: 27%
+        }
+        .OS-map-frame {
+            left: 31%;
+            top: 16%
+        }
+    }
+    
     @media screen and (max-width:1200px) {
         .Map-Image {
             width: 90%;

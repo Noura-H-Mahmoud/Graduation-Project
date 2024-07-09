@@ -1,75 +1,82 @@
 import React from 'react'
 import './TapFlights.css'
+import Emirates from '../../assets/images/Emirates-line.png'
+import linel from '../../assets/images/LineL.svg'
+import DateIcon from '../../assets/images/calendar.svg'
+import HourIcon from '../../assets/images/timmer.svg'
+import GateIcon from '../../assets/images/doorclosed.svg'
+import SateIcon from '../../assets/images/airlineseat.svg'
+import btnContent2 from '../../assets/images/chevron_forward.svg'
 export default function TapFlights  () {
     const OSArrowFlight=[{
-        img:'./src/assets/images/Emirates-line.png',
+        img:Emirates,
         paragraf:'Newark(EWR)',
         number1:'12:00 pm',
-        linel:'./src/assets/images/LineL.svg',
+        linel:linel,
         number2:'6:00 pm',
-        dateIcon:'./src/assets/images/calendar.svg',
+        dateIcon:DateIcon,
         dateText:'Date',
         Date:'12-11-22',
-        HourIcon:'./src/assets/images/timmer.svg',
+        HourIcon:HourIcon,
         time:'Flight time',
         TimeText:'Newark(EWR)',
-        GateIcon:'./src/assets/images/doorclosed.svg',
+        GateIcon:GateIcon,
         gate:'Gate',
         GateText:'A12',
-        SateIcon:'./src/assets/images/airlineseat.svg',
+        SateIcon:SateIcon ,
         sate:'Seat no.',
         SateText:'128',
         btnContent1:'Download Ticket',
-        btnContent2:'./src/assets/images/chevron_forward.svg'
+        btnContent2:btnContent2
     },
     {
-    img:'./src/assets/images/Emirates-line.png',
+    img:Emirates,
     paragraf:'Newark(EWR)',
     number1:'12:00 pm',
-    linel:'./src/assets/images/LineL.svg',
+    linel:linel,
     number2:'6:00 pm',
-    dateIcon:'./src/assets/images/calendar.svg',
+    dateIcon:DateIcon,
     dateText:'Date',
     Date:'12-11-22',
-    HourIcon:'./src/assets/images/timmer.svg',
+    HourIcon:HourIcon,
     time:'Flight time',
     TimeText:'Newark(EWR)',
-    GateIcon:'./src/assets/images/doorclosed.svg',
+    GateIcon:GateIcon,
     gate:'Gate',
     GateText:'A12',
-    SateIcon:'./src/assets/images/airlineseat.svg',
+    SateIcon:SateIcon,
     sate:'Seat no.',
     SateText:'128',
     btnContent1:'Download Ticket',
-    btnContent2:'./src/assets/images/chevron_forward.svg'
+    btnContent2:btnContent2
     },
     {
-    img:'./src/assets/images/Emirates-line.png',
+    img:Emirates,
     paragraf:'Newark(EWR)',
     number1:'12:00 pm',
-    linel:'./src/assets/images/LineL.svg',
+    linel:linel,
     number2:'6:00 pm',
-    dateIcon:'./src/assets/images/calendar.svg',
+    dateIcon:DateIcon,
     dateText:'Date',
     Date:'12-11-22',
-    HourIcon:'./src/assets/images/timmer.svg',
+    HourIcon:HourIcon,
     time:'Flight time',
     TimeText:'Newark(EWR)',
-    GateIcon:'./src/assets/images/doorclosed.svg',
+    GateIcon:GateIcon,
     gate:'Gate',
     GateText:'A12',
-    SateIcon:'./src/assets/images/airlineseat.svg',
+    SateIcon: SateIcon,
     sate:'Seat no.',
     SateText:'128',
     btnContent1:'Download Ticket',
-    btnContent2:'./src/assets/images/chevron_forward.svg'}
+    btnContent2:btnContent2}
     ]
   return (
     <>
        <div className='OS-big-Style'>
-           {OSArrowFlight.map((item)=>{
+           {OSArrowFlight.map((item ,index)=>{
              return<div className='OS-Fl-Style'>
-                <div className='OS-Emirates-line'> <img src={item.img} alt="Emirates-line" /></div>
+                <div className='OS-Emirates-line'key={index} > <img  src={item.img} alt="Emirates-line" /></div>
                 <div className=' OS-Text-Style'>
                     <div className='OS-Text'>
                         <p className='OS-Text-par'>{item.paragraf}</p>

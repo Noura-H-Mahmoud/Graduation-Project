@@ -50,6 +50,7 @@
         padding-top: 2.5rem;
         flex-wrap: wrap;
         display: flex;
+        justify-content: space-between;
     }
     
     .OS-Travel {
@@ -159,6 +160,7 @@
         display: flex;
         padding: 0px 104px 120px 104px;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
     
     .OS-one-Backing {
@@ -249,7 +251,7 @@
     }
     
     .OS-two-Backing {
-        max-width: 41rem;
+        width: 676px!important;
         height: 424px;
         display: flex;
         justify-content: space-between;
@@ -261,7 +263,7 @@
         border: none;
         border-radius: 12px;
         display: flex;
-        width: 318px!important;
+        width: max-content!important;
         height: 200px;
     }
     
@@ -282,8 +284,10 @@
         .OS-two-Backing {
             margin-top: 10px;
         }
-        .img1 {
-            padding-left: 0px;
+        .OS-BackPacking {
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
         }
     }
     

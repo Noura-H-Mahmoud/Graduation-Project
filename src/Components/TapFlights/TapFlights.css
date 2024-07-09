@@ -6,6 +6,7 @@
     background-color: var( --second-text-color);
     margin-bottom: 16px;
     width: 100%;
+    box-shadow: 0px 4px 16px 0px var(--third-bgcolor);
 }
 
 .css-19kzrtu {
@@ -124,7 +125,7 @@
 .OS-btn1:hover {
     background-color: transparent;
     border: 1px solid var(--main-bgcolor);
-    transition: all 1s;
+    transition: all .5s;
 }
 
 .OS-btn2 {
@@ -137,7 +138,7 @@
 
 .OS-btn2:hover {
     background-color: var(--main-bgcolor);
-    transition: all 1s;
+    transition: all .5s;
 }
 
 @media screen and (max-width:1200px) {
