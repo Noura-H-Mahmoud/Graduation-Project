@@ -126,3 +126,7 @@ h5,
 h6 {
     font-family: var(--second-font) !important;
 }
+#root{
+    max-width: 2200px;
+    margin: auto;
+  }
