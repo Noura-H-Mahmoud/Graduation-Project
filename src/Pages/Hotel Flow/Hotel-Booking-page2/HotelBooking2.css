@@ -17,7 +17,6 @@
 }
 @media (max-width:1100px) {
     .MH-Hotelbooking2 .Aya-Flight_Card .hoteltCards {
-        width: 100% !important;
         margin-bottom: 40px;
     }
     .MH-Hotelbooking2 .Aya_Hotel_Details_Final {

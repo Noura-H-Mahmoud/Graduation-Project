@@ -26,16 +26,6 @@
         width: 100%;
         text-align: center;
     }
-    .MH-FlightBooking .Aya-Flight_Card .flightCards {
-        width: 100% !important ;
-        margin-bottom: 40px;
-    }
-    .MH-FlightBooking .Aya_Flight_Details_Final .cards {
-        width: 100% !important ;
-    }
-    .MH-FlightBooking .Aya-Accordion{
-        width: 100% !important ;
-    }
  }
  @media (max-width:992px) {
     .MH-flight-content{
