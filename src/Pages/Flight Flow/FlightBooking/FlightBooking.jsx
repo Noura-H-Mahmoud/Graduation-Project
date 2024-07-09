@@ -26,13 +26,14 @@ export default function FlightBooking({navButtons, navButtonsForMobile,navList})
       <div>
         <FlightCard page={'FlightBooking'} imgFlightCard={imgFlightCard} title={'Economy'} subtitle={<p className="subtitle" style={{marginBottom: '20px'}}>Emirates A380 Airbus</p>} button={'4.2'}
         price_Base_Fare={'400 $'} price_Discount={'400 $'} price_taxes={'400 $'} price_Service_Fee={'400 $'} price_total={'400 $'}/>
-        <div  className="plane">
-          <img src={plane} alt="plane" />
+        <div className="animation">
+          <div  className="plane">
+            <img src={plane} alt="plane" />
+          </div>
+          <div className="earth">
+            <img src={earth} alt="earth" />
+          </div>
         </div>
-        <div className="earth">
-          <img src={earth} alt="earth" />
-        </div>
-        
       </div>
     </div>
     <Newsletter/>
