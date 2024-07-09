@@ -145,6 +145,14 @@
     text-align: right;
     color: var(--main-text-color);
 }
+.Aya-Flight_Card .part1 .part1-content .button:hover {
+    background-color: #FF8500;
+    color: #fff;
+}
+.Aya-Flight_Card .part1 .image:hover {
+    filter: grayscale(1);
+    cursor: pointer;
+}
 @media (min-width : 1310px) and (max-width : 1400px) {
     .Aya-Flight_Card .flightCards , .Aya-Flight_Card .hoteltCards{
         width: 25.425rem;

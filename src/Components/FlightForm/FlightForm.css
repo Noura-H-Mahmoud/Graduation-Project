@@ -149,6 +149,14 @@
     text-align: left;
     color: var(--main-text-color);
 }
+.Aya-Flight-Form .Form-Part1 .Continue:hover {
+    background-color: #fff;
+    border: 1px solid #FF8500;
+}
+.Aya-Flight-Form .Form-Part3 .img1:hover , .Aya-Flight-Form .Form-Part3 .img2:hover ,
+.Aya-Flight-Form .Form-Part3 .img3:hover , .Aya-Flight-Form .Form-Part4 .Continue-with-email:hover {
+    background-color: #FF8500;
+}
 @media (min-width : 1310px) and (max-width : 1400px) {
     .Aya-Flight-Form{
         width: 46.375rem;
