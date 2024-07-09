@@ -72,14 +72,14 @@ export default function ShowFlight() {
 
   const handleShowPlaces = () => {
     if (token) {
-      navigate('/Graduation-Project/hotelflow/listing');
+      navigate('/Graduation-Project/flightflow/listing');
     } else {
       navigate('/Graduation-Project/auth/login');
     }
   };
   const handleShowStays = () => {
     if (token) {
-      navigate('/Graduation-Project/flightflow/listing');
+      navigate('/Graduation-Project/hotelflow/listing');
     } else {
       navigate('/Graduation-Project/auth/login');
     }
@@ -280,7 +280,7 @@ export default function ShowFlight() {
             </div>
             <div className="MS-right">
               <a><img src={plus} alt="plus" className="MS-plus" />Add Promo Code</a>
-              <button className="MS-btnFlight" onClick={handleShowPlaces}><img src={btn} alt="arrow" />Show Stays</button>
+              <button className="MS-btnFlight" onClick={handleShowStays}><img src={btn} alt="arrow" />Show Stays</button>
             </div>
           </Tab>
         </Tabs>
