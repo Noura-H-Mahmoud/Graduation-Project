@@ -132,10 +132,10 @@ function FavouritesMainFlight() {
             {item.id === 3 && textRow(secondHalf)}
             {item.id === 4 && textRow(secondHalf)}
             <div className="foorterflightitem">
-                <img src={item.lineImg} alt="" />
+                <img className="AM_FooterLine" src={item.lineImg} alt="" />
                 <div className="btnsFooterFlight">
                     <button className="favBtn"><img src={heart} alt="" /></button>
-                    <Link to={'/Graduation-Project/flightflow/detail'}><button className="dealBtn">View Deals</button></Link>
+                    <Link className='AM_BtnLink' to={'/Graduation-Project/flightflow/detail'}><button className="dealBtn">View Deals</button></Link>
                 </div>
             </div>
           </div>

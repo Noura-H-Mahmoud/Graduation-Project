@@ -1,13 +1,14 @@
 .AM_flightComponent {
     display: flex;
     gap: 24px;
-    width: 840px;
+    max-width: 52.5rem;
     height: 286.5px;
     padding: 24px 16px 24px 16px;
     border-radius: 12px;
     background-color: white;
     margin-bottom: 32px;
     box-shadow: 0px 4px 16px 0px #1122110D;
+    position: relative;
 }
 
 .AM_flightComponent .syrianAirLogo {
@@ -30,8 +31,9 @@
 .AM_content {
     display: flex;
     justify-content: start;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
+    width: 100%;
 }
 .rate {
  display: flex;   
@@ -59,7 +61,6 @@
     padding-bottom: 30px;
 }
 .firstRow {
-    width: 600px;
     max-height: 44px;
     display: flex;
     justify-content: space-between;
@@ -70,6 +71,9 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    position: absolute;
+    top: 24px;
+    right: 40px;
 }
 .captionPrice {
     width: 100%;
@@ -112,10 +116,15 @@
     gap: 40px;
     margin-left: 12px;
 }
+.foorterflightitem {
+    width: 100%;
+    height:48px;
+}
 .btnsFooterFlight {
     display: flex;
     gap: 16px;
     margin-top: 16px;
+    width: 100%;
 }
 .favBtn {
     width:  48px;
@@ -123,13 +132,33 @@
     background-color: transparent;
     border: 1px solid #FF8500
 }
+.AM_BtnLink {
+    width: 89.33%;
+}
 .dealBtn {
-    width: 536px;
+    /* width: 33.5rem; */
     height: 48px;
     padding: 8px 16px 8px 16px;
     gap: 4px;
     border-radius: 4px;
     background-color: #FF8500;
     border: 0;
-
+    width: 89.33%;
 }
+.AM_FooterLine {
+    width: 100%;
+}
+@media screen and (max-width:1439px) {
+    .firstRow {
+        width: 35rem;
+        justify-content: start;
+    }
+    .AM_content {
+        align-items: start;
+    }
+}
+/* 
+16.75 1440
+x      1000
+11.63194
+1.163194444 */

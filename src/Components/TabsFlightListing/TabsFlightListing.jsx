@@ -36,9 +36,7 @@ export default function TabsHotelListing() {
 
   return (
     <section className="NM_HotelListing">
-      <div>
         <FormWithOutTab />
-      </div>
       <div className="NM_MainSection">
         <div className="NM_filter">
           <button className="MS-filterBtn" onClick={togglePopup}>
