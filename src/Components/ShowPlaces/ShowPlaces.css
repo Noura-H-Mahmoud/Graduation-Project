@@ -209,8 +209,10 @@
     .OS-removeRoom-Style:active {
         color: var(--main-bgcolor);
     }
-    
-    @media (max-width: 992px) {
+    @media (max-width: 1200px) {
+        .MS-textfields {
+            flex-direction: column;
+        }
         .MS-firstfield,.MS-field1{
             width: 100%;
         }
