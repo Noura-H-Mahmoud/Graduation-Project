@@ -3,8 +3,10 @@
     padding: 80px var(  --main-padding);
 }
 .MS-placesCards{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(389.33px,1fr));
+   display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 32px;
     width: 100%;
 }
@@ -51,11 +53,5 @@ background-color: var(--main-bgcolor);
 }
 .MS-pargraph{
     text-align: center;
-}
-.MS-placesCards{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 }

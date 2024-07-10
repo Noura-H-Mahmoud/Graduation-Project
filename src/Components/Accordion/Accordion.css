@@ -76,9 +76,10 @@ color:var(  --second-acount-color);
     background-color: var(--main-bgcolor); 
 }
 .arrow {
+    transform: rotate(180deg);
     transition: transform 0.5s ease;
   }
   
   .arrow.open {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
   }
