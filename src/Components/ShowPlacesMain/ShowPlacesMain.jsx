@@ -8,7 +8,6 @@ import arrowdown from "./../../assets/images/Vector (7).svg";
 import building from "./../../assets/images/building.svg";
 import user from "./../../assets/images/User.svg";
 import dayjs from 'dayjs';
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -83,123 +82,123 @@ const ShowPlacesMain = () => {
 
   return (
     <>
-        <div className="MS-textfields">
-          <TextField
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <img src={car} alt="icon" className="MS-field-icon" />
-                </InputAdornment>
-              ),
-            }}
-            label="Enter Destination"
-            id="outlined-size-small"
-            value={selectedCity}
-            size="large"
-            className="MS-firstfield OS-firstfiled"
-            onClick={toggleHandler}
-          />
-          <div className={destination ? "OS-Destination" : "OS-DestinationDisplay"}>
-            <h1 className='OS-Destination-h1'>popular cities</h1>
-            <div>
-              {OSdataDes.map((item) => {
-                return (
-                  <div className='OS-DestinationFlex'>
-                    <div className='OS-Destination-Par' onClick={() => click(item.des1)}>{item.des1}</div>
-                    <p className='OS-Destination-Par' onClick={() => click(item.des2)}>{item.des2}</p>
-                    <p className='OS-Destination-Par' onClick={() => click(item.des3)}>{item.des3}</p>
-                    <p className='OS-Destination-Par' onClick={() => click(item.des4)}>{item.des4}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <LocalizationProvider dateAdapter={AdapterDayjs} className='OS-Date-co'>
-            <DemoContainer components={['DatePicker', 'DatePicker']} className='OS-Date-co'>
-              <DatePicker
-                id="outlined-size-small"
-                label="Check In"
-                defaultValue={dayjs('2022-02-12')}
-                className="MS-field1"
-                size="large"
-                format='ddd/MM/YY'
-              />
-              <DatePicker
-                id="outlined-size-small"
-                label="Check Out"
-                defaultValue={dayjs('2022-02-12')}
-                className="MS-field1"
-                size="large"
-                format='ddd/MM/YY'
-              />
-            </DemoContainer>
-          </LocalizationProvider>
-          <TextField
-            label="Rooms & Guests"
-            id="outlined-size-small"
-            defaultValue="1 room, 2 guests"
-            value={`${Room} Room, ${Count} guests`}
-            size="large"
-            className="MS-field1 OS-firstfiled1"
-            onClick={RoomHandler}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="end">
-                  <img src={user} alt="icon" className="MS-field-icon" />
-                </InputAdornment>
-              ),
-              endAdornment: (
-                <InputAdornment position="end">
-                  <img src={arrowdown} alt="icon" className="MS-field-icon" />
-                </InputAdornment>
-              ),
-            }}
-          />
-          <div className={room ? "OS-Room" : "OS-DestinationDisplay"}>
-            {OSRoom.map((item) => {
+      <div className="NM_TextField">
+        <TextField
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <img src={car} alt="icon" className="MS-field-icon" />
+              </InputAdornment>
+            ),
+          }}
+          label="Enter Destination"
+          id="outlined-size-small"
+          value={selectedCity}
+          size="large"
+          className="MS-firstfield OS-firstfiled"
+          onClick={toggleHandler}
+        />
+        <div className={destination ? "OS-Destination" : "OS-DestinationDisplay"}>
+          <h1 className='OS-Destination-h1'>popular cities</h1>
+          <div>
+            {OSdataDes.map((item) => {
               return (
-                <>
-                  <h1 className='OS-Destination-h1 OS-Room-h1'>{item.Title}</h1>
-                  <div className='OS-Ti-Flex OS-All-Padding'>
-                    {OSdataRoom.map((item) => {
-                      return (
-                        <div className={item.class}>
-                          <img src={user} alt="icon" className="MS-field-icon" />
-                          <div className='OS-DivT-Room'>
-                            <h6 className='OS-h6-Room'>{item.Title}</h6>
-                            <p className='OS-p-Room'> {item.year} </p>
-                          </div>
-                          <div className='OS-Ti-Flex'>
-                            <button className='OS-btn-Room' id={item.id} onClick={() => { if (item.id == 1) { if (count <= 0) { setCount(count) } else { setCount(count - 1) } } else { if (count1 <= 0) { setCount1(count1) } else { setCount1(count1 - 1) } } Count = count + count1 }}>{item.btn1contact}</button>
-                            <p className='OS-pp-Room' id={item.id}>{count}</p>
-                            <p className='OS-pp-Room' id={item.id}>{count1}</p>
-                            <button className='OS-btn-Room' id={item.id} onClick={() => { if (item.id == 1) { setCount(count + 1) } else { setCount1(count1 + 1) } }}>{item.btn2contact}</button>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </>
+                <div className='OS-DestinationFlex'>
+                  <div className='OS-Destination-Par' onClick={() => click(item.des1)}>{item.des1}</div>
+                  <p className='OS-Destination-Par' onClick={() => click(item.des2)}>{item.des2}</p>
+                  <p className='OS-Destination-Par' onClick={() => click(item.des3)}>{item.des3}</p>
+                  <p className='OS-Destination-Par' onClick={() => click(item.des4)}>{item.des4}</p>
+                </div>
               );
             })}
-            <div className='OS-Ti-FlexStyle'>
-              <div className='OS-Ti-Flex OS-Ti-Style' onClick={changeRoom}>
-                <div className='OS-Plus-Style'>+</div>
-                <h6 className='OS-AddRoom-Style'> add room</h6>
-              </div>
-              <div className='OS-applyDiv-Style' onClick={RoomHandler}><p className='OS-apply-Style'>Apply</p></div>
-            </div>
           </div>
         </div>
-        <div className="MS-right">
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <div className="NM_full-width">
+            <DatePicker
+              id="outlined-size-small"
+              label="Check In"
+              defaultValue={dayjs('2022-02-12')}
+              size="large"
+              format="ddd/MM/YY"
+            />
+          </div>
+        </LocalizationProvider>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <div className="NM_full-width">
+            <DatePicker
+              id="outlined-size-small"
+              label="Check In"
+              defaultValue={dayjs('2022-02-12')}
+              size="large"
+              format="ddd/MM/YY"
+            />
+          </div>
+        </LocalizationProvider>
+
+        <TextField
+          label="Rooms & Guests"
+          id="outlined-size-small"
+          defaultValue="1 room, 2 guests"
+          value={`${Room} Room, ${Count} guests`}
+          size="large"
+          className="MS-field1 OS-firstfiled1"
+          onClick={RoomHandler}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="end">
+                <img src={user} alt="icon" className="MS-field-icon" />
+              </InputAdornment>
+            ),
+            endAdornment: (
+              <InputAdornment position="end">
+                <img src={arrowdown} alt="icon" className="MS-field-icon" />
+              </InputAdornment>
+            ),
+          }}
+        />
+        <div className={room ? "OS-Room" : "OS-DestinationDisplay"}>
+          {OSRoom.map((item) => {
+            return (
+              <>
+                <h1 className='OS-Destination-h1 OS-Room-h1'>{item.Title}</h1>
+                <div className='OS-Ti-Flex OS-All-Padding'>
+                  {OSdataRoom.map((item) => {
+                    return (
+                      <div className={item.class}>
+                        <img src={user} alt="icon" className="MS-field-icon" />
+                        <div className='OS-DivT-Room'>
+                          <h6 className='OS-h6-Room'>{item.Title}</h6>
+                          <p className='OS-p-Room'> {item.year} </p>
+                        </div>
+                        <div className='OS-Ti-Flex'>
+                          <button className='OS-btn-Room' id={item.id} onClick={() => { if (item.id == 1) { if (count <= 0) { setCount(count) } else { setCount(count - 1) } } else { if (count1 <= 0) { setCount1(count1) } else { setCount1(count1 - 1) } } Count = count + count1 }}>{item.btn1contact}</button>
+                          <p className='OS-pp-Room' id={item.id}>{count}</p>
+                          <p className='OS-pp-Room' id={item.id}>{count1}</p>
+                          <button className='OS-btn-Room' id={item.id} onClick={() => { if (item.id == 1) { setCount(count + 1) } else { setCount1(count1 + 1) } }}>{item.btn2contact}</button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            );
+          })}
+          <div className='OS-Ti-FlexStyle'>
+            <div className='OS-Ti-Flex OS-Ti-Style' onClick={changeRoom}>
+              <div className='OS-Plus-Style'>+</div>
+              <h6 className='OS-AddRoom-Style'> add room</h6>
+            </div>
+            <div className='OS-applyDiv-Style' onClick={RoomHandler}><p className='OS-apply-Style'>Apply</p></div>
+          </div>
+        </div>
+      </div>
+      <div className="MS-right">
         <a><img src={plus} alt="plus" className="MS-plus" />Add Promo Code</a>
-         <button onClick={handleShowStays} className="MS-btnFlight"><img src={building} alt="arrow" />Show Places</button>
+        <button onClick={handleShowStays} className="MS-btnFlight"><img src={building} alt="arrow" />Show Places</button>
       </div>
     </>
   );
 };
 
 export default ShowPlacesMain;
-
-
-
