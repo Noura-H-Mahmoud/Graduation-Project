@@ -101,7 +101,7 @@ export default function TabsHotelListing() {
             <Tab
               eventKey="other"
               title={
-                <span className="tab-title lastTab">
+                <span className="titleTabs">
                   <img src={tabBar} alt="tabBar" />
                   Other sort
                 </span>

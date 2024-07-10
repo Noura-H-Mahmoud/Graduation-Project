@@ -10,6 +10,7 @@ import Newsletter from "../../../Components/Newsletter/Newsletter";
 import Footer from "../../../Components/Footer/Footer";
 import earth from './../../../assets/images/Earth.png'
 import plane from './../../../assets/images/Vector1.svg'
+import Earth from "../../../Components/Earth/Earth";
 export default function HotelBooking({
   navButtons,
   navButtonsForMobile,
@@ -63,14 +64,7 @@ export default function HotelBooking({
                 price_Service_Fee={"5 $"}
                 price_total={"265 $"}
               />
-              <div className="animation">
-                <div  className="plane">
-                  <img src={plane} alt="plane" />
-                </div>
-                <div className="earth">
-                  <img src={earth} alt="earth" />
-                </div>
-              </div>
+              <Earth/>
             </div>
           </div>
         </section>

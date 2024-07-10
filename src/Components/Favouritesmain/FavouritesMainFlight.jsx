@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from 'react';
 import "./FavouritesMainFlight.css";
 import syrianAirLogo from "../../assets/images/Syrianair.svg";
 import chamWIngsLogo from "../../assets/images/Cham wings.svg";
@@ -7,12 +7,25 @@ import etihadLogo from "../../assets/images/Etihad.png";
 import Checkbox from "@mui/material/Checkbox";
 import listingLine from '../../assets/images/listingline.png'
 import heart from '../../assets/images/heart.svg'
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 function FavouritesMainFlight() {
-  const flights = [
+  useEffect(() => {
+    AOS.init({
+        duration: 2000,
+        once: true,
+    });
+    AOS.refresh();
+  }, []);
+  
+  const location = useLocation();
+  const isFavoritesPage = location.pathname === '/Graduation-Project/flightflow/favorites';
+
+  const initialFlights = [
     {
       id: 1,
       rating: "4.2",
@@ -28,6 +41,7 @@ function FavouritesMainFlight() {
       logo: syrianAirLogo,
       className: "syrianAirLogo",
       lineImg: listingLine,
+      isFavorite: true
     },
     {
         id: 2,
@@ -44,6 +58,7 @@ function FavouritesMainFlight() {
       logo: chamWIngsLogo,
       className: "chamWIngsLogo",
       lineImg: listingLine,
+      isFavorite: true
     },
     {
         id: 3,
@@ -61,6 +76,7 @@ function FavouritesMainFlight() {
       logo: qatarAirwaysLogo,
       className: "qatarAirwaysLogo",
       lineImg: listingLine,
+      isFavorite: false
     },
     {
         id: 4,
@@ -78,9 +94,39 @@ function FavouritesMainFlight() {
       logo: etihadLogo,
       className: "etihadLogo",
       lineImg: listingLine,
+      isFavorite: false
     },
   ];
-  
+
+  const [flights, setFlights] = useState(() => {
+    const savedFlights = JSON.parse(localStorage.getItem('flightInfo'));
+    return savedFlights || initialFlights;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('flightInfo', JSON.stringify(flights));
+  }, [flights]);
+
+  const toggleFavorite = (id) => {
+    const updatedFlights = flights.map(flight => {
+      if (flight.id === id) {
+        return {
+          ...flight,
+          isFavorite: !flight.isFavorite
+        };
+      }
+      return flight;
+    });
+    setFlights(updatedFlights);
+  };
+
+  const removeFromFavorites = (id) => {
+    const updatedFlights = flights.filter(flight => flight.id !== id);
+    setFlights(updatedFlights);
+  };
+
+  const displayedFlights = isFavoritesPage ? flights.filter(flight => flight.isFavorite) : flights;
+
   const textRow = (items) => {
     return (
       <>
@@ -111,10 +157,10 @@ function FavouritesMainFlight() {
 
   return (
     <div>
-      {flights.map((item) => (
+      {displayedFlights.map((item) => (
         <div key={item.id} className="AM_flightComponent">
-          <img className={item.className} src={item.logo} alt="" />
-          <div className="AM_content">
+          <img className={item.className} src={item.logo} alt="" data-aos='flip-right' />
+          <div className="AM_content" data-aos='fade-right'>
             <div className="firstRow">
               <div className="rate">
                 <p className="rating">{item.rating}</p>
@@ -133,9 +179,13 @@ function FavouritesMainFlight() {
             {item.id === 4 && textRow(secondHalf)}
             <div className="foorterflightitem">
                 <img className="AM_FooterLine" src={item.lineImg} alt="" />
-                <div className="btnsFooterFlight">
-                    <button className="favBtn"><img src={heart} alt="" /></button>
-                    <Link className='AM_BtnLink' to={'/Graduation-Project/flightflow/detail'}><button className="dealBtn">View Deals</button></Link>
+                <div className="btnsFooterFlight" data-aos='flip-up'>
+                    <button className="favBtn" onClick={() => toggleFavorite(item.id)}>
+                      {item.isFavorite ? <img src={heart} alt="heart" /> : <span>♡</span>}
+                    </button>
+                    <Link className='AM_BtnLink' to={'/Graduation-Project/flightflow/detail'}>
+                      <button className="dealBtn">View Deals</button>
+                    </Link>
                 </div>
             </div>
           </div>

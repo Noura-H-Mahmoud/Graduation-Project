@@ -3,7 +3,7 @@
     justify-content: start;
     align-items: center;
     text-align: center !important;
-    width: 58.33%;
+    /* width: 840px; */
     height: 80px;
     padding: 16px 24px 16px 24px;
     gap: 48px;
@@ -15,7 +15,7 @@
 .NM_HotelListing {
     background-color: #FAFBFC;
 }
-.AM_flightlist .tab-title {
+.AM_flightlist .titleTabs {
     display: block;
     width: 140px;
     height: 20px;
@@ -26,7 +26,9 @@
     color: black;
     margin: 0 !important;
 }
-
+.AM_flightlist .tab-title {
+    margin: 0;
+}
 .AM_flightlist  .small {
     color: #a0a7a0;
     width: 140px;
@@ -36,6 +38,7 @@
     font-weight: 400;
     line-height: 17.07px;
     text-align: left;
+    margin: 0 !important;
 
 }
 .lastTab {
@@ -44,15 +47,17 @@
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     border: 0;
 }
-.nav-tabs .nav-link.active .titleTabs {
+.custom-tabs .titleTabs {
     position: relative;
 }
 .nav-tabs .nav-link.active .titleTabs::after {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 168px;
     height: 4px;
     background-color: var(--main-bgcolor);
+    bottom: -27.5px;
+    left: -12px;
 }
 
 .nav-tabs .nav-link .titleTabs {
@@ -67,8 +72,28 @@
     align-items: center;
     justify-content: center;
 }
+@media screen and (min-width:1201px) and (max-width:1428px) {
+    .custom-tabs {
+        gap: 20px;
+    }
+}
 @media screen and (max-width:1200px){
     .listLinev {
         display: none;
+    }
+}
+@media screen and (max-width:1039px){
+    .custom-tabs {
+        gap: 18px;
+    }
+}
+@media screen and (max-width:891px) {
+    .custom-tabs {
+        gap: 0px;
+        height: max-content;
+        row-gap: 20px;
+    }
+    .AM_flightlist .titleTabs {
+        width: 100px;
     }
 }
