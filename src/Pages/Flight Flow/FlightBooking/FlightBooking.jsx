@@ -8,8 +8,7 @@ import FlightForm from "../../../Components/FlightForm/FlightForm";
 import imgFlightCard from './../../../assets/images/Booking detail.png'
 import Navigation from "../../../Components/Nav/Nav";
 import Newsletter from "../../../Components/Newsletter/Newsletter";
-import earth from './../../../assets/images/Earth.png'
-import plane from './../../../assets/images/Vector1.svg'
+import Earth from "../../../Components/Earth/Earth";
 export default function FlightBooking({navButtons, navButtonsForMobile,navList}) {
   return (
     <section className="FlightBooking">
@@ -26,14 +25,7 @@ export default function FlightBooking({navButtons, navButtonsForMobile,navList})
       <div>
         <FlightCard page={'FlightBooking'} imgFlightCard={imgFlightCard} title={'Economy'} subtitle={<p className="subtitle" style={{marginBottom: '20px'}}>Emirates A380 Airbus</p>} button={'4.2'}
         price_Base_Fare={'400 $'} price_Discount={'400 $'} price_taxes={'400 $'} price_Service_Fee={'400 $'} price_total={'400 $'}/>
-        <div className="animation">
-          <div  className="plane">
-            <img src={plane} alt="plane" />
-          </div>
-          <div className="earth">
-            <img src={earth} alt="earth" />
-          </div>
-        </div>
+        <Earth/>
       </div>
     </div>
     <Newsletter/>

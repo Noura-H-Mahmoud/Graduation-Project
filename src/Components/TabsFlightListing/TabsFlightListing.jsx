@@ -11,6 +11,7 @@ import chevrondown from '../../assets/images/chevron_down.svg';
 import listLinev from '../../assets/images/listlinev.svg';
 import listNavLine from '../../assets/images/listnavline.svg';
 
+
 export default function TabsHotelListing() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -38,7 +39,7 @@ export default function TabsHotelListing() {
 
   return (
     <section className="NM_HotelListing">
-      <FormWithOutTab />
+       <FormWithOutTab page="flightListing" />
       <div className="NM_MainSection">
         <div className="NM_filter">
           <button className="MS-filterBtn" onClick={togglePopup}>
