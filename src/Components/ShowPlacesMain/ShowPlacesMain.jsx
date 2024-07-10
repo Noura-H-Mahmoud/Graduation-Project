@@ -1,16 +1,88 @@
-import { useLocation } from 'react-router-dom';
-import ShowPlacesMain from '../ShowPlacesMain/ShowPlacesMain';
-import ShowFlightsMain from '../ShowFlightsMain/ShowFlightsMain';
+import React, { useState } from 'react';
+import "../ShowPlaces/ShowPlaces.css";
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import car from "./../../assets/images/Vector (9).svg";
+import plus from "./../../assets/images/Vector (10).svg";
+import arrowdown from "./../../assets/images/Vector (7).svg";
+import building from "./../../assets/images/building.svg";
+import user from "./../../assets/images/User.svg";
+import dayjs from 'dayjs';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { useNavigate } from 'react-router-dom';
 
-export default function ShowPlaces() {
-  const location = useLocation();
-  const path = location.pathname;
+const ShowPlacesMain = () => {
+  let index = 1;
+
+  const [destination, setDestination] = useState(false);
+  const [selectedCity, setSelectedCity] = useState('Istanbul, Turkey');
+  const [room, setRoom] = useState(false);
+  const [count, setCount] = useState(0);
+  const [count1, setCount1] = useState(0);
+  const [add, setAdd] = useState('');
+  const navigate = useNavigate();
+  const token = localStorage.getItem('authToken');
+
+  const toggleHandler = () => {
+    setDestination(!destination);
+  };
+
+  const RoomHandler = () => {
+    setRoom(!room);
+  };
+
+  const click = (city) => {
+    setSelectedCity(city);
+  };
+
+  const changeRoom = () => {
+    setAdd(add);
+  };
+
+  let Count = count + count1;
+  let Room = index;
+
+  const OSdataDes = [
+    { des1: 'Makkah, Saudi Arabia', des2: 'Dubai, United Arab Emirates', des3: 'Al Madinah, Saudi Arabia', des4: 'Cairo, Egypt' },
+    { des1: 'Hurghada, Egypt', des2: 'Sharm El Sheikh, Egypt', des3: 'Alexandria, Egypt', des4: 'Istanbul, Turkey' },
+    { des1: 'Abu Dhabi, United Arab Emirates', des2: 'Sharjah, United Arab Emirates', des3: 'Riyadh, Saudi Arabia', des4: 'Jeddah, Saudi Arabia' },
+    { des1: 'Ain Sokhna, Egypt', des2: 'Beirut, Lebanon', des3: 'Dahab, Egypt', des4: 'Doha, Qatar' },
+    { des1: 'Aswan, Egypt', des2: 'Kuwait', des3: 'Ajman, United Arab Emirates', des4: 'Amman, Jordan' },
+  ];
+
+  const OSdataRoom = [
+    {
+      Title: "Adults",
+      year: ">17years",
+      btn1contact: "-",
+      btn2contact: "+",
+      class: "OS-Ti-Flex",
+      id: "1"
+    },
+    {
+      Title: "Children",
+      year: "<17years",
+      btn1contact: "-",
+      btn2contact: "+",
+      class: "OS-Ti-Flex OS-Ti-Padding1",
+      id: "2"
+    },
+  ];
+
+  const handleShowStays = () => {
+    if (token) {
+      navigate('/Graduation-Project/hotelflow/listing');
+    } else {
+      navigate('/Graduation-Project/auth/login');
+    }
+  };
+  const OSRoom = [{ Title: `Room ${index}` }];
 
   return (
-<<<<<<< HEAD
     <>
-      <div className='MS-showFlight MS-ShowPlaces container'>
-        <p>Where are you flying? </p>
         <div className="MS-textfields">
           <TextField
             InputProps={{
@@ -68,7 +140,7 @@ export default function ShowPlaces() {
             defaultValue="1 room, 2 guests"
             value={`${Room} Room, ${Count} guests`}
             size="large"
-            className="MS-field1 OS-firstfiled"
+            className="MS-field1 OS-firstfiled1"
             onClick={RoomHandler}
             InputProps={{
               startAdornment: (
@@ -120,24 +192,14 @@ export default function ShowPlaces() {
           </div>
         </div>
         <div className="MS-right">
-          <a><img src={plus} alt="plus" className="MS-plus" />Add Promo Code</a>
-          <Link to="/Graduation-Project/hotelflow/listing"> <button className="MS-btnFlight"><img src={building} alt="arrow" />Show Places</button></Link>
-        </div>
+        <a><img src={plus} alt="plus" className="MS-plus" />Add Promo Code</a>
+         <button onClick={handleShowStays} className="MS-btnFlight"><img src={building} alt="arrow" />Show Places</button>
       </div>
     </>
-  )
-}
-
-    <div className='MS-showFlight MS-ShowPlaces container'>
-      <p>Where are you flying?</p>
-      {path.includes('/flightflow') ? <ShowFlightsMain /> : null}
-      {path.includes('/hotelflow') ? <ShowPlacesMain /> : null}
-    </div>
   );
-}
+};
+
+export default ShowPlacesMain;
 
 
 
-
-
->>>>>>> 60b37eeeb5feaa4aaed9090c36c1f28ff94a4c6e
