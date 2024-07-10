@@ -1,4 +1,4 @@
-    .MS-ShowPlaces p {
+.MS-ShowPlaces p {
         font-weight: 900;
         font-weight: var(--third-font-weight);
         font-size: var(--small-font-size);
@@ -170,8 +170,7 @@
         cursor: pointer;
         background-color: var(--third-bgcolor);
     }
-
-    .OS-Plus-Style {
+.OS-Plus-Style {
         width: 30px;
         height: 30px;
         display: flex;
@@ -202,11 +201,9 @@
     .OS-removeRoom-Style:active {
         color: var(--main-bgcolor);
     }
-    @media (max-width: 1200px) {
-        .MS-textfields {
-            flex-direction: column;
-        }
-        .MS-firstfield,.MS-field1{
-            width: 100%;
+    
+    @media (max-width: 576px) {
+        .MS-firstfield {
+            width: 240px;
         }
     }
