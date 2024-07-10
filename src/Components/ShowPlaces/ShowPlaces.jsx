@@ -26,18 +26,6 @@ const[roomCount,SetRoomCount]=useState(1)
   const [count,setcount]=useState(0)
   const [count1,setcount1]=useState(0)
   let Count=count+count1
-{/* USE State for Btton Minus*/ }
-const handlerMinus=(index)=>{
-  if(item.id==1){
-    if(count<=0) 
-      {setcount(count)}else{setcount(count-1)}}
-  else{
-    if(count1<=0) 
-      {setcount1(count1)}
-    else{setcount1(count1-1)}} 
-  Count=count+count1
-}
-
 {/* USE State for Show Room*/ }
   const [room,setRoom]=useState(false)
   const RoomHandler = () => {
@@ -91,7 +79,7 @@ alert(value)
       year:">17years",
       btn1contact:"-",
       btn2contact:"+",
-      class:"OS-Ti-Flex",
+      class:"OS-Ti-Flex ",
       id:"1"
     }, {
       Title:"Children",
@@ -216,7 +204,7 @@ alert(value)
                <h1 className='OS-Destination-h1 OS-Room-h1' key={index}>Room{index+1}</h1>
                {roomList.length>1 &&(<h6  key={index} className='OS-removeRoom-Style' onClick={()=>handleRoomremove(index)} >remove</h6>)}
                </div>
-              <div className='OS-Ti-Flex OS-All-Padding' key={index}>
+              <div className='OS-Ti-Flex  OS-All-Padding' key={index}>
               {OSdataRoom.map((item ,index)=>{
               return <>
               <div className={item.class}>
@@ -236,7 +224,7 @@ alert(value)
                </>})}
                 </div>
                
-                <div className='OS-Ti-FlexStyle'>
+                <div className='OS-Ti-FlexStyle OS-FlexWrap'>
                   {roomList.length-1 === index &&(
                   <>
                   <div className='OS-Ti-Flex OS-Ti-Style' onClick={handleRoomAdd}>
