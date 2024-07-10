@@ -136,7 +136,6 @@
     width: 89.33%;
 }
 .dealBtn {
-    /* width: 33.5rem; */
     height: 48px;
     padding: 8px 16px 8px 16px;
     gap: 4px;
@@ -157,8 +156,31 @@
         align-items: start;
     }
 }
-/* 
-16.75 1440
-x      1000
-11.63194
-1.163194444 */
+@media screen and (max-width:992px) {
+    .AM_flightComponent {
+        flex-direction: column;
+        height: max-content;
+        padding: 60px 10px;
+    }
+    .firstRow {
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width:503px){
+    .AM_flightComponent {
+        align-items: center;
+    }
+    .firstRow {
+        justify-content: center;
+    }
+    .secRow {
+        justify-content: center;
+    }
+    .textRow {
+        flex-direction: column;
+        margin-bottom: 30px;
+        gap: 10px;
+        /* align-items: center; */
+    }
+}
