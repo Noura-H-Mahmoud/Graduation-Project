@@ -4,6 +4,7 @@ import bin from '../../assets/images/Bin.png';
 import visa from '../../assets/images/visacard2.png';
 import Popup from '../Booking-Popup/Popup';
 import './PaymentMethods.css';
+import { Link } from 'react-router-dom';
 
 export default function PaymentMethods() {
   const [isClicked1, setIsClicked1] = useState(false);
@@ -19,6 +20,9 @@ export default function PaymentMethods() {
     }
   };
 
+  const linkto = [
+    <Link className='MH-addbtn ' to={"/Graduation-Project/hotelflow/booking3"}>Add Card</Link>
+  ]
   return (
     <section className='RH_PaymentMethods'>
       <div className='RH_paymenttitlte'>Payment methods</div>
@@ -51,7 +55,7 @@ export default function PaymentMethods() {
         </div>
       </div>
 
-      {showNewCard && <Popup />}
+      {showNewCard && <Popup link={linkto}/>}
     </section>
   );
 }
