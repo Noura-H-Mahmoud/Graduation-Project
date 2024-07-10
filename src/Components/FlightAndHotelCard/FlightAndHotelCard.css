@@ -66,5 +66,6 @@ background-color:  #d86304;
 @media (max-width: 576px) {
     .MS-FlightHotelCard{
         width: 100%;
+        padding: 20px;
     }
 }
