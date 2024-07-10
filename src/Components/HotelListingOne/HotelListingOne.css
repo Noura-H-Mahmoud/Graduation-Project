@@ -153,7 +153,7 @@
         margin: 0px 15px;
     }
     
-    .OS_div-btn :hover {
+    .OS_div-btn :active {
         background-color: var(--main-bgcolor);
         transition: all .5s;
     }
@@ -163,13 +163,13 @@
         background-color: var(--main-bgcolor);
     }
     
-    .OS-Btn-Book:hover,
-    .OS-link-Book:hover {
+    .OS-Btn-Book:active,
+    .OS-link-Book:active {
         background-color: transparent;
         transition: all .5s;
     }
     
-    .OS-Btn-Photo:hover {
+    .OS-Btn-Photo:active {
         background-color: var(--black-color);
         transition: all .5s;
         color: var( --main-bgcolor);
