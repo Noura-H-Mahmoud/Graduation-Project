@@ -44,6 +44,7 @@ import card from './assets/images/card.svg';
 import setting from './assets/images/setting.svg';
 import support from './assets/images/support.svg';
 import logout from './assets/images/logout.svg';
+import navLine from './assets/images/navLine.svg'
 
 const title = 'LIVE & TRAVEL';
 const para = 'Special offers to suit your plan';
@@ -193,7 +194,7 @@ const State = () => {
             <li className={currentPage === 'landingpage' ? 'd-none' : ''}>
                 <Link className='AM_Link'>John D.</Link>
             </li>
-            <li className={currentPage === 'landingpage' ? 'd-none' : 'user-profile'}>
+            <li onClick={handleLinkClick} className={currentPage === 'landingpage' ? 'd-none' : 'user-profile'}>
                 <img src={client} alt="" /></li>
         </>
     );
@@ -208,11 +209,13 @@ const State = () => {
               <p className='connect-status'>Online</p>
             </div>
           </div>
+          <img className='AM_Navline' src={navLine} alt="" />
           <div className='AM_AccountLinks'>
             <Link className='AM_Link1' to="/Graduation-Project/myaccount"><img src={profileBlack} alt=""/>My Account</Link>
             <Link className='AM_Link1'><img src={card} alt="" />Payments</Link>
             <Link className='AM_Link1'><img src={setting} alt="" />Setting</Link>
           </div>
+          <img className='AM_Navline' src={navLine} alt="" />
           <div className='AM_SupportLinks'>
             <Link className='AM_Link1'><img src={support} alt="" />Support</Link>
             <Link className='AM_Link1'><img src={logout} alt="" />Logout</Link>

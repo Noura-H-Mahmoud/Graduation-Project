@@ -8,6 +8,8 @@ import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import FavouritesMainFlight from "../Favouritesmain/FavouritesMainFlight";
 import tabBar from "../../assets/images/tabbar.svg";
 import chevrondown from '../../assets/images/chevron_down.svg';
+import listLinev from '../../assets/images/listlinev.svg';
+import listNavLine from '../../assets/images/listnavline.svg';
 
 export default function TabsHotelListing() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -36,7 +38,7 @@ export default function TabsHotelListing() {
 
   return (
     <section className="NM_HotelListing">
-        <FormWithOutTab />
+      <FormWithOutTab />
       <div className="NM_MainSection">
         <div className="NM_filter">
           <button className="MS-filterBtn" onClick={togglePopup}>
@@ -52,53 +54,54 @@ export default function TabsHotelListing() {
             <Accordion filters={filters} />
           </div>
         </div>
+        <img className="listLinev" src={listLinev} alt="" />
         <div className="AM_flightlist">
-          <Tabs
-            defaultActiveKey="best"
-            id="uncontrolled-tab-example"
-            className="custom-tabs"
-          >
+          <Tabs defaultActiveKey="best" id="uncontrolled-tab-example" className="custom-tabs">
             <Tab
               eventKey="cheapest"
               title={
-                <span className="tab-title">
-                  Cheapest <br /> <small>$99 . 2h 18m</small>
-                </span>
+                <div className="titleTabs">
+                  <p className="tab-title">Cheapest </p>
+                  <p className="small">$99 . 2h 18m</p>
+                </div>
               }
             >
               {detailTab()}
-              <FavouritesMainFlight/>
+              <FavouritesMainFlight />
             </Tab>
+
             <Tab
               eventKey="best"
               title={
-                <span className="tab-title">
-                  Best <br /> <small>$99 . 2h 18m</small>
-                </span>
+                <div className="titleTabs">
+                  <p className="tab-title">Best </p>
+                  <p className="small">$99 . 2h 18m</p>
+                </div>
               }
             >
               <div className="tab-content">
                 {detailTab()}
-                <FavouritesMainFlight/>
-                </div>
+                <FavouritesMainFlight />
+              </div>
             </Tab>
             <Tab
               eventKey="quickest"
               title={
-                <span className="tab-title">
-                  Quickest <br /> <small>$99 . 2h 18m</small>
-                </span>
+                <div className="titleTabs">
+                  <p className="tab-title">Quickest </p>
+                  <p className="small">$99 . 2h 18m</p>
+                </div>
               }
             >
               <div className="tab-content">
                 {detailTab()}
-                <FavouritesMainFlight/>
-                </div>
+                <FavouritesMainFlight />
+              </div>
             </Tab>
             <Tab
               eventKey="other"
               title={
-                <span className="tab-title">
+                <span className="tab-title lastTab">
                   <img src={tabBar} alt="tabBar" />
                   Other sort
                 </span>
@@ -106,8 +109,8 @@ export default function TabsHotelListing() {
             >
               <div className="tab-content">
                 {detailTab()}
-                <FavouritesMainFlight/>
-                </div>
+                <FavouritesMainFlight />
+              </div>
             </Tab>
           </Tabs>
         </div>

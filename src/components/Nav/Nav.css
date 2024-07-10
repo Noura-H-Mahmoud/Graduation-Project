@@ -403,7 +403,7 @@
 
 .arrowDown {
     position: absolute;
-    right: 9.5rem;
+    right: 10rem;
     top: 3.6rem;
     width: 14px;
     height: 14px;
@@ -447,7 +447,7 @@
     width: 329px;
     height: 363px;
     top: 77px;
-    left: 994px;
+    right: 7.3125rem;
     padding: 32px;
     gap: 24px;
     border-radius: 12px;
@@ -488,6 +488,7 @@
 .AM_AccountLinks, .AM_SupportLinks {
     display: flex;
     flex-direction: column;
+    gap: 16px;
 }
 .AM_AccountLinks {
     max-width: 265px;
@@ -499,6 +500,10 @@
     text-decoration: none;
     position: relative;
 }
+.AM_Link1 img {
+    padding-right: 8px;
+
+}
 .AM_Link1::after {
     content: '';
     position: absolute;
@@ -509,12 +514,14 @@
     color: black;
     border: 1.5px ;
     background-image: url(../../assets/images/rightarrow.svg);
-
 }
 /* by Noura */
 
 .AM-Bed.AM-margin{
     margin-right: 3.5px;
+}
+.AM_Navline {
+    padding: 24px 0;
 }
 /* ------------------------------------------------Whitebg nav------------------------------------------------ */
 /* ------------------------------------------------Whitebg nav------------------------------------------------ */
@@ -553,6 +560,9 @@
         left: 24px;
         transform: translateX(0%);
     }
+    /* .AM_AccountList {
+        display: none;
+    } */
 
     .NM_NavBar {
         width: calc(100% - 14px);
