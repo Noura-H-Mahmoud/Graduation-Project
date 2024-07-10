@@ -134,7 +134,7 @@ export default function ShowPlaces() {
             defaultValue="1 room, 2 guests"
             value={`${Room} Room, ${Count} guests`}
             size="large"
-            className="MS-field1 OS-firstfiled1"
+            className="MS-field1 OS-firstfiled"
             onClick={RoomHandler}
             InputProps={{
               startAdornment: (
