@@ -121,6 +121,7 @@ const ShowPlacesMain = () => {
               defaultValue={dayjs('2022-02-12')}
               size="large"
               format="ddd/MM/YY"
+              className='MS-width'
             />
           </div>
         </LocalizationProvider>
@@ -132,6 +133,7 @@ const ShowPlacesMain = () => {
               defaultValue={dayjs('2022-02-12')}
               size="large"
               format="ddd/MM/YY"
+               className='MS-width'
             />
           </div>
         </LocalizationProvider>

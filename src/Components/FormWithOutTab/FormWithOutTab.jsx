@@ -118,7 +118,7 @@ const FormWithOutTab = ({ page }) => {
             </div>
           </div>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <div>
+            <div className='MS-text-field'>
               <DatePicker
                 id="outlined-size-small"
                 label="Check In"
@@ -130,7 +130,7 @@ const FormWithOutTab = ({ page }) => {
             </div>
           </LocalizationProvider>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <div className="">
+            <div className="MS-text-field">
               <DatePicker
                 id="outlined-size-small"
                 label="Check Out"

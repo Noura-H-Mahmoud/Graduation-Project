@@ -51,6 +51,18 @@
 .MS-text-field1{
     width: 344px!important;
 }
+.MS-text-field .MuiInputLabel-root.Mui-focused,
+.AM-field  .MuiInputLabel-root.Mui-focused,
+.MS-text-field1  .MuiInputLabel-root.Mui-focused,
+.AM-Returnfield .MuiInputLabel-root.Mui-focused{
+       color:var(--main-bgcolor);
+     }
+     .MS-text-field .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+     .AM-field .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+     .MS-text-field1  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline ,
+     .AM-Returnfield  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+       border-color:var(--main-bgcolor);
+     }
 @media screen and (max-width: 1439px) {
     .AM_form {
         min-width: 0 !important;
@@ -86,24 +98,15 @@
     .MS-SButton{
         margin-right: 0 !important;
     }
+    .MS-text-field1,.MS-text-field{
+        width: 100% !important;
+    }
 }
- .MS-text-field .MuiInputLabel-root.Mui-focused,
- .AM-field  .MuiInputLabel-root.Mui-focused,
- .MS-text-field1  .MuiInputLabel-root.Mui-focused,
- .AM-Returnfield .MuiInputLabel-root.Mui-focused{
-        color:var(--main-bgcolor);
-      }
-      .MS-text-field .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
-      .AM-field .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
-      .MS-text-field1  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline ,
-      .AM-Returnfield  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-        border-color:var(--main-bgcolor);
-      }
 @media screen and (max-width:560px) {
-    .AM-field ,.MS-text-field{
+    .AM-field {
         width: 20rem !important;
     }
-    .AM-Returnfield ,.MS-text-field1  {
+    .AM-Returnfield {
         width: 20rem !important;
         
     }
@@ -112,10 +115,10 @@
     }
 }
 @media screen and (max-width:410px) {
-    .AM-field,.MS-text-field {
+    .AM-field {
         width: 14rem !important;
     }
-    .AM-Returnfield ,.MS-text-field1  {
+    .AM-Returnfield  {
         width: 14rem !important;
     }
     .AM_searchButton {
