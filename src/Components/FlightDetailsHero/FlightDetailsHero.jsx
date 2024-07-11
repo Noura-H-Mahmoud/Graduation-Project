@@ -52,7 +52,7 @@ export default function FlightDetailsHero() {
 <div>
 <img src={heart} alt="plane" className='RH_Heart' />
 <img src={sharing} alt="plane" className='RH_sharing' />
-<button className='RH_book' ><a href='http://localhost:5173/Graduation-Project/flightflow/booking'>Book now</a></button>
+<button className='RH_book' ><a href='/Graduation-Project/flightflow/booking'>Book now</a></button>
 
 </div>
 
