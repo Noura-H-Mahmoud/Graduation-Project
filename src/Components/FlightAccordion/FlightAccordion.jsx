@@ -23,7 +23,7 @@ const FlightAccordion = ({Header_Title , Header_Body , Header_Title2 ,Header_Bod
                 <p className='Header-Body-para2'>{Header_Body}</p>
             </div>
             <div className="Header-icon">
-                <img onClick={() => ActivePanel(1)} src= {active===1 ? {icon2} : {circle} } alt="iconActive" />
+                <img onClick={() => ActivePanel(1)} src= {active===1 ? icon2 : circle } alt="iconActive" />
             </div>
         </div>
         <div className="Accordion-Header-Hiden" style={{background : active ===2 ? "#FF8500" : "#fff"}} >
