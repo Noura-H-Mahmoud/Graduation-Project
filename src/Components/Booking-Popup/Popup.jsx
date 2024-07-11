@@ -55,9 +55,11 @@ export default function Popup({link}) {
                     <input type="checkbox"  />
                     <p>Securely save my information for 1-click checkout</p>
                     </div>
+                    <Link className='MH-addbtn ' to={"/Graduation-Project/flightflow/booking3"}>
                     <div className="MH-btn">
-                    {link}
+                        Add Card
                     </div>
+                    </Link>
                    </form>
                    <p className='MH-paragraph' >By confirming your subscription, you allow The Outdoor Inn Crowd Limited to charge your card for this payment and future payments in accordance with their terms. You can always cancel your subscription.</p> 
                 </div>
