@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'TradeGothic LT Extended Regular';
-    src: url('./assets/fonts/TradeGothicLTExtendedRegular.ttf') format('opentype');
+    src: url('../../assets/fonts/TradeGothic\ LT\ Extended\ Regular.ttf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
