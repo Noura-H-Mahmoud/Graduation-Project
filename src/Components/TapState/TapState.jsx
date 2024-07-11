@@ -5,8 +5,8 @@ import linel from '../../assets/images/LineL.svg'
 
 import HourIcon from '../../assets/images/timmer.svg'
 import GateIcon from '../../assets/images/doorclosed.svg'
-
 import btnContent2 from '../../assets/images/chevron_forward.svg'
+import imgticket from '../../assets/images/flight-ticket.png'
 export default  function TapState  ()  {
     const OSArrowFlight=[{
         img:cvk,
@@ -63,8 +63,8 @@ export default  function TapState  ()  {
   return (
     <>
          <div className='OS-big-Style'>
-           {OSArrowFlight.map((item)=>{
-             return<div className='OS-Fl-Style'>
+           {OSArrowFlight.map((item, index)=>{
+             return<div key={index} className='OS-Fl-Style'>
                 <div className=' OS-Emirates-line'> <img src={item.img} alt="Emirates-line" /></div>
                 <div className=' OS-Text-Style'>
                     <div className='OS-Text'>
@@ -106,7 +106,7 @@ export default  function TapState  ()  {
                 </div>
                 </div>
                 <div className='OS-Flight-btn'>
-                    <button className='OS-btn1'>{item.btnContent1}</button>
+                    <a href={imgticket} download><button className='OS-btn1'>{item.btnContent1}</button></a>
                     <button  className='OS-btn2'><img src={item.btnContent2}alt="" /></button>
                 </div>
              </div>})}

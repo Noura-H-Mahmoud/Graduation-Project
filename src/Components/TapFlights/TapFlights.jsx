@@ -7,6 +7,7 @@ import HourIcon from '../../assets/images/timmer.svg'
 import GateIcon from '../../assets/images/doorclosed.svg'
 import SateIcon from '../../assets/images/airlineseat.svg'
 import btnContent2 from '../../assets/images/chevron_forward.svg'
+import imgticket from '../../assets/images/flight-ticket.png'
 export default function TapFlights  () {
     const OSArrowFlight=[{
         img:Emirates,
@@ -75,7 +76,7 @@ export default function TapFlights  () {
     <>
        <div className='OS-big-Style'>
            {OSArrowFlight.map((item ,index)=>{
-             return<div className='OS-Fl-Style'>
+             return<div key={index} className='OS-Fl-Style'>
                 <div className='OS-Emirates-line'key={index} > <img  src={item.img} alt="Emirates-line" /></div>
                 <div className=' OS-Text-Style'>
                     <div className='OS-Text'>
@@ -123,7 +124,7 @@ export default function TapFlights  () {
                 </div>
                 </div>
                 <div className='OS-Flight-btn'>
-                    <button className='OS-btn1'>{item.btnContent1}</button>
+                   <a href={imgticket} download> <button className='OS-btn1'>{item.btnContent1}</button></a>
                     <button  className='OS-btn2'><img src={item.btnContent2}alt="" /></button>
                 </div>
              </div>})}
