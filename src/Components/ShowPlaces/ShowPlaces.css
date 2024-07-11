@@ -221,4 +221,33 @@
         .OS-Destination {
             bottom: 7.2rem;
         }
+        .OS-Room {
+            margin-right: 0%;
+            width: 75%;
+        }
+        .OS-FlexWrap {
+            flex-wrap: wrap;
+        }
+        .OS-Destination {
+            width: 98%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            margin-top: 300px!important;
+        }
+        .OS-DestinationFlex {
+            flex-wrap: wrap;
+        }
+    }
+    
+    @media (max-width: 420px) {
+        .OS-Destination {
+            margin-top: 26.25rem!important;
+        }
+    }
+    
+    @media (max-width: 320px) {
+        .OS-Destination {
+            margin-top: 34.25rem!important;
+        }
     }
