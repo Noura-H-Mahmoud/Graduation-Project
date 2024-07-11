@@ -376,8 +376,11 @@
     }
     /* Ali edit this */
     @media screen and (max-width:576px) {
+        .OS-BackPacking {
+            padding: 20px 30px;
+        }
         .OS-one-Backing {
-            width: 25.5rem;
+            width: 30.5rem;
         }
         .OS-Back_Par {
             width: 100%;
@@ -391,18 +394,42 @@
             width: 80%;
         }
         .OS-one-Backing {
-            height: 450px;
+            height: 500px;
         }
-
+        .OS-paragraf {
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .OS-paragraf p {
+            font-size: 10px !important;
+        }
+        .OS-paragraf h6 {
+            font-size: 15px;
+        }
+        .OS-Back_Par h1 {
+            font-size: 24px;
+            margin: 30px 0;
+            width: 100%;
+            
+        }
+        .OS-P {
+            font-size: 13px;
+        }
+        
     }
     
     @media screen and (max-width: 450px) {
         .OS-BackPacking {
+            padding: 20px;
             flex-wrap: wrap;
         }
         .OS-one-Backing {
-            width: 20.5rem;
-            height: 28.5rem;
+            width: 23.5rem;
+            height: 500px !important;
         }
         .OS_img_Travel {
             width: 300px!important;

@@ -10,6 +10,7 @@ import heart from '../../assets/images/heart.svg'
 import { Link, useLocation } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import fav from '../../assets/images/favourites.svg'
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -41,10 +42,11 @@ function FavouritesMainFlight() {
       logo: syrianAirLogo,
       className: "syrianAirLogo",
       lineImg: listingLine,
+      periodClass: 'd-none',
       isFavorite: true
     },
     {
-        id: 2,
+      id: 2,
         rating: "4.2",
         status: "Very Good",
       reviews: "54 reviews",
@@ -58,10 +60,11 @@ function FavouritesMainFlight() {
       logo: chamWIngsLogo,
       className: "chamWIngsLogo",
       lineImg: listingLine,
+      periodClass: 'd-none',
       isFavorite: true
     },
     {
-        id: 3,
+      id: 3,
       airline: "Qatar Airways",
       rating: "4.2",
       status: "Very Good",
@@ -76,12 +79,14 @@ function FavouritesMainFlight() {
       logo: qatarAirwaysLogo,
       className: "qatarAirwaysLogo",
       lineImg: listingLine,
+      period:'/night',
+      periodClass: 'period',
       isFavorite: false
     },
     {
-        id: 4,
+      id: 4,
         airline: "Etihad Airways",
-      rating: "4.2",
+        rating: "4.2",
       status: "Very Good",
       reviews: "54 reviews",
       price: "104 $",
@@ -94,6 +99,8 @@ function FavouritesMainFlight() {
       logo: etihadLogo,
       className: "etihadLogo",
       lineImg: listingLine,
+      period:'/night',
+      periodClass: 'period',
       isFavorite: false
     },
   ];
@@ -170,7 +177,7 @@ function FavouritesMainFlight() {
               </div>
               <div className="priceItem">
                 <p className="captionPrice">starting from</p>
-                <p className="price">{item.price}</p>
+                <p className="price">{item.price}<span className={item.periodClass}>{item.period}</span></p>
               </div>
             </div>
             {item.id === 1 && textRow(firstHalf)}
@@ -181,7 +188,7 @@ function FavouritesMainFlight() {
                 <img className="AM_FooterLine" src={item.lineImg} alt="" />
                 <div className="btnsFooterFlight" data-aos='flip-up'>
                     <button className="favBtn" onClick={() => toggleFavorite(item.id)}>
-                      {item.isFavorite ? <img src={heart} alt="heart" /> : <span>♡</span>}
+                      {item.isFavorite ? <img src={heart} alt="heart" /> : <img src={fav} />}
                     </button>
                     <Link className='AM_BtnLink' to={'/Graduation-Project/flightflow/detail'}>
                       <button className="dealBtn">View Deals</button>

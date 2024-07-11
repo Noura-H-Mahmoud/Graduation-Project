@@ -564,12 +564,23 @@
         top: 180px;
         right: 13.1rem;
     }
-    /* .AM_AccountList {
-        display: none;
-    } */
 
     .NM_NavBar {
         width: calc(100% - 14px);
         left: var(--small-padding);
     }
+}
+@media screen and (max-width:540px) {
+    .AM_AccountList {
+        top: 300% !important;
+        left: 50% !important;
+        transform: translate(-50%,-50%);
+    }
+}
+@media screen and (max-width:325px) {
+    .AM_AccountList {
+        width: 80%;
+        overflow: hidden;
+    }
+    
 }

@@ -72,7 +72,7 @@
     align-items: center;
     flex-wrap: wrap;
     position: absolute;
-    top: 24px;
+    top: 0;
     right: 40px;
 }
 .captionPrice {
@@ -147,6 +147,13 @@
 .AM_FooterLine {
     width: 100%;
 }
+.period {
+    font-size: 14px;
+    font-weight: 700;
+    /* line-height: 17.07px; */
+    text-align: right;
+    
+}
 @media screen and (max-width:1439px) {
     .firstRow {
         width: 35rem;
@@ -166,10 +173,9 @@
         width: 100%;
     }
     .priceItem {
-        top: -170px;
+        /* top: -170px; */
         right: 15px;
-    
-}
+    }
 }
 @media screen and (max-width:503px){
     .AM_flightComponent {
