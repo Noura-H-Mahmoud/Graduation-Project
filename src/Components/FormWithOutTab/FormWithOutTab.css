@@ -89,13 +89,7 @@
         width: 30rem !important;
         
     }
-    .AM-Returnfield , .MS-text-field1{
-        width: 240px !important;
-    }
-    .AM_searchButton {
-        margin-right: 421px;
-    }
-    .MS-SButton{
+    .MS-SButton,.AM_searchButton{
         margin-right: 0 !important;
     }
     .MS-text-field1,.MS-text-field{
