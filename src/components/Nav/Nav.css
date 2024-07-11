@@ -560,6 +560,10 @@
         left: 24px;
         transform: translateX(0%);
     }
+    .AM_AccountList  {
+        top: 180px;
+        right: 13.1rem;
+    }
     /* .AM_AccountList {
         display: none;
     } */
