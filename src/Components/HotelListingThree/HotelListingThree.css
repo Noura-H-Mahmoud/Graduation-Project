@@ -69,25 +69,30 @@
     .line1 {
         padding-top: 4rem;
     }
+
+    .OS-Section-three button:hover {
+        background-color: var(--fourth-bgcolor);
+        color: var( --main-bgcolor);
+        border: 1px solid var(--main-bgcolor);
+    }
     
-    @media screen and (max-width:1000px) {
+    @media screen and (max-width:992px) {
+        .OS-Section-three{
+            padding-left: var(--main-padding-home);
+            padding-right: var(--main-padding-home);
+        }
         .OS-Room-avv {
             padding: 20px 0px;
         }
         .line {
-            background-color: black;
-            width: 150%;
+            background-color:#11221140;
+            width: 100%;
         }
-    }
-    
-    @media screen and (max-width:400px) {
-        .OS-Section-three {
-            padding: 0px 2rem;
+        .OS-ROOM-par{
+            width: 100%;
         }
-    }
-    
-    @media screen and (max-width:300px) {
-        .OS-Room-avv {
-            flex-wrap: wrap;
+        .OS-Room-avv{
+            flex-direction: column;
+            align-items: start;
         }
     }

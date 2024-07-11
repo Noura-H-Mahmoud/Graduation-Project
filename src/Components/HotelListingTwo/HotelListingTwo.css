@@ -108,23 +108,25 @@
     }
 }
 
+@media screen and (max-width:992px){
+    .OS-Section-two {
+        padding-left: var(--main-padding-home);
+        padding-right: var(--main-padding-home);
+    }
+    .OS-Divbig-review{
+        justify-content: center;
+    }
+    .OS-Two-review{
+        display: flex;
+        justify-content: center;
+    }
+}
+
 @media screen and (max-width:912px) {
     .OS-Twoo-review {
         margin: 10px;
     }
     .OS-Line_Img img {
         background-color: var(--main-text-color);
-    }
-}
-
-@media screen and (max-width:512px) {
-    .OS-Paragraf-Two {
-        width: 150%;
-        font-size: var(--small-font-size);
-        line-height: var(--omedium-line-hieght);
-    }
-    .OS-Line_Img img {
-        background-color: var(--main-text-color);
-        width: 150%;
     }
 }
