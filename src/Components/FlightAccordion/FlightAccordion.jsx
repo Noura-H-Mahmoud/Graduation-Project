@@ -5,6 +5,8 @@ import { useState } from 'react'
 import Aos from "aos";
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import icone2 from '../../assets/images/icon2.png'
+import circle from '../../assets/images/circle.svg'
 const FlightAccordion = ({Header_Title , Header_Body , Header_Title2 ,Header_Body2 ,Header_More}) => {
     const [active, setActive] = useState(null)
     const ActivePanel = (panelId) => {
@@ -21,7 +23,7 @@ const FlightAccordion = ({Header_Title , Header_Body , Header_Title2 ,Header_Bod
                 <p className='Header-Body-para2'>{Header_Body}</p>
             </div>
             <div className="Header-icon">
-                <img onClick={() => ActivePanel(1)} src= {active===1 ? "./../src/assets/images/icon2.png" : "./../src/assets/images/circle.svg" } alt="iconActive" />
+                <img onClick={() => ActivePanel(1)} src= {active===1 ? {icon2} : {circle} } alt="iconActive" />
             </div>
         </div>
         <div className="Accordion-Header-Hiden" style={{background : active ===2 ? "#FF8500" : "#fff"}} >
@@ -31,7 +33,7 @@ const FlightAccordion = ({Header_Title , Header_Body , Header_Title2 ,Header_Bod
                 <p className='Header-Body-Hiden-para3'>{Header_More}</p>
             </div>
             <div className="Header-icon">
-                <img onClick={() => ActivePanel(2)} src= {active===2 ? "./../src/assets/images/icon2.png" : "./../src/assets/images/circle.svg" } alt="iconActive" />
+                <img onClick={() => ActivePanel(2)} src= {active===2 ? {icone2} : {circle} } alt="iconActive" />
             </div>
         </div>
     </section>
