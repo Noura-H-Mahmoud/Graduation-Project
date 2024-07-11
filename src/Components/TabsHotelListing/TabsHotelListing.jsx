@@ -16,7 +16,7 @@ export default function TabsHotelListing() {
     const filters = ['price', 'rating', 'freebies', 'amenities'];
     return (
         <section className='NM_HotelListing'>
-            <div><FormWithOutTab /></div>
+            <div> <FormWithOutTab page="hotelListing" /></div>
             <div className='NM_MainSection'>
                 <div className='NM_filter'>
                 <button className='MS-filterBtn' onClick={togglePopup}><FontAwesomeIcon icon={faSliders} size="lg" style={{color: "#ffffff",}} /> Filters</button>

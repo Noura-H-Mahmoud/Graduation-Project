@@ -101,9 +101,9 @@ const ShowPlacesMain = () => {
         <div className={destination ? "OS-Destination" : "OS-DestinationDisplay"}>
           <h1 className='OS-Destination-h1'>popular cities</h1>
           <div>
-            {OSdataDes.map((item) => {
+            {OSdataDes.map((item,index) => {
               return (
-                <div className='OS-DestinationFlex'>
+                <div key={index} className='OS-DestinationFlex'>
                   <div className='OS-Destination-Par' onClick={() => click(item.des1)}>{item.des1}</div>
                   <p className='OS-Destination-Par' onClick={() => click(item.des2)}>{item.des2}</p>
                   <p className='OS-Destination-Par' onClick={() => click(item.des3)}>{item.des3}</p>
@@ -163,9 +163,9 @@ const ShowPlacesMain = () => {
               <>
                 <h1 className='OS-Destination-h1 OS-Room-h1'>{item.Title}</h1>
                 <div className='OS-Ti-Flex OS-All-Padding'>
-                  {OSdataRoom.map((item) => {
+                  {OSdataRoom.map((item,index) => {
                     return (
-                      <div className={item.class}>
+                      <div key={index} className={item.class}>
                         <img src={user} alt="icon" className="MS-field-icon" />
                         <div className='OS-DivT-Room'>
                           <h6 className='OS-h6-Room'>{item.Title}</h6>

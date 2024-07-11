@@ -36,20 +36,6 @@
         color: var(--main-text-color) !important;
         padding: 10px 15px 0px;
     }
-    
-    .OS-Destination-Par {
-        font-size: var(--xsmall-font-size)!important;
-        font-weight: var( --main-font-weight)!important;
-        color: var(--main-text-color)!important;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        padding-bottom: 13px;
-        cursor: pointer;
-    }
-    
-    .OS-Destination-Par:active {
-        color: var(--main-bgcolor)!important;
 
     .OS-Destination-Par:hover {
         color: var(--main-bgcolor) !important;
@@ -71,7 +57,6 @@
         padding-top: 20px;
     }
 
-    
     .OS-All-Flex {
         display: flex;
     }
@@ -111,8 +96,6 @@
     }
 
     .OS-btn-Room:hover {
-    
-    .OS-btn-Room:active {
         border: 1px solid var(--third-bgcolor);
         background-color: var(--main-bgcolor);
         border-radius: 4px;
@@ -144,8 +127,6 @@
     }
 
     .OS-applyDiv-Style:hover {
-    
-    .OS-applyDiv-Style:active {
         background-color: var(--main-bgcolor);
         color: var(--main-text-color);
         transition: all 1s;
@@ -165,8 +146,8 @@
         padding: 10px;
         color: var(--main-bgcolor);
     }
-    
-    .OS-Ti-Style:active {
+
+    .OS-Ti-Style:hover {
         cursor: pointer;
         background-color: var(--third-bgcolor);
     }
@@ -182,28 +163,69 @@
         font-size: var(--small-font-size) !important;
         font-weight: var(--main-font-weight) !important;
     }
-    
-    .OS-flex-remove {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 10px;
+
+    .OS-Destination {
+        position: absolute;
+        margin-top: 367px !important;
+        background-color: var(--second-text-color);
+        box-shadow: 0px 0px 14px 0px var(--third-bgcolor);
+        max-height: 300px;
+        border-radius: 10px;
+        overflow-y: auto;
+        width: 33%;
+        z-index: 100;
     }
-    
-    .OS-removeRoom-Style {
-        color: var(--main-text-color);
-        font-size: var( --small-font-size)!important;
-        font-weight: var( --main-font-weight)!important;
-        margin-right: 20px;
+
+    .OS-Destination-Par {
+        font-size: var(--xsmall-font-size) !important;
+        font-weight: var(--main-font-weight) !important;
+        color: var(--main-text-color) !important;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
         cursor: pointer;
+        padding: 10px 15px;
+        box-sizing: border-box;
     }
-    
-    .OS-removeRoom-Style:active {
-        color: var(--main-bgcolor);
+    @media (max-width:1200px) {
+        .OS-firstfiled {
+            width: 21.6%;
+        }
     }
-    
-    @media (max-width: 576px) {
-        .MS-firstfield {
-            width: 240px;
+
+    @media (min-width:992px) {
+        .full-width {
+            margin-top: .6rem;
+        }
+    }
+
+    @media (max-width:992px) {
+        .NM_TextField {
+            flex-direction: column;
+        }
+
+        .OS-firstfiled {
+            width: 100%;
+        }
+
+        .OS-firstfiled1,
+        .OS-Date-co,
+        .NM_Change {
+            width: 100%;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .OS-Destination {
+            bottom: 4.3rem;
+            width: 90%;
+        }
+    }
+
+    @media (max-width:577px) {
+        .OS-Destination {
+            bottom: 7.2rem;
         }
     }
