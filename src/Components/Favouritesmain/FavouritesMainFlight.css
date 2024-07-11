@@ -170,6 +170,7 @@
         right: 15px;
     
 }
+}
 @media screen and (max-width:503px){
     .AM_flightComponent {
         align-items: center;
