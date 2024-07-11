@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'TradeGothic LT Extended Regular';
-    src: url('../Puplic/Assets/fonts/TradeGothicLTExtendedRegular.ttf format')('opentype');
+    src: url('../Puplic/Assets/fonts/TradeGothicLTExtendedRegular.ttf')format('opentype');
     font-weight: normal;
     font-style: normal;
 }
