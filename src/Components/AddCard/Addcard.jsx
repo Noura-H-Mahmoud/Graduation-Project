@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import img1 from './../../assets/images/Visa-add.png'
 import Popup from '../Booking-Popup/Popup'
 import './Addcard.css'
+import icone2 from '../../assets/images/icon2.png'
+import circle from '../../assets/images/circle.svg'
 export default function Addcard ({linkto}) {
     const [active, setActive] = useState(null)
     const [isClicked, setIsClicked] = useState(false);
@@ -51,7 +53,7 @@ const link =[
                    <p>**** 4321 <span>02/27</span></p>
                 </div>
                 <div className="MH-head-content2">
-                <img onClick={handleClick} src= {active===1 ? "./../src/assets/images/icon2.png" : "./../src/assets/images/iconActive.svg" } alt="iconActive" />
+                <img onClick={handleClick} src= {active===1 ? icone2 : circle } alt="iconActive" />
                 </div>
             </div>
             <div className="MH-addcard-footer">
