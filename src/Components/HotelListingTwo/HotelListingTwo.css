@@ -46,7 +46,7 @@
     height: 41px;
 }
 
-.OS-Div-review:active {
+.OS-Div-review:hover {
     background-color: transparent;
     border: 1px solid var(--main-bgcolor);
     transition: all .5s;
@@ -85,7 +85,7 @@
     margin-left: 1rem;
 }
 
-.OS-Two-review :active {
+.OS-Two-review :hover {
     background-color: var(--main-bgcolor);
     transition: all.5s;
 }
