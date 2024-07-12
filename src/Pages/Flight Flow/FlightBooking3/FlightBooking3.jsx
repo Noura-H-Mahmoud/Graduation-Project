@@ -41,7 +41,7 @@ export default function FlightBooking3({  navButtons,
             </div> 
             <div className="MH-content2">
             <FlightCard page={'FlightBooking'} imgFlightCard={imgFlightCard} title={'Economy'} subtitle={<p className="subtitle" style={{marginBottom: '20px'}}>Emirates A380 Airbus</p>} button={'4.2'}
-      price_Base_Fare={'400 $'} price_Discount={'400 $'} price_taxes={'400 $'} price_Service_Fee={'400 $'} price_total={'400 $'}/>
+            price_Base_Fare={'400 $'} price_Discount={'400 $'} price_taxes={'400 $'} price_Service_Fee={'400 $'} price_total={'400 $'}/>
             </div>    
             </div>  
         </div>
