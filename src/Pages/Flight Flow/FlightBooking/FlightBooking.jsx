@@ -20,7 +20,7 @@ export default function FlightBooking({navButtons, navButtonsForMobile,navList})
                 <FlightAccordion Header_Title={'Pay in full'} Header_Body={'Pay the total and you are all set'}
           Header_Title2={'Pay part now, part later'} Header_Body2={'Pay 207.43 $ now, and the rest (207.43 $) will be automatically charged to the same payment method on Nov 14, 2022. No extra fees.'}
           Header_More={'More info'}/>
-          <FlightForm/>
+          <FlightForm page='FlightBooking'/>
       </div>
       <div>
         <FlightCard page={'FlightBooking'} imgFlightCard={imgFlightCard} title={'Economy'} subtitle={<p className="subtitle" style={{marginBottom: '20px'}}>Emirates A380 Airbus</p>} button={'4.2'}

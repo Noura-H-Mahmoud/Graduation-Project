@@ -45,7 +45,7 @@ export default function HotelBooking({
                 }
                 Header_More={"More info"}
               />
-              <FlightForm />
+              <FlightForm/>
             </div>
             <div>
               <FlightCard

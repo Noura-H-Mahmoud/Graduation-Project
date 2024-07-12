@@ -91,6 +91,10 @@ const State = () => {
         e.preventDefault();
         setShowDiv(!showDiv);
       };
+      const handleNavLinkClick = () => {
+        setShowDiv(false);
+    };
+    
     
     // for scroll and active by Noura
     const NM_Login2 = isLoginActive ? (isScrolled ? 'NM_Login Scrolled' : 'NM_Login') : (isScrolled ? 'NM_Signup Scrolled' : 'NM_Signup');
@@ -211,7 +215,7 @@ const State = () => {
           </div>
           <img className='AM_Navline' src={navLine} alt="" />
           <div className='AM_AccountLinks'>
-            <Link className='AM_Link1' to="/Graduation-Project/myaccount"><img src={profileBlack} alt=""/>My Account</Link>
+          <Link className='AM_Link1' to="/Graduation-Project/myaccount" onClick={handleNavLinkClick}><img src={profileBlack} alt=""/>My Account</Link>
             <Link className='AM_Link1'><img src={card} alt="" />Payments</Link>
             <Link className='AM_Link1'><img src={setting} alt="" />Setting</Link>
           </div>
